@@ -487,6 +487,7 @@
       font-weight: 600; cursor: pointer; letter-spacing: 0.04em;
       align-self: flex-start;
       transition: background var(--transition-interactive);
+      border: none;
     }
     .form-submit:hover { background: var(--color-primary-hover); }
 
@@ -949,7 +950,8 @@
             </div>
           </div>
         </div>
-        <div class="contact-form fade-up" id="contactForm">
+        
+        <form action="https://formspree.io/f/meedkobl" method="POST" class="contact-form fade-up" id="contactForm">
           <div class="form-row">
             <div class="form-group">
               <label for="fname">Name *</label>
@@ -968,8 +970,9 @@
             <label for="message">Message *</label>
             <textarea id="message" name="message" placeholder="Tell me about your project or inquiry..." required></textarea>
           </div>
-          <button type="button" class="form-submit" onclick="handleFormSubmit(this)">Send Message</button>
-        </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+
       </div>
     </div>
   </section>
@@ -1029,18 +1032,6 @@
       entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
     },{threshold:0.12});
     document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
-
-    // Form submit
-    function handleFormSubmit(btn){
-      const form=document.getElementById('contactForm');
-      const fname=form.querySelector('#fname').value.trim();
-      const email=form.querySelector('#email').value.trim();
-      const message=form.querySelector('#message').value.trim();
-      if(!fname||!email||!message){btn.textContent='Please fill required fields ⚠️';setTimeout(()=>btn.textContent='Send Message',2000);return;}
-      btn.textContent='Message sent! ✓';
-      btn.style.background='var(--color-primary-active)';
-      setTimeout(()=>{btn.textContent='Send Message';btn.style.background='';},3000);
-    }
   </script>
 </body>
 </html>
