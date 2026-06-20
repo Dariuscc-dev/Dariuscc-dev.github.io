@@ -308,7 +308,6 @@
     .about-stats {
       display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-6);
     }
-    /* El elemento 5 de la tarjeta de stats se centrará */
     .stat-card:nth-child(5):last-child {
       grid-column: span 2;
     }
@@ -607,7 +606,6 @@
       font-family: var(--font-display); font-weight: 700;
       font-size: var(--text-base);
     }
-    /* Fixed flex-wrap to prevent horizontal scroll */
     .footer-links { display: flex; flex-wrap: wrap; gap: var(--space-4); }
     .footer-links a { font-size: var(--text-sm); color: var(--color-text-muted); }
     .footer-links a:hover { color: var(--color-primary); }
@@ -697,7 +695,7 @@
           <p class="section-label">Who Am I</p>
           <h2 class="section-title" id="about-title">Architect-Translator:<br>Bridging Tech & Business</h2>
           <p>I'm a 22-year-old of Romanian origin, raised in Spain. As a hybrid profile between Business and Technology, I'm passionate about translating technical infrastructure into financial profitability (ROI, FinOps) within the Cloud ecosystem.</p>
-          <p>With a foundation in competitive sports (Taekwondo and Basketball), I built the discipline I now apply to business. I hold a degree in Marketing and Market Research (UMA), an MBA, and I'm currently studying Web Application Development (DAW) and transitioning into Software Engineering.</p>
+          <p>With a foundation in competitive sports (Taekwondo and Basketball), I built the discipline I now apply to business. I hold a degree in Marketing and Market Research (UMA), an MBA, and I'm currently studying Web Application Development (DAW) and transitioning into Software Engineering, with an open and ambitious outlook toward my long-term trajectory in STEM fields.</p>
           <p>Trilingual, proactive, and results-oriented, my goal is to provide immediate strategic value as the bridge between business needs and technical execution.</p>
           
           <div class="hero-actions" style="margin-top: var(--space-6);">
@@ -1061,12 +1059,13 @@
       <p class="section-description">My structured technical roadmap spanning 5 layers: from foundational web technologies to cloud infrastructure and CI/CD automation.</p>
 
       <div class="roadmap-grid">
-        <div class="layer-card">
+        <div class="layer-card" style="border-color: var(--color-primary); box-shadow: 0 0 0 1px oklch(from var(--color-primary) l c h / 0.25);">
           <div class="layer-header">
             <div class="layer-title">Layer 1: Web Fundamentals</div>
+            <span style="font-size: var(--text-xs); color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">▶ Current Stage (Focusing on CSS)</span>
           </div>
           <div class="layer-body">
-            <span class="tool-tag">HTML</span><span class="tool-tag">CSS</span><span class="tool-tag">JavaScript</span><span class="tool-tag">HTTP/HTTPS</span><span class="tool-tag">TLS/SSL</span>
+            <span class="tool-tag">HTML</span><span class="tool-tag" style="background: var(--color-primary); color: var(--color-text-inverse);">CSS</span><span class="tool-tag">JavaScript</span><span class="tool-tag">HTTP/HTTPS</span><span class="tool-tag">TLS/SSL</span>
           </div>
         </div>
 
