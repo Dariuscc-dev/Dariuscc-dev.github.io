@@ -87,6 +87,10 @@
 
     /* ============ BASE ============ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      overflow-x: hidden; /* Fix for horizontal scrolling on mobile */
+      width: 100%;
+    }
     html {
       -webkit-font-smoothing: antialiased;
       scroll-behavior: smooth;
@@ -304,6 +308,10 @@
     .about-stats {
       display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-6);
     }
+    /* El elemento 5 de la tarjeta de stats se centrará */
+    .stat-card:nth-child(5):last-child {
+      grid-column: span 2;
+    }
     .stat-card {
       background: var(--color-surface-2);
       border: 1px solid var(--color-divider);
@@ -392,7 +400,6 @@
     .layer-card:hover { box-shadow: var(--shadow-md); border-color: var(--color-primary); }
     .layer-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-4); flex-wrap: wrap; gap: var(--space-2); }
     .layer-title { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; color: var(--color-text); }
-    .layer-meta { font-size: var(--text-xs); color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
     .layer-body { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 
     /* ============ CERTIFICATIONS ============ */
@@ -600,7 +607,8 @@
       font-family: var(--font-display); font-weight: 700;
       font-size: var(--text-base);
     }
-    .footer-links { display: flex; gap: var(--space-6); }
+    /* Fixed flex-wrap to prevent horizontal scroll */
+    .footer-links { display: flex; flex-wrap: wrap; gap: var(--space-4); }
     .footer-links a { font-size: var(--text-sm); color: var(--color-text-muted); }
     .footer-links a:hover { color: var(--color-primary); }
     .footer-copy { font-size: var(--text-xs); color: var(--color-text-faint); width: 100%; }
@@ -647,10 +655,10 @@
     </a>
     <ul class="nav-links" id="navLinks" role="list">
       <li><a href="#about">Who Am I</a></li>
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="#certifications">Certs</a></li>
-      <li><a href="#roadmap">Roadmap</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#certifications">Certs</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -725,6 +733,10 @@
                 <div class="stat-number">🏆</div>
                 <div class="stat-label">Honors (TFG)</div>
               </div>
+              <div class="stat-card">
+                <div class="stat-number">+10</div>
+                <div class="stat-label">Projects</div>
+              </div>
             </div>
           </div>
         </div>
@@ -786,221 +798,6 @@
               <p class="exp-desc">Business Administration framework and modern digital marketing strategies.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider" role="separator"></div>
-
-  <section class="section" id="tools" aria-labelledby="tools-title">
-    <div class="section-narrow fade-up">
-      <p class="section-label">Skills & Stack</p>
-      <h2 class="section-title" id="tools-title">Tools I work with</h2>
-      <p class="section-description">A mix of statistical, analytical, BI and dev tools — some mastered, some actively learning.</p>
-
-      <div class="tools-section-title">Languages</div>
-      <div class="tools-grid">
-        <span class="tool-chip">DAX</span>
-        <span class="tool-chip">M</span>
-        <span class="tool-chip learning">Python <small>· Learning</small></span>
-        <span class="tool-chip learning">SQL <small>· Learning</small></span>
-        <span class="tool-chip">HTML</span>
-        <span class="tool-chip learning">JavaScript <small>· DAW</small></span>
-      </div>
-
-      <div class="tools-section-title">Data, BI & Cloud</div>
-      <div class="tools-grid">
-        <span class="tool-chip">Power BI <small>· PL-300 ✓</small></span>
-        <span class="tool-chip">Microsoft Fabric</span>
-        <span class="tool-chip">Azure Cloud</span>
-        <span class="tool-chip">Tableau</span>
-        <span class="tool-chip">Machine Learning</span>
-        <span class="tool-chip">Excel</span>
-      </div>
-
-      <div class="tools-section-title">Statistics & Research</div>
-      <div class="tools-grid">
-        <span class="tool-chip">SPSS</span>
-        <span class="tool-chip">Gretl</span>
-        <span class="tool-chip">Statgraphics</span>
-        <span class="tool-chip">Google Trends</span>
-        <span class="tool-chip">Google Analytics</span>
-      </div>
-
-      <div class="tools-section-title">Business & AI</div>
-      <div class="tools-grid">
-        <span class="tool-chip">ROI & FinOps</span>
-        <span class="tool-chip">Prompt Engineering</span>
-        <span class="tool-chip">Sales Pipeline Mgt</span>
-        <span class="tool-chip">HubSpot</span>
-        <span class="tool-chip">Odoo</span>
-        <span class="tool-chip">Salesforce</span>
-        <span class="tool-chip">Gemini / Claude / Perplexity</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider" role="separator"></div>
-
-  <section class="section" id="roadmap" aria-labelledby="roadmap-title">
-    <div class="section-narrow fade-up">
-      <p class="section-label">Development Roadmap</p>
-      <h2 class="section-title" id="roadmap-title">Living Web Stack Path</h2>
-      <p class="section-description">My structured ~90h technical roadmap spanning 5 layers: from foundational web technologies to cloud infrastructure and CI/CD automation.</p>
-
-      <div class="roadmap-grid">
-        <div class="layer-card">
-          <div class="layer-header">
-            <div class="layer-title">Layer 1: Web Fundamentals</div>
-            <div class="layer-meta">~34h Total</div>
-          </div>
-          <div class="layer-body">
-            <span class="tool-tag">HTML</span><span class="tool-tag">CSS</span><span class="tool-tag">JavaScript</span><span class="tool-tag">HTTP/HTTPS</span><span class="tool-tag">TLS/SSL</span>
-          </div>
-        </div>
-
-        <div class="layer-card">
-          <div class="layer-header">
-            <div class="layer-title">Layer 2: Logic & Data</div>
-            <div class="layer-meta">~25h Total</div>
-          </div>
-          <div class="layer-body">
-            <span class="tool-tag">Python</span><span class="tool-tag">SQL</span><span class="tool-tag">REST APIs</span><span class="tool-tag">CORS</span>
-          </div>
-        </div>
-
-        <div class="layer-card">
-          <div class="layer-header">
-            <div class="layer-title">Layer 3: Networks & Security</div>
-            <div class="layer-meta">~6h Total</div>
-          </div>
-          <div class="layer-body">
-            <span class="tool-tag">TCP/IP</span><span class="tool-tag">DNS Flow</span>
-          </div>
-        </div>
-
-        <div class="layer-card">
-          <div class="layer-header">
-            <div class="layer-title">Layer 4: Infrastructure</div>
-            <div class="layer-meta">~25h Total</div>
-          </div>
-          <div class="layer-body">
-            <span class="tool-tag">Linux / Bash</span><span class="tool-tag">Git</span><span class="tool-tag">GitHub</span><span class="tool-tag">Docker</span>
-          </div>
-        </div>
-
-        <div class="layer-card">
-          <div class="layer-header">
-            <div class="layer-title">Layer 5: Automation & DevOps</div>
-            <div class="layer-meta">~7h Total</div>
-          </div>
-          <div class="layer-body">
-            <span class="tool-tag">CI / CD</span><span class="tool-tag">GitHub Actions</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider" role="separator"></div>
-
-  <section class="section" id="certifications" aria-labelledby="certs-title">
-    <div class="section-narrow fade-up">
-      <p class="section-label">Cloud & Tech Certifications</p>
-      <h2 class="section-title" id="certs-title">Microsoft & Cloud Roadmap</h2>
-      <p class="section-description">Building a hybrid profile as a technical authority in Cloud Architecture, Data Engineering and Applied AI — from fundamentals to expert-level architecture design.</p>
-
-      <div class="certs-grid">
-        <div class="cert-row">
-          <div><div class="cert-name">PL-300</div><div class="cert-sub">Power BI Data Analyst</div></div>
-          <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">The end of the pipeline. Mastery of data analysis and visualization. Advantage for understanding data engineering.</p>
-          <span class="cert-level done">✓ Achieved</span>
-        </div>
-        
-        <div class="cert-row">
-          <div><div class="cert-name">AZ-900</div><div class="cert-sub">Azure Fundamentals</div></div>
-          <span class="cert-badge fundamental">Fundamental</span>
-          <p class="cert-why">The foundation. Azure vocabulary and base structure. Everything built on top will now make sense.</p>
-          <span class="cert-level done">✓ Achieved</span>
-        </div>
-        
-        <div class="cert-row" style="border-color: var(--color-primary); box-shadow: 0 0 0 1px oklch(from var(--color-primary) l c h / 0.25);">
-          <div><div class="cert-name">SC-900</div><div class="cert-sub">Security, Compliance & Identity</div></div>
-          <span class="cert-badge fundamental">Fundamental</span>
-          <p class="cert-why">The barrier to entry. Zero Trust, compliance, and identity. Security designed from the ground up.</p>
-          <span class="cert-level now">▶ 1-2 Weeks</span>
-        </div>
-        
-        <div class="cert-row">
-          <div><div class="cert-name">DP-700</div><div class="cert-sub">Microsoft Fabric Data Engineer</div></div>
-          <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">The natural connection. Integrating analytics; preparing and moving data for Power BI analysis.</p>
-          <span class="cert-level soon">Short-term</span>
-        </div>
-        
-        <div class="cert-row">
-          <div><div class="cert-name">AZ-104</div><div class="cert-sub">Azure Administrator</div></div>
-          <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">The controls. Infrastructure management, networking, storage, and compute (AZ-305 prerequisite).</p>
-          <span class="cert-level soon">Short-term</span>
-        </div>
-
-        <div class="cert-row">
-          <div><div class="cert-name">AI-300</div><div class="cert-sub">AI & Machine Learning in Production</div></div>
-          <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">MLOps & LLM/RAG integration. Taking AI from testing to stable, real-world systems.</p>
-          <span class="cert-level mid">Mid-term</span>
-        </div>
-
-        <div class="cert-row">
-          <div><div class="cert-name">DP-750</div><div class="cert-sub">Data Engineering with Databricks</div></div>
-          <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">The industry standard. Official MS engineering for Databricks. Open Lakehouse architecture.</p>
-          <span class="cert-level mid">Mid-term</span>
-        </div>
-
-        <div class="cert-row">
-          <div><div class="cert-name">Databricks Associate</div><div class="cert-sub">Data Engineer</div></div>
-          <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">(Optional) Ideal complement to DP-750. Valid for AWS/GCP, offering total cloud portability.</p>
-          <span class="cert-level mid">Mid-term</span>
-        </div>
-
-        <div class="cert-row">
-          <div><div class="cert-name">AI-103</div><div class="cert-sub">AI Apps & Agents Development</div></div>
-          <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">The future of agents. The "guts" of building autonomous workflows and multimodal systems.</p>
-          <span class="cert-level mid">Mid-term</span>
-        </div>
-        
-        <div class="cert-row">
-          <div><div class="cert-name">AZ-305</div><div class="cert-sub">Azure Solutions Architect</div></div>
-          <span class="cert-badge expert">Expert</span>
-          <p class="cert-why">The Architect. High-level design decisions on cost, performance, and security for full projects.</p>
-          <span class="cert-level mid">Mid-term</span>
-        </div>
-
-        <div class="cert-row">
-          <div><div class="cert-name">AWS SAA-C03</div><div class="cert-sub">AWS Solutions Architect</div></div>
-          <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">Multicloud unlock. Opening doors to the largest cloud provider market globally.</p>
-          <span class="cert-level mid">Mid-term</span>
-        </div>
-
-        <div class="cert-row">
-          <div><div class="cert-name">AWS MLA-C01</div><div class="cert-sub">AWS Machine Learning</div></div>
-          <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">Extreme technical versatility mastering AI ecosystems on the two most powerful clouds.</p>
-          <span class="cert-level long">Mid-Long</span>
-        </div>
-
-        <div class="cert-row">
-          <div><div class="cert-name">SC-500</div><div class="cert-sub">AI Security</div></div>
-          <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">Proactive AI Defense. Security specifically applied to defending artificial intelligence environments.</p>
-          <span class="cert-level long">Long-term</span>
         </div>
       </div>
     </div>
@@ -1207,6 +1004,216 @@
 
   <div class="divider" role="separator"></div>
 
+  <section class="section" id="tools" aria-labelledby="tools-title">
+    <div class="section-narrow fade-up">
+      <p class="section-label">Skills & Stack</p>
+      <h2 class="section-title" id="tools-title">Tools I work with</h2>
+      <p class="section-description">A mix of statistical, analytical, BI and dev tools — some mastered, some actively learning.</p>
+
+      <div class="tools-section-title">Languages</div>
+      <div class="tools-grid">
+        <span class="tool-chip">DAX</span>
+        <span class="tool-chip">M</span>
+        <span class="tool-chip learning">Python <small>· Learning</small></span>
+        <span class="tool-chip learning">SQL <small>· Learning</small></span>
+        <span class="tool-chip">HTML</span>
+        <span class="tool-chip learning">JavaScript <small>· DAW</small></span>
+      </div>
+
+      <div class="tools-section-title">Data, BI & Cloud</div>
+      <div class="tools-grid">
+        <span class="tool-chip">Power BI <small>· PL-300 ✓</small></span>
+        <span class="tool-chip">Microsoft Fabric</span>
+        <span class="tool-chip">Azure Cloud</span>
+        <span class="tool-chip">Tableau</span>
+        <span class="tool-chip">Machine Learning</span>
+        <span class="tool-chip">Excel</span>
+      </div>
+
+      <div class="tools-section-title">Statistics & Research</div>
+      <div class="tools-grid">
+        <span class="tool-chip">SPSS</span>
+        <span class="tool-chip">Gretl</span>
+        <span class="tool-chip">Statgraphics</span>
+        <span class="tool-chip">Google Trends</span>
+        <span class="tool-chip">Google Analytics</span>
+      </div>
+
+      <div class="tools-section-title">Business & AI</div>
+      <div class="tools-grid">
+        <span class="tool-chip">ROI & FinOps</span>
+        <span class="tool-chip">Prompt Engineering</span>
+        <span class="tool-chip">Sales Pipeline Mgt</span>
+        <span class="tool-chip">HubSpot</span>
+        <span class="tool-chip">Odoo</span>
+        <span class="tool-chip">Salesforce</span>
+        <span class="tool-chip">Gemini / Claude / Perplexity</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" role="separator"></div>
+
+  <section class="section" id="roadmap" aria-labelledby="roadmap-title">
+    <div class="section-narrow fade-up">
+      <p class="section-label">Development Roadmap</p>
+      <h2 class="section-title" id="roadmap-title">Living Web Stack Path</h2>
+      <p class="section-description">My structured technical roadmap spanning 5 layers: from foundational web technologies to cloud infrastructure and CI/CD automation.</p>
+
+      <div class="roadmap-grid">
+        <div class="layer-card">
+          <div class="layer-header">
+            <div class="layer-title">Layer 1: Web Fundamentals</div>
+          </div>
+          <div class="layer-body">
+            <span class="tool-tag">HTML</span><span class="tool-tag">CSS</span><span class="tool-tag">JavaScript</span><span class="tool-tag">HTTP/HTTPS</span><span class="tool-tag">TLS/SSL</span>
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-header">
+            <div class="layer-title">Layer 2: Logic & Data</div>
+          </div>
+          <div class="layer-body">
+            <span class="tool-tag">Python</span><span class="tool-tag">SQL</span><span class="tool-tag">REST APIs</span><span class="tool-tag">CORS</span>
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-header">
+            <div class="layer-title">Layer 3: Networks & Security</div>
+          </div>
+          <div class="layer-body">
+            <span class="tool-tag">TCP/IP</span><span class="tool-tag">DNS Flow</span>
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-header">
+            <div class="layer-title">Layer 4: Infrastructure</div>
+          </div>
+          <div class="layer-body">
+            <span class="tool-tag">Linux / Bash</span><span class="tool-tag">Git</span><span class="tool-tag">GitHub</span><span class="tool-tag">Docker</span>
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-header">
+            <div class="layer-title">Layer 5: Automation & DevOps</div>
+          </div>
+          <div class="layer-body">
+            <span class="tool-tag">CI / CD</span><span class="tool-tag">GitHub Actions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" role="separator"></div>
+
+  <section class="section" id="certifications" aria-labelledby="certs-title">
+    <div class="section-narrow fade-up">
+      <p class="section-label">Cloud & Tech Certifications</p>
+      <h2 class="section-title" id="certs-title">Microsoft & Cloud Roadmap</h2>
+      <p class="section-description">Building a hybrid profile as a technical authority in Cloud Architecture, Data Engineering and Applied AI — from fundamentals to expert-level architecture design.</p>
+
+      <div class="certs-grid">
+        <div class="cert-row">
+          <div><div class="cert-name">PL-300</div><div class="cert-sub">Power BI Data Analyst</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">The end of the pipeline. Mastery of data analysis and visualization. Advantage for understanding data engineering.</p>
+          <span class="cert-level done">✓ Achieved</span>
+        </div>
+        
+        <div class="cert-row">
+          <div><div class="cert-name">AZ-900</div><div class="cert-sub">Azure Fundamentals</div></div>
+          <span class="cert-badge fundamental">Fundamental</span>
+          <p class="cert-why">The foundation. Azure vocabulary and base structure. Everything built on top will now make sense.</p>
+          <span class="cert-level done">✓ Achieved</span>
+        </div>
+        
+        <div class="cert-row" style="border-color: var(--color-primary); box-shadow: 0 0 0 1px oklch(from var(--color-primary) l c h / 0.25);">
+          <div><div class="cert-name">SC-900</div><div class="cert-sub">Security, Compliance & Identity</div></div>
+          <span class="cert-badge fundamental">Fundamental</span>
+          <p class="cert-why">The barrier to entry. Zero Trust, compliance, and identity. Security designed from the ground up.</p>
+          <span class="cert-level now">▶ 1-2 Weeks</span>
+        </div>
+        
+        <div class="cert-row">
+          <div><div class="cert-name">DP-700</div><div class="cert-sub">Microsoft Fabric Data Engineer</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">The natural connection. Integrating analytics; preparing and moving data for Power BI analysis.</p>
+          <span class="cert-level soon">Short-term</span>
+        </div>
+        
+        <div class="cert-row">
+          <div><div class="cert-name">AZ-104</div><div class="cert-sub">Azure Administrator</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">The controls. Infrastructure management, networking, storage, and compute (AZ-305 prerequisite).</p>
+          <span class="cert-level soon">Short-term</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">AI-300</div><div class="cert-sub">AI & Machine Learning in Production</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">MLOps & LLM/RAG integration. Taking AI from testing to stable, real-world systems.</p>
+          <span class="cert-level mid">Mid-term</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">DP-750</div><div class="cert-sub">Data Engineering with Databricks</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">The industry standard. Official MS engineering for Databricks. Open Lakehouse architecture.</p>
+          <span class="cert-level mid">Mid-term</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">Databricks Associate</div><div class="cert-sub">Data Engineer</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">(Optional) Ideal complement to DP-750. Valid for AWS/GCP, offering total cloud portability.</p>
+          <span class="cert-level mid">Mid-term</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">AI-103</div><div class="cert-sub">AI Apps & Agents Development</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">The future of agents. The "guts" of building autonomous workflows and multimodal systems.</p>
+          <span class="cert-level mid">Mid-term</span>
+        </div>
+        
+        <div class="cert-row">
+          <div><div class="cert-name">AZ-305</div><div class="cert-sub">Azure Solutions Architect</div></div>
+          <span class="cert-badge expert">Expert</span>
+          <p class="cert-why">The Architect. High-level design decisions on cost, performance, and security for full projects.</p>
+          <span class="cert-level mid">Mid-term</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">AWS SAA-C03</div><div class="cert-sub">AWS Solutions Architect</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">Multicloud unlock. Opening doors to the largest cloud provider market globally.</p>
+          <span class="cert-level mid">Mid-term</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">AWS MLA-C01</div><div class="cert-sub">AWS Machine Learning</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">Extreme technical versatility mastering AI ecosystems on the two most powerful clouds.</p>
+          <span class="cert-level long">Mid-Long</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">SC-500</div><div class="cert-sub">AI Security</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">Proactive AI Defense. Security specifically applied to defending artificial intelligence environments.</p>
+          <span class="cert-level long">Long-term</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" role="separator"></div>
+
   <section class="section" id="contact" aria-labelledby="contact-title">
     <div class="section-inner">
       <div class="contact-grid">
@@ -1275,10 +1282,10 @@
     <span class="footer-brand">Darius Chiosa Chiosa</span>
     <nav class="footer-links" aria-label="Footer navigation">
       <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#tools">Tools</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#certifications">Certs</a>
-      <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
       <a href="https://www.linkedin.com/in/darius-chiosa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://github.com/Dariuscc-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
