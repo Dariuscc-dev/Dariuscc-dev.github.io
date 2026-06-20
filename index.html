@@ -266,7 +266,7 @@
     }
     .divider { height: 1px; background: var(--color-divider); }
 
-    /* ============ ABOUT ============ */
+    /* ============ ABOUT & EXPERIENCE ============ */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -318,7 +318,41 @@
     }
     .stat-label { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-1); }
 
-    /* ============ TOOLS ============ */
+    /* Timeline & Experience Grid */
+    .experience-section-title {
+      font-family: var(--font-body);
+      font-size: var(--text-sm); font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--color-text);
+      margin-bottom: var(--space-4);
+      margin-top: var(--space-12);
+      padding-bottom: var(--space-2);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .experience-list {
+      display: flex; flex-direction: column; gap: var(--space-8);
+      margin-top: var(--space-6);
+    }
+    .exp-item {
+      display: grid; grid-template-columns: 1fr; gap: var(--space-2);
+    }
+    .exp-date {
+      font-size: var(--text-xs); color: var(--color-primary);
+      font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .exp-role {
+      font-size: var(--text-lg); font-weight: 700; color: var(--color-text);
+      font-family: var(--font-display); line-height: 1.2; margin-bottom: 4px;
+    }
+    .exp-company { font-weight: 500; color: var(--color-text-muted); font-size: var(--text-base); }
+    .exp-desc { font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2); max-width: 65ch; line-height: 1.6; }
+    
+    @media (min-width: 768px) {
+      .exp-item { grid-template-columns: 180px 1fr; gap: var(--space-6); }
+      .exp-date { text-align: right; padding-top: 6px; }
+    }
+
+    /* ============ TOOLS & ROADMAP ============ */
     .tools-grid {
       display: flex; flex-wrap: wrap; gap: var(--space-3);
     }
@@ -344,6 +378,69 @@
       letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--color-text-faint);
       margin-bottom: var(--space-3); margin-top: var(--space-6);
+    }
+
+    /* Roadmap Cards */
+    .roadmap-grid { display: grid; gap: var(--space-4); margin-top: var(--space-8); }
+    .layer-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5) var(--space-6);
+      transition: box-shadow var(--transition-interactive), border-color var(--transition-interactive);
+    }
+    .layer-card:hover { box-shadow: var(--shadow-md); border-color: var(--color-primary); }
+    .layer-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-4); flex-wrap: wrap; gap: var(--space-2); }
+    .layer-title { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; color: var(--color-text); }
+    .layer-meta { font-size: var(--text-xs); color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+    .layer-body { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+    /* ============ CERTIFICATIONS ============ */
+    .certs-grid { display: flex; flex-direction: column; gap: var(--space-3); }
+    .cert-row {
+      display: grid;
+      grid-template-columns: 180px 100px 1fr auto;
+      align-items: center;
+      gap: var(--space-4);
+      padding: var(--space-4) var(--space-5);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      transition: box-shadow var(--transition-interactive), border-color var(--transition-interactive);
+    }
+    .cert-row:hover { box-shadow: var(--shadow-sm); border-color: var(--color-primary); }
+    .cert-name { font-size: var(--text-sm); font-weight: 700; color: var(--color-text); }
+    .cert-sub { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 2px; }
+    .cert-level {
+      font-size: var(--text-xs); font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      text-align: center;
+      white-space: nowrap;
+    }
+    .cert-level.done { background: oklch(from var(--color-success,#437a22) l c h / 0.12); color: #437a22; }
+    [data-theme="dark"] .cert-level.done { background: oklch(0.65 0.12 130 / 0.15); color: #6daa45; }
+    .cert-level.now { background: var(--color-primary-highlight); color: var(--color-primary); }
+    .cert-level.soon { background: var(--color-surface-2); color: var(--color-text); }
+    .cert-level.mid { background: var(--color-surface-2); color: var(--color-text-muted); }
+    .cert-level.long { background: var(--color-surface-offset); color: var(--color-text-faint); }
+    
+    .cert-why { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.55; max-width: 42ch; }
+    .cert-badge {
+      font-size: var(--text-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--color-text-faint);
+      white-space: nowrap;
+    }
+    .cert-badge.fundamental { color: var(--color-blue, #006494); }
+    .cert-badge.associate { color: var(--color-primary); }
+    .cert-badge.expert { color: var(--color-warning, #964219); }
+    [data-theme="dark"] .cert-badge.fundamental { color: #5591c7; }
+    [data-theme="dark"] .cert-badge.expert { color: #bb653b; }
+    @media (max-width: 768px) {
+      .cert-row { grid-template-columns: 1fr auto; gap: var(--space-3); }
+      .cert-why { display: none; }
     }
 
     /* ============ PORTFOLIO ============ */
@@ -509,25 +606,25 @@
     .footer-copy { font-size: var(--text-xs); color: var(--color-text-faint); width: 100%; }
 
     /* ============ MOBILE ============ */
-@media (max-width: 768px) {
-  .nav-links, .nav-cta { display: none; }
-  .hamburger { display: flex; }
-  .nav-links.open {
-    display: flex; flex-direction: column; gap: var(--space-4);
-    position: fixed; top: 5rem; left: 0; right: 0;
-    background: var(--color-surface);
-    padding: var(--space-6);
-    border-bottom: 1px solid var(--color-divider);
-  }
-  .nav-links.open ~ .nav-cta { display: none; }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-visual { aspect-ratio: unset; max-height: none; height: auto; }
-  .about-visual-inner { padding: var(--space-5); }
-  .about-avatar { width: 72px; height: 72px; font-size: 1.8rem; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .hero-title { font-size: clamp(2.5rem, 12vw, 5rem); }
-}
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column; gap: var(--space-4);
+        position: fixed; top: 5rem; left: 0; right: 0;
+        background: var(--color-surface);
+        padding: var(--space-6);
+        border-bottom: 1px solid var(--color-divider);
+      }
+      .nav-links.open ~ .nav-cta { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-visual { aspect-ratio: unset; max-height: none; height: auto; }
+      .about-visual-inner { padding: var(--space-5); }
+      .about-avatar { width: 72px; height: 72px; font-size: 1.8rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-title { font-size: clamp(2.5rem, 12vw, 5rem); }
+    }
     /* ============ SCROLL ANIMATIONS ============ */
     .fade-up {
       opacity: 0;
@@ -552,6 +649,7 @@
       <li><a href="#about">Who Am I</a></li>
       <li><a href="#tools">Tools</a></li>
       <li><a href="#certifications">Certs</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -589,10 +687,11 @@
       <div class="about-grid">
         <div class="about-text fade-up">
           <p class="section-label">Who Am I</p>
-          <h2 class="section-title" id="about-title">From the court<br>to the code</h2>
-          <p>I'm a 22-year-old of Romanian origin, raised in Spain. From a young age I was immersed in competitive sports — Taekwondo and Basketball were my main focus, where I built an unbreakable character and an intense drive that pushed me to become a high-level athlete in my local community.</p>
-          <p>At 18, I made the deliberate decision to step away from competitive sports and direct that same hunger toward education and business. I've always had an entrepreneurial streak — building small ventures since I was very young — and now I'm channelling all of that energy into <strong>Tech and Business</strong>.</p>
-          <p>I'm studying at the <strong>Universidad de Málaga</strong>, specialising in Marketing & Market Research, with a growing focus on data analysis, Python, AI and financial modelling.</p>
+          <h2 class="section-title" id="about-title">Architect-Translator:<br>Bridging Tech & Business</h2>
+          <p>I'm a 22-year-old of Romanian origin, raised in Spain. As a hybrid profile between Business and Technology, I'm passionate about translating technical infrastructure into financial profitability (ROI, FinOps) within the Cloud ecosystem.</p>
+          <p>With a foundation in competitive sports (Taekwondo and Basketball), I built the discipline I now apply to business. I hold a degree in Marketing and Market Research (UMA), an MBA, and I'm currently studying Web Application Development (DAW) and transitioning into Software Engineering.</p>
+          <p>Trilingual, proactive, and results-oriented, my goal is to provide immediate strategic value as the bridge between business needs and technical execution.</p>
+          
           <div class="hero-actions" style="margin-top: var(--space-6);">
             <a href="https://www.linkedin.com/in/darius-chiosa" target="_blank" rel="noopener noreferrer" class="btn-ghost">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -615,17 +714,76 @@
                 <div class="stat-label">Years old</div>
               </div>
               <div class="stat-card">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Projects</div>
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Years Exp.</div>
               </div>
               <div class="stat-card">
-                <div class="stat-number">UMA</div>
-                <div class="stat-label">Universidad Málaga</div>
+                <div class="stat-number">3</div>
+                <div class="stat-label">Languages</div>
               </div>
               <div class="stat-card">
                 <div class="stat-number">🏆</div>
-                <div class="stat-label">Award-winning</div>
+                <div class="stat-label">Honors (TFG)</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-up">
+        <div class="experience-section-title">Professional Experience</div>
+        <div class="experience-list">
+          <div class="exp-item">
+            <div class="exp-date">Jun 2026 - Present</div>
+            <div>
+              <div class="exp-role">Treatment Coordinator & Sales <span class="exp-company">@ Impress (Health Tech)</span></div>
+              <p class="exp-desc">Comprehensive sales cycle management and structured financial advising maximizing ROI. Direct cross-functional collaboration and operational optimization for hybrid clinics using AI solutions, HubSpot, Odoo, and Salesforce.</p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-date">Mar 2025 - Sep 2025</div>
+            <div>
+              <div class="exp-role">Business & Sales Analyst <span class="exp-company">@ La Zambra Resort 5* GL</span></div>
+              <p class="exp-desc">Strategic KPI analysis (ADR, RevPAR, conversion) and BI dashboard creation (Tableau). Explored and implemented AI workflows and prompt engineering focused on data analysis, marketing, and operational efficiency (SOPs).</p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-date">Jan 2021 - Jul 2024</div>
+            <div>
+              <div class="exp-role">Founder & Digital Marketing Consultant <span class="exp-company">@ Fly Vip Marketing</span></div>
+              <p class="exp-desc">Technical launch and comprehensive management of 2 e-commerce platforms. Digital strategy, SEM campaigns (Google/YouTube Ads), and ROI optimization through traffic analytics.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-section-title" style="margin-top: var(--space-12);">Education & Certifications</div>
+        <div class="experience-list">
+          <div class="exp-item">
+            <div class="exp-date">Feb 2026 - Jul 2031</div>
+            <div>
+              <div class="exp-role">DAW + AI Specialization + Software Engineering <span class="exp-company">@ UTAMED</span></div>
+              <p class="exp-desc">Formal technical transition covering full-stack web application development, applied artificial intelligence, and a complete degree in Software Engineering.</p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-date">Jul 2025 - Present</div>
+            <div>
+              <div class="exp-role">Technical Specialization <span class="exp-company">@ DataCamp</span></div>
+              <p class="exp-desc">Focused curriculum on Business Intelligence, Python, Machine Learning, and advanced SQL data modeling.</p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-date">Sep 2022 - Jun 2026</div>
+            <div>
+              <div class="exp-role">Degree in Marketing & Market Research <span class="exp-company">@ Universidad de Málaga</span></div>
+              <p class="exp-desc">Graduated with 'Matrícula de Honor' (Highest Distinction) for my Quantitative Finance Bachelor's Thesis.</p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-date">2024</div>
+            <div>
+              <div class="exp-role">MBA & Master in Digital Marketing <span class="exp-company">@ ThePower</span></div>
+              <p class="exp-desc">Business Administration framework and modern digital marketing strategies.</p>
             </div>
           </div>
         </div>
@@ -648,6 +806,17 @@
         <span class="tool-chip learning">Python <small>· Learning</small></span>
         <span class="tool-chip learning">SQL <small>· Learning</small></span>
         <span class="tool-chip">HTML</span>
+        <span class="tool-chip learning">JavaScript <small>· DAW</small></span>
+      </div>
+
+      <div class="tools-section-title">Data, BI & Cloud</div>
+      <div class="tools-grid">
+        <span class="tool-chip">Power BI <small>· PL-300 ✓</small></span>
+        <span class="tool-chip">Microsoft Fabric</span>
+        <span class="tool-chip">Azure Cloud</span>
+        <span class="tool-chip">Tableau</span>
+        <span class="tool-chip">Machine Learning</span>
+        <span class="tool-chip">Excel</span>
       </div>
 
       <div class="tools-section-title">Statistics & Research</div>
@@ -659,26 +828,77 @@
         <span class="tool-chip">Google Analytics</span>
       </div>
 
-      <div class="tools-section-title">Data & Business Intelligence</div>
+      <div class="tools-section-title">Business & AI</div>
       <div class="tools-grid">
-        <span class="tool-chip">Power BI <small>· PL-300 ✓</small></span>
-        <span class="tool-chip">Excel</span>
-        <span class="tool-chip">Word</span>
-      </div>
-
-      <div class="tools-section-title">Web & Business</div>
-      <div class="tools-grid">
-        <span class="tool-chip">Shopify</span>
-        <span class="tool-chip">Wix</span>
-        <span class="tool-chip">Lighthouse</span>
-        <span class="tool-chip">Aircall</span>
+        <span class="tool-chip">ROI & FinOps</span>
+        <span class="tool-chip">Prompt Engineering</span>
+        <span class="tool-chip">Sales Pipeline Mgt</span>
         <span class="tool-chip">HubSpot</span>
-        <span class="tool-chip">Kalendarik</span>
         <span class="tool-chip">Odoo</span>
-        <span class="tool-chip">Gemini</span>
-        <span class="tool-chip">Claude</span>
-        <span class="tool-chip">Perplexity</span>
-        <span class="tool-chip">Perplexity Computer</span>
+        <span class="tool-chip">Salesforce</span>
+        <span class="tool-chip">Gemini / Claude / Perplexity</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" role="separator"></div>
+
+  <section class="section" id="roadmap" aria-labelledby="roadmap-title">
+    <div class="section-narrow fade-up">
+      <p class="section-label">Development Roadmap</p>
+      <h2 class="section-title" id="roadmap-title">Living Web Stack Path</h2>
+      <p class="section-description">My structured ~90h technical roadmap spanning 5 layers: from foundational web technologies to cloud infrastructure and CI/CD automation.</p>
+
+      <div class="roadmap-grid">
+        <div class="layer-card">
+          <div class="layer-header">
+            <div class="layer-title">Layer 1: Web Fundamentals</div>
+            <div class="layer-meta">~34h Total</div>
+          </div>
+          <div class="layer-body">
+            <span class="tool-tag">HTML</span><span class="tool-tag">CSS</span><span class="tool-tag">JavaScript</span><span class="tool-tag">HTTP/HTTPS</span><span class="tool-tag">TLS/SSL</span>
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-header">
+            <div class="layer-title">Layer 2: Logic & Data</div>
+            <div class="layer-meta">~25h Total</div>
+          </div>
+          <div class="layer-body">
+            <span class="tool-tag">Python</span><span class="tool-tag">SQL</span><span class="tool-tag">REST APIs</span><span class="tool-tag">CORS</span>
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-header">
+            <div class="layer-title">Layer 3: Networks & Security</div>
+            <div class="layer-meta">~6h Total</div>
+          </div>
+          <div class="layer-body">
+            <span class="tool-tag">TCP/IP</span><span class="tool-tag">DNS Flow</span>
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-header">
+            <div class="layer-title">Layer 4: Infrastructure</div>
+            <div class="layer-meta">~25h Total</div>
+          </div>
+          <div class="layer-body">
+            <span class="tool-tag">Linux / Bash</span><span class="tool-tag">Git</span><span class="tool-tag">GitHub</span><span class="tool-tag">Docker</span>
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-header">
+            <div class="layer-title">Layer 5: Automation & DevOps</div>
+            <div class="layer-meta">~7h Total</div>
+          </div>
+          <div class="layer-body">
+            <span class="tool-tag">CI / CD</span><span class="tool-tag">GitHub Actions</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -691,94 +911,98 @@
       <h2 class="section-title" id="certs-title">Microsoft & Cloud Roadmap</h2>
       <p class="section-description">Building a hybrid profile as a technical authority in Cloud Architecture, Data Engineering and Applied AI — from fundamentals to expert-level architecture design.</p>
 
-      <style>
-        .certs-grid { display: flex; flex-direction: column; gap: var(--space-3); }
-        .cert-row {
-          display: grid;
-          grid-template-columns: 180px 100px 1fr auto;
-          align-items: center;
-          gap: var(--space-4);
-          padding: var(--space-4) var(--space-5);
-          background: var(--color-surface);
-          border: 1px solid var(--color-border);
-          border-radius: var(--radius-xl);
-          transition: box-shadow var(--transition-interactive), border-color var(--transition-interactive);
-        }
-        .cert-row:hover { box-shadow: var(--shadow-sm); border-color: var(--color-primary); }
-        .cert-name { font-size: var(--text-sm); font-weight: 700; color: var(--color-text); }
-        .cert-sub { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 2px; }
-        .cert-level {
-          font-size: var(--text-xs); font-weight: 600;
-          letter-spacing: 0.06em; text-transform: uppercase;
-          padding: var(--space-1) var(--space-3);
-          border-radius: var(--radius-full);
-          text-align: center;
-          white-space: nowrap;
-        }
-        .cert-level.done { background: oklch(from var(--color-success,#437a22) l c h / 0.12); color: #437a22; }
-        [data-theme="dark"] .cert-level.done { background: oklch(0.65 0.12 130 / 0.15); color: #6daa45; }
-        .cert-level.now { background: var(--color-primary-highlight); color: var(--color-primary); }
-        .cert-level.soon { background: var(--color-surface-2); color: var(--color-text-faint); }
-        .cert-why { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.55; max-width: 42ch; }
-        .cert-badge {
-          font-size: var(--text-xs); font-weight: 700;
-          text-transform: uppercase; letter-spacing: 0.06em;
-          color: var(--color-text-faint);
-          white-space: nowrap;
-        }
-        .cert-badge.fundamental { color: var(--color-blue, #006494); }
-        .cert-badge.associate { color: var(--color-primary); }
-        .cert-badge.expert { color: var(--color-warning, #964219); }
-        [data-theme="dark"] .cert-badge.fundamental { color: #5591c7; }
-        [data-theme="dark"] .cert-badge.expert { color: #bb653b; }
-        @media (max-width: 768px) {
-          .cert-row { grid-template-columns: 1fr auto; gap: var(--space-3); }
-          .cert-why { display: none; }
-        }
-      </style>
-
       <div class="certs-grid">
         <div class="cert-row">
           <div><div class="cert-name">PL-300</div><div class="cert-sub">Power BI Data Analyst</div></div>
           <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">Completed. Mastery of data analysis and visualization. The foundation of the entire analytical pipeline.</p>
+          <p class="cert-why">The end of the pipeline. Mastery of data analysis and visualization. Advantage for understanding data engineering.</p>
           <span class="cert-level done">✓ Achieved</span>
         </div>
+        
         <div class="cert-row">
           <div><div class="cert-name">AZ-900</div><div class="cert-sub">Azure Fundamentals</div></div>
           <span class="cert-badge fundamental">Fundamental</span>
-          <p class="cert-why">Completed. Azure foundations: vocabulary, structure, and core architecture. No expiration.</p>
+          <p class="cert-why">The foundation. Azure vocabulary and base structure. Everything built on top will now make sense.</p>
           <span class="cert-level done">✓ Achieved</span>
         </div>
+        
         <div class="cert-row" style="border-color: var(--color-primary); box-shadow: 0 0 0 1px oklch(from var(--color-primary) l c h / 0.25);">
           <div><div class="cert-name">SC-900</div><div class="cert-sub">Security, Compliance & Identity</div></div>
           <span class="cert-badge fundamental">Fundamental</span>
-          <p class="cert-why">Zero Trust, compliance, and identity. Security is designed from the ground up, not added as an afterthought.</p>
-          <span class="cert-level now">▶ Now</span>
+          <p class="cert-why">The barrier to entry. Zero Trust, compliance, and identity. Security designed from the ground up.</p>
+          <span class="cert-level now">▶ 1-2 Weeks</span>
         </div>
+        
         <div class="cert-row">
           <div><div class="cert-name">DP-700</div><div class="cert-sub">Microsoft Fabric Data Engineer</div></div>
           <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">Microsoft Fabric — the natural next step after PL-300. Data preparation and movement.</p>
+          <p class="cert-why">The natural connection. Integrating analytics; preparing and moving data for Power BI analysis.</p>
           <span class="cert-level soon">Short-term</span>
         </div>
+        
         <div class="cert-row">
           <div><div class="cert-name">AZ-104</div><div class="cert-sub">Azure Administrator</div></div>
           <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">Azure networking, storage, and compute. Mandatory prerequisite for AZ-305.</p>
+          <p class="cert-why">The controls. Infrastructure management, networking, storage, and compute (AZ-305 prerequisite).</p>
           <span class="cert-level soon">Short-term</span>
         </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">AI-300</div><div class="cert-sub">AI & Machine Learning in Production</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">MLOps & LLM/RAG integration. Taking AI from testing to stable, real-world systems.</p>
+          <span class="cert-level mid">Mid-term</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">DP-750</div><div class="cert-sub">Data Engineering with Databricks</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">The industry standard. Official MS engineering for Databricks. Open Lakehouse architecture.</p>
+          <span class="cert-level mid">Mid-term</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">Databricks Associate</div><div class="cert-sub">Data Engineer</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">(Optional) Ideal complement to DP-750. Valid for AWS/GCP, offering total cloud portability.</p>
+          <span class="cert-level mid">Mid-term</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">AI-103</div><div class="cert-sub">AI Apps & Agents Development</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">The future of agents. The "guts" of building autonomous workflows and multimodal systems.</p>
+          <span class="cert-level mid">Mid-term</span>
+        </div>
+        
         <div class="cert-row">
           <div><div class="cert-name">AZ-305</div><div class="cert-sub">Azure Solutions Architect</div></div>
           <span class="cert-badge expert">Expert</span>
-          <p class="cert-why">The Architect. From executor to designer. High-level decisions on cost, performance, and security.</p>
-          <span class="cert-level soon">Mid-term</span>
+          <p class="cert-why">The Architect. High-level design decisions on cost, performance, and security for full projects.</p>
+          <span class="cert-level mid">Mid-term</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">AWS SAA-C03</div><div class="cert-sub">AWS Solutions Architect</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">Multicloud unlock. Opening doors to the largest cloud provider market globally.</p>
+          <span class="cert-level mid">Mid-term</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">AWS MLA-C01</div><div class="cert-sub">AWS Machine Learning</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">Extreme technical versatility mastering AI ecosystems on the two most powerful clouds.</p>
+          <span class="cert-level long">Mid-Long</span>
+        </div>
+
+        <div class="cert-row">
+          <div><div class="cert-name">SC-500</div><div class="cert-sub">AI Security</div></div>
+          <span class="cert-badge associate">Associate</span>
+          <p class="cert-why">Proactive AI Defense. Security specifically applied to defending artificial intelligence environments.</p>
+          <span class="cert-level long">Long-term</span>
         </div>
       </div>
-
-      <p style="font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-5); text-align: center;">
-        Active roadmap · AI-300 · DP-750 · AWS SAA-C03 · AWS MLA-C01 · SC-500
-      </p>
     </div>
   </section>
 
@@ -1052,6 +1276,7 @@
     <nav class="footer-links" aria-label="Footer navigation">
       <a href="#about">About</a>
       <a href="#tools">Tools</a>
+      <a href="#roadmap">Roadmap</a>
       <a href="#certifications">Certs</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
