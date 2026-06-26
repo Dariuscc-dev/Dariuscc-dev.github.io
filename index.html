@@ -744,10 +744,10 @@
         <div class="experience-section-title">Professional Experience</div>
         <div class="experience-list">
           <div class="exp-item">
-            <div class="exp-date">Jun 2026 - Present</div>
+            <div class="exp-date">Jan 2026 - Present</div>
             <div>
               <div class="exp-role">Treatment Coordinator & Sales <span class="exp-company">@ Impress (Health Tech)</span></div>
-              <p class="exp-desc">Comprehensive sales cycle management and structured financial advising maximizing ROI. Direct cross-functional collaboration and operational optimization for hybrid clinics using AI solutions, HubSpot, Odoo, and Salesforce.</p>
+              <p class="exp-desc">Comprehensive sales cycle management and structured financial advising maximizing ROI. <strong>Interim Clinic Management:</strong> Appointed as Interim Clinic Manager for the Marbella location to ensure seamless operational continuity. Led daily operations and local team coordination, gaining intensive, hands-on experience in leadership and high-level clinic management. Direct cross-functional collaboration and operational optimization for hybrid clinics using AI solutions, HubSpot, Odoo, and Salesforce.</p>
             </div>
           </div>
           <div class="exp-item">
@@ -1322,16 +1322,3 @@
         const tab=btn.dataset.tab;
         document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false');});
         document.querySelectorAll('.portfolio-panel').forEach(p=>p.classList.remove('active'));
-        btn.classList.add('active');btn.setAttribute('aria-selected','true');
-        document.getElementById('tab-'+tab).classList.add('active');
-      });
-    });
-
-    // Scroll animation
-    const observer=new IntersectionObserver(entries=>{
-      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
-    },{threshold:0.12});
-    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
-  </script>
-</body>
-</html>
