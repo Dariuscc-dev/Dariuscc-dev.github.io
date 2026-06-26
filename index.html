@@ -88,7 +88,7 @@
     /* ============ BASE ============ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
-      overflow-x: hidden; /* Fix for horizontal scrolling on mobile */
+      overflow-x: hidden;
       width: 100%;
     }
     html {
@@ -1322,3 +1322,16 @@
         const tab=btn.dataset.tab;
         document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false');});
         document.querySelectorAll('.portfolio-panel').forEach(p=>p.classList.remove('active'));
+        btn.classList.add('active');btn.setAttribute('aria-selected','true');
+        document.getElementById('tab-'+tab).classList.add('active');
+      });
+    });
+
+    // Scroll animation
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+    },{threshold:0.12});
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
