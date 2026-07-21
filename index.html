@@ -649,7 +649,6 @@
       background: oklch(from var(--color-primary) l c h / 0.05);
     }
 
-    /* Nuevo: learning-neutral para que JS quede gris como pediste */
     .tool-chip.learning-neutral {
       border-color: var(--color-border);
       color: var(--color-text-muted);
@@ -1650,7 +1649,7 @@
             </div>
           </div>
 
-          <!-- NUEVO PROYECTO JS -->
+          <!-- PROYECTO JS -->
           <div class="project-card">
             <div class="project-icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1663,6 +1662,20 @@
               <h3 class="project-title">Living Web Stack — JavaScript Foundations</h3>
               <p class="project-desc">The third layer of my web development learning path. Focused on core JavaScript logic, DOM interaction, scripting fundamentals, and the transition from static pages to dynamic browser behaviour.</p>
               <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/03-javascript" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
+            </div>
+          </div>
+
+          <!-- NUEVO PROYECTO HTTP/HTTPS/SSL/TLS -->
+          <div class="project-card">
+            <div class="project-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Living Web Stack — Web Protocols & Security</h3>
+              <p class="project-desc">The fourth layer of my web development learning path. Exploring the architecture of web communications, covering the HTTP/HTTPS request lifecycle, statefulness, and the implementation mechanics of SSL and TLS encryption.</p>
+              <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
             </div>
           </div>
 
@@ -1703,13 +1716,13 @@
         <span class="tool-chip learning-neutral">JavaScript <small>· Learning</small></span>
       </div>
 
-      <!-- NUEVO BLOQUE -->
+      <!-- NUEVO BLOQUE ACTUALIZADO -->
       <h3 class="tools-section-title">Web Protocols & Security</h3>
       <div class="tools-grid">
-        <span class="tool-chip learning">HTTP <small>· Learning</small></span>
-        <span class="tool-chip learning">HTTPS <small>· Learning</small></span>
-        <span class="tool-chip learning">TLS <small>· Learning</small></span>
-        <span class="tool-chip learning">SSL <small>· Learning</small></span>
+        <span class="tool-chip">HTTP</span>
+        <span class="tool-chip">HTTPS</span>
+        <span class="tool-chip">TLS</span>
+        <span class="tool-chip">SSL</span>
       </div>
 
       <h3 class="tools-section-title">Data, BI & Cloud</h3>
@@ -1752,29 +1765,29 @@
       <p class="section-description">My structured technical roadmap spanning 5 layers: from foundational web technologies to cloud infrastructure and CI/CD automation.</p>
 
       <div class="roadmap-grid">
-        <div class="layer-card" style="border-color: var(--color-primary); box-shadow: 0 0 0 1px oklch(from var(--color-primary) l c h / 0.25);">
+        <div class="layer-card">
           <div class="layer-header">
             <h3 class="layer-title">Layer 1: Web Fundamentals</h3>
-            <span style="font-size: var(--text-xs); color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">▶ Current Stage (HTTP / HTTPS / TLS / SSL)</span>
           </div>
           <div class="layer-body">
             <span class="tool-tag">HTML</span>
             <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/02-css" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">CSS</a>
             <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/03-javascript" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">JavaScript</a>
-            <span class="tool-tag" style="background: var(--color-primary); color: var(--color-text-inverse); display: inline-block;">HTTP</span>
-            <span class="tool-tag" style="background: var(--color-primary); color: var(--color-text-inverse); display: inline-block;">HTTPS</span>
-            <span class="tool-tag" style="background: var(--color-primary); color: var(--color-text-inverse); display: inline-block;">TLS</span>
-            <span class="tool-tag" style="background: var(--color-primary); color: var(--color-text-inverse); display: inline-block;">SSL</span>
+            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">HTTP</a>
+            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">HTTPS</a>
+            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">TLS</a>
+            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">SSL</a>
           </div>
         </div>
 
-        <div class="layer-card">
+        <div class="layer-card" style="border-color: var(--color-primary); box-shadow: 0 0 0 1px oklch(from var(--color-primary) l c h / 0.25);">
           <div class="layer-header">
             <h3 class="layer-title">Layer 2: Logic & Data</h3>
+            <span style="font-size: var(--text-xs); color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">▶ Current Stage (Python / SQL)</span>
           </div>
           <div class="layer-body">
-            <span class="tool-tag">Python</span>
-            <span class="tool-tag">SQL</span>
+            <span class="tool-tag" style="background: var(--color-primary); color: var(--color-text-inverse); display: inline-block;">Python</span>
+            <span class="tool-tag" style="background: var(--color-primary); color: var(--color-text-inverse); display: inline-block;">SQL</span>
             <span class="tool-tag">REST APIs</span>
             <span class="tool-tag">CORS</span>
           </div>
