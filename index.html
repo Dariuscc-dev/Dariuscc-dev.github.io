@@ -1129,6 +1129,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: var(--space-4);
+      margin-bottom: 0;
     }
 
     .footer-links a {
@@ -1416,6 +1417,7 @@
         <button class="tab-btn" id="tab-btn-python" role="tab" aria-selected="false" data-tab="python" aria-controls="tab-python">Python</button>
         <button class="tab-btn" id="tab-btn-ai" role="tab" aria-selected="false" data-tab="ai" aria-controls="tab-ai">AI</button>
         <button class="tab-btn" id="tab-btn-web" role="tab" aria-selected="false" data-tab="web" aria-controls="tab-web">Web Development</button>
+        <button class="tab-btn" id="tab-btn-cloud" role="tab" aria-selected="false" data-tab="cloud" aria-controls="tab-cloud">Cloud Architecture</button>
       </nav>
 
       <div class="portfolio-panel active fade-up" id="tab-academic" role="tabpanel" aria-labelledby="tab-btn-academic">
@@ -1694,6 +1696,30 @@
           </div>
         </div>
       </div>
+
+      <!-- NUEVA SECCIÓN CLOUD & ARCHITECTURE -->
+      <div class="portfolio-panel" id="tab-cloud" role="tabpanel" aria-labelledby="tab-btn-cloud">
+        <p class="panel-description">Cloud infrastructure and architecture projects, demonstrating practical implementations of Azure services, security, and cloud deployment principles.</p>
+        <div class="panel-tools">
+          <span class="tool-tag">Azure</span><span class="tool-tag">Cloud Architecture</span><span class="tool-tag">AZ-900</span>
+        </div>
+
+        <div class="project-list">
+          <div class="project-card">
+            <div class="project-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Azure Architecture Implementation — AZ-900</h3>
+              <p class="project-desc">A practical cloud architecture project built alongside the Microsoft AZ-900 (Azure Fundamentals) certification. Showcases applied knowledge of core Azure services, structural design, and foundational cloud infrastructure concepts.</p>
+              <a href="https://github.com/Dariuscc-dev/azure-az900-architecture-project/tree/main" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </section>
 
