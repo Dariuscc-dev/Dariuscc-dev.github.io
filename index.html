@@ -1222,6 +1222,32 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* ============ CAROUSEL ============ */
+    .carousel-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-primary) transparent;
+    }
+    .carousel-container::-webkit-scrollbar { height: 6px; }
+    .carousel-container::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 10px; }
+    .carousel-card {
+      min-width: 300px;
+      max-width: 400px;
+      scroll-snap-align: start;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
@@ -1903,6 +1929,24 @@
   <div class="divider" role="separator"></div>
 
 
+
+<section class="section" id="engineering-map">
+  <div class="section-inner">
+    <p class="section-label">From Curiosity to Direction</p>
+    <h2 class="section-title">Beyond Web Development: Mapping Computer Engineering</h2>
+    <div class="carousel-container" id="engineering-carousel">
+      <!-- Card 1 -->
+      <div class="carousel-card">
+        <h3 style="font-family: var(--font-display);">WEB & SOFTWARE ENGINEERING</h3>
+        <p style="font-size: var(--text-sm);">Designing, building and maintaining applications that solve real user and business problems. This area includes the development of web applications, backend services, APIs, databases, business logic, testing and software architecture. It is the branch most people first associate with Computer Engineering, but it is only one part of the wider field. Frontend development focuses on what users see and interact with. Backend development focuses on the invisible logic behind an application: data, authentication, rules, integrations and reliability. Full stack development connects both sides.</p>
+        <p style="font-size: var(--text-sm);"><strong>Example:</strong> A customer platform where users log in, manage their profile, make payments, access reports and receive notifications. The frontend displays the interface; the backend manages permissions, transactions, business rules and database operations.</p>
+        <p style="font-size: var(--text-sm);"><strong>My relationship:</strong> Backend systems are part of my core direction because they connect naturally with Python, data, APIs and cloud infrastructure. Frontend development is a functional supporting skill for me: I want to be able to create clear and professional interfaces for projects, but visual design and UI-focused work are not my long-term specialization.</p>
+        <p style="font-size: var(--text-xs); color: var(--color-text-muted);"><strong>Typical tools & technologies:</strong> HTML, CSS, JavaScript, TypeScript, React, Vue or Angular for frontend work; Python with FastAPI, Django or Flask; Node.js with Express or NestJS; Java with Spring Boot; C# with .NET; REST and GraphQL APIs; PostgreSQL, MySQL, MongoDB and Redis; Git, GitHub, Docker, testing frameworks, CI/CD pipelines and cloud deployment platforms.</p>
+        <p style="font-size: var(--text-sm); font-weight: 600; color: var(--color-primary);">Status: Core Direction for Backend — Frontend as Functional Support</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section" id="roadmap" aria-labelledby="roadmap-title">
     <div class="section-narrow fade-up">
       <p class="section-label">Development Roadmap</p>
