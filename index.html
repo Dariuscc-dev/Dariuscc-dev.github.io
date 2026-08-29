@@ -649,6 +649,9 @@
       background: oklch(from var(--color-primary) l c h / 0.05);
     }
 
+    .tool-chip.good-level { border-color: var(--color-primary); color: var(--color-primary); background: var(--color-primary-highlight); }
+    .tool-chip.fundamental { border-color: var(--color-border); color: var(--color-text-muted); background: var(--color-surface); }
+
     .tool-chip.learning-neutral {
       border-color: var(--color-border);
       color: var(--color-text-muted);
@@ -1821,51 +1824,78 @@
 
       <h3 class="tools-section-title">Languages</h3>
       <div class="tools-grid">
-        <span class="tool-chip">DAX</span>
-        <span class="tool-chip">M</span>
+
+        <span class="tool-chip good-level">DAX <small>· GL</small></span>
+
+        <span class="tool-chip good-level">M <small>· GL</small></span>
         <span class="tool-chip learning">Python <small>· Learning</small></span>
         <span class="tool-chip learning">SQL <small>· Learning</small></span>
-        <span class="tool-chip">HTML</span>
-        <span class="tool-chip">CSS</span>
-        <span class="tool-chip">JavaScript</span>
+
+        <span class="tool-chip learning">HTML <small>· Learning</small></span>
+
+        <span class="tool-chip learning">CSS <small>· Learning</small></span>
+
+        <span class="tool-chip learning">JavaScript <small>· Learning</small></span>
       </div>
 
       <h3 class="tools-section-title">Cloud Security & Protocols</h3>
       <div class="tools-grid">
-<span class="tool-chip">Zero Trust <small>· SC-900 ✓</small></span>
-        <span class="tool-chip">Microsoft Entra</span>
-        <span class="tool-chip">Microsoft Defender</span>
-        <span class="tool-chip">HTTP / HTTPS</span>
-        <span class="tool-chip">SSL / TLS</span>
+
+        <span class="tool-chip good-level">Zero Trust <small>· SC-900 GL ✓</small></span>
+
+        <span class="tool-chip good-level">Microsoft Entra <small>· GL</small></span>
+
+        <span class="tool-chip good-level">Microsoft Defender <small>· GL</small></span>
+
+        <span class="tool-chip fundamental">HTTP / HTTPS <small>· F</small></span>
+
+        <span class="tool-chip fundamental">SSL / TLS <small>· F</small></span>
       </div>
 
       <h3 class="tools-section-title">Data, BI & Cloud</h3>
       <div class="tools-grid">
-        <span class="tool-chip">Power BI <small>· PL-300 ✓</small></span>
-        <span class="tool-chip">Microsoft Fabric</span>
-        <span class="tool-chip">Azure Cloud <small>· AZ-900 ✓</small></span>
-        <span class="tool-chip">Tableau</span>
-        <span class="tool-chip">Excel</span>
+
+        <span class="tool-chip good-level">Power BI <small>· PL-300 GL ✓</small></span>
+
+        <span class="tool-chip good-level">Microsoft Fabric <small>· GL</small></span>
+
+        <span class="tool-chip good-level">Azure Cloud <small>· AZ-900 GL ✓</small></span>
+
+        <span class="tool-chip good-level">Tableau <small>· GL</small></span>
+
+        <span class="tool-chip fundamental">Excel <small>· F</small></span>
       </div>
 
       <h3 class="tools-section-title">Statistics & Research</h3>
       <div class="tools-grid">
-        <span class="tool-chip">SPSS</span>
-        <span class="tool-chip">Gretl</span>
-        <span class="tool-chip">Statgraphics</span>
-        <span class="tool-chip">Google Trends</span>
-        <span class="tool-chip">Google Analytics</span>
+
+        <span class="tool-chip fundamental">SPSS <small>· F</small></span>
+
+        <span class="tool-chip fundamental">Gretl <small>· F</small></span>
+
+        <span class="tool-chip good-level">Statgraphics <small>· GL</small></span>
+
+        <span class="tool-chip good-level">Google Trends <small>· GL</small></span>
+
+        <span class="tool-chip good-level">Google Analytics <small>· GL</small></span>
       </div>
 
       <h3 class="tools-section-title">Business & AI</h3>
       <div class="tools-grid">
-        <span class="tool-chip">ROI & FinOps</span>
-        <span class="tool-chip">Prompt Engineering</span>
-        <span class="tool-chip">Sales Pipeline Mgt</span>
-        <span class="tool-chip">HubSpot</span>
-        <span class="tool-chip">Odoo</span>
-        <span class="tool-chip">Salesforce</span>
-        <span class="tool-chip">Gemini / Claude / Perplexity</span>
+
+        <span class="tool-chip good-level">ROI & FinOps <small>· GL</small></span>
+
+        <span class="tool-chip good-level">Prompt Engineering <small>· GL</small></span>
+
+        <span class="tool-chip good-level">Sales Pipeline Mgt <small>· GL</small></span>
+
+        <span class="tool-chip good-level">HubSpot <small>· GL</small></span>
+
+        <span class="tool-chip good-level">Odoo <small>· GL</small></span>
+
+        <span class="tool-chip good-level">Salesforce <small>· GL</small></span>
+
+        <span class="tool-chip good-level">Gemini / Claude / Perplexity <small>· GL</small></span>
       </div>
     </div>
   </section>
@@ -1882,6 +1912,7 @@
   <span><span style="color: var(--color-primary);">F:</span> Fundamental (know concepts, familiar)</span>
   <span><span style="color: var(--color-primary);">L:</span> Learning</span>
 
+  <span><span style="color: var(--color-primary);">GL:</span> Good Level</span>
   <span><span style="color: var(--color-primary);">GL:</span> Good Level</span>
   <span><span style="color: var(--color-primary);">E:</span> Expert</span>
 </div>
