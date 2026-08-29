@@ -1902,49 +1902,45 @@
 
   <div class="divider" role="separator"></div>
 
-  <section class="section" id="roadmap" aria-labelledby="roadmap-title">
+
+<section class="section" id="roadmap" aria-labelledby="roadmap-title">
     <div class="section-narrow fade-up">
       <p class="section-label">Development Roadmap</p>
       <h2 class="section-title" id="roadmap-title">Living Web Stack Path</h2>
       <p class="section-description">My structured technical roadmap spanning 5 layers: from foundational web technologies to cloud infrastructure and CI/CD automation.</p>
 
-<div style="background: var(--color-surface); border: 1px solid var(--color-divider); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-6); display: flex; gap: var(--space-6); flex-wrap: wrap; font-size: var(--text-xs); font-weight: 600; color: var(--color-text-muted);">
-  <span><span style="color: var(--color-primary);">F:</span> Fundamental (know concepts, familiar)</span>
-  <span><span style="color: var(--color-primary);">L:</span> Learning</span>
-
-  <span><span style="color: var(--color-primary);">GL:</span> Good Level</span>
-  <span><span style="color: var(--color-primary);">GL:</span> Good Level</span>
-  <span><span style="color: var(--color-primary);">E:</span> Expert</span>
-</div>
-
-
       <div class="roadmap-grid">
+        <!-- Layer 1: Web Fundamentals -->
         <div class="layer-card">
           <div class="layer-header">
             <h3 class="layer-title">Layer 1: Web Fundamentals</h3>
           </div>
           <div class="layer-body">
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/01-html" target="_blank" rel="noopener noreferrer" class="tool-chip learning">HTML <small>· L</small></a>
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/02-css" target="_blank" rel="noopener noreferrer" class="tool-chip learning">CSS <small>· L</small></a>
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/03-javascript" target="_blank" rel="noopener noreferrer" class="tool-chip learning">JavaScript <small>· L</small></a>
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-chip fundamental">HTTP <small>· F</small></a>
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-chip fundamental">HTTPS <small>· F</small></a>
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_chip fundamental">TLS <small>· F</small></a>
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-chip fundamental">SSL <small>· F</small></a>
+            <span class="tool-chip learning">HTML <small>· L</small></span>
+            <span class="tool-chip learning">CSS <small>· L</small></span>
+            <span class="tool-chip learning">JavaScript <small>· L</small></span>
+            <span class="tool-chip fundamental">HTTP <small>· F</small></span>
+            <span class="tool-chip fundamental">HTTPS <small>· F</small></span>
+            <span class="tool-chip fundamental">TLS <small>· F</small></span>
+            <span class="tool-chip fundamental">SSL <small>· F</small></span>
           </div>
         </div>
+
+        <!-- Layer 2: Logic & Data -->
         <div class="layer-card" style="border-color: var(--color-primary); box-shadow: 0 0 0 1px oklch(from var(--color-primary) l c h / 0.25);">
           <div class="layer-header">
             <h3 class="layer-title">Layer 2: Logic & Data</h3>
             <span style="font-size: var(--text-xs); color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">▶ Current Stage</span>
           </div>
           <div class="layer-body">
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/05-python" target="_blank" rel="noopener noreferrer" class="tool-chip learning">Python <small>· L</small></a>
+            <span class="tool-chip learning">Python <small>· L</small></span>
             <span class="tool-chip fundamental">SQL <small>· F</small></span>
             <span class="tool-chip fundamental">REST APIs <small>· F</small></span>
             <span class="tool-chip fundamental">CORS <small>· F</small></span>
           </div>
         </div>
+
+        <!-- Layer 3: Networks & Security -->
         <div class="layer-card">
           <div class="layer-header">
             <h3 class="layer-title">Layer 3: Networks & Security</h3>
@@ -1954,93 +1950,28 @@
             <span class="tool-chip fundamental">DNS Flow <small>· F</small></span>
           </div>
         </div>
+
+        <!-- Layer 4: Infrastructure -->
         <div class="layer-card">
           <div class="layer-header">
             <h3 class="layer-title">Layer 4: Infrastructure</h3>
           </div>
           <div class="layer-body">
-            <span class="tool-chip fundamental">Linux / Bash <small>· F</small></span>
+            <span class="tool-chip fundamental">Linux/Bash <small>· F</small></span>
             <span class="tool-chip fundamental">Git <small>· F</small></span>
             <span class="tool-chip fundamental">GitHub <small>· F</small></span>
             <span class="tool-chip fundamental">Docker <small>· F</small></span>
           </div>
         </div>
+
+        <!-- Layer 5: Automation & DevOps -->
         <div class="layer-card">
           <div class="layer-header">
             <h3 class="layer-title">Layer 5: Automation & DevOps</h3>
           </div>
-            <span class="tool-chip fundamental">CI / CD <small>· F</small></span>
+          <div class="layer-body">
+            <span class="tool-chip fundamental">CI/CD <small>· F</small></span>
             <span class="tool-chip fundamental">GitHub Actions <small>· F</small></span>
-          </div>
-        </div>
-      </div>
-        <div class="layer-card">
-          <div class="layer-header">
-            <h3 class="layer-title">Layer 1: Web Fundamentals</h3>
-          </div>
-          <div class="layer-body">
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/01-html" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">HTML</a>
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/02-css" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">CSS</a>
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/03-javascript" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">JavaScript</a>
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">HTTP</a>
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">HTTPS</a>
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">TLS</a>
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">SSL</a>
-          </div>
-        </div>
-
-        <div class="layer-card" style="border-color: var(--color-primary); box-shadow: 0 0 0 1px oklch(from var(--color-primary) l c h / 0.25);">
-          <div class="layer-header">
-            <h3 class="layer-title">Layer 2: Logic & Data</h3>
-            <span style="font-size: var(--text-xs); color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">▶ Current Stage (SQL)</span>
-          </div>
-          <div class="layer-body">
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/05-python"  target="_blank" rel="noopener noreferrer" class="tool-tag" style="text-decoration: none; transition: transform var(--transition-interactive); display: inline-block;">Python</a>
-            <span class="tool-tag" style="background: var(--color-primary); color: var(--color-text-inverse); display: inline-block;">SQL</span>
-
-<span class="tool-chip fundamental">REST APIs <small>· F</small></span>
-
-<span class="tool-chip fundamental">CORS <small>· F</small></span>
-          </div>
-        </div>
-
-        <div class="layer-card">
-          <div class="layer-header">
-            <h3 class="layer-title">Layer 3: Networks & Security</h3>
-          </div>
-          <div class="layer-body">
-
-<span class="tool-chip fundamental">TCP/IP <small>· F</small></span>
-
-<span class="tool-chip fundamental">DNS Flow <small>· F</small></span>
-          </div>
-        </div>
-
-        <div class="layer-card">
-          <div class="layer-header">
-            <h3 class="layer-title">Layer 4: Infrastructure</h3>
-          </div>
-          <div class="layer-body">
-
-<span class="tool-chip fundamental">Linux / Bash <small>· F</small></span>
-
-<span class="tool-chip fundamental">Git <small>· F</small></span>
-
-<span class="tool-chip fundamental">GitHub <small>· F</small></span>
-
-<span class="tool-chip fundamental">Docker <small>· F</small></span>
-          </div>
-        </div>
-
-        <div class="layer-card">
-          <div class="layer-header">
-            <h3 class="layer-title">Layer 5: Automation & DevOps</h3>
-          </div>
-          <div class="layer-body">
-
-<span class="tool-chip fundamental">CI / CD <small>· F</small></span>
-
-<span class="tool-chip fundamental">GitHub Actions <small>· F</small></span>
           </div>
         </div>
       </div>
