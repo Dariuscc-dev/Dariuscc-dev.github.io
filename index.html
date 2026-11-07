@@ -1,2395 +1,1075 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="1zXJXmjSOLOLMZjqNWuMIHvVHwvmIXyGBrAooWNv3Yo">
-  <meta name="description" content="Darius Chiosa Chiosa — Tech & Business portfolio. Market Research, Data Analysis, Python, AI, Business Intelligence, Excel & Financial Modelling.">
-  <meta property="og:title" content="Darius Chiosa Chiosa — Tech & Business">
-  <meta property="og:description" content="Portfolio of Darius Chiosa Chiosa: Market Research, Data Analysis, Python, AI, BI & Financial Modelling.">
+  <meta name="description" content="Darius Chiosa Chiosa. Moving from business into Data & Cloud engineering: Python, SQL, Power BI, Azure and Applied AI, with an eye on aerospace and New Space.">
+  <meta property="og:title" content="Darius Chiosa Chiosa · Data & Cloud">
+  <meta property="og:description" content="Portfolio of Darius Chiosa Chiosa: data, cloud, BI, quantitative finance and web development projects.">
   <meta property="og:type" content="website">
-  <title>Darius Chiosa Chiosa — Tech & Business</title>
+  <meta name="theme-color" content="#05070f">
+  <title>Darius Chiosa Chiosa · Data & Cloud</title>
 
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&f[]=boska@400,500,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* Art direction: Romanian raised in Spain, 22yo — Tech & Business analytical profile
-       Palette: Dark charcoal with electric teal accent — precise, ambitious, modern
-       Typography: Boska display + Satoshi body — editorial meets clean Swiss
-       Density: Spacious hero → dense portfolio grid */
-
-    /* ============ TOKENS ============ */
-    :root,
-    [data-theme="light"] {
-      --color-bg: #f7f6f2;
-      --color-surface: #f2f1ec;
-      --color-surface-2: #eceae4;
-      --color-surface-offset: #e5e3dc;
-      --color-divider: #d4d1ca;
-      --color-border: #cac7bf;
-      --color-text: #1a1916;
-      --color-text-muted: #6b6a65;
-      --color-text-faint: #aaa99f;
-      --color-text-inverse: #f7f6f2;
-      --color-primary: #017a82;
-      --color-primary-hover: #015c63;
-      --color-primary-active: #013d42;
-      --color-primary-highlight: #c5d9d8;
-
-      --shadow-sm: 0 1px 3px oklch(0.2 0.01 80 / 0.07);
-      --shadow-md: 0 4px 16px oklch(0.2 0.01 80 / 0.10);
-      --shadow-lg: 0 16px 48px oklch(0.2 0.01 80 / 0.14);
-
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
-      --text-hero: clamp(3rem, 0.5rem + 7vw, 8rem);
-
-      --space-1: 0.25rem;
-      --space-2: 0.5rem;
-      --space-3: 0.75rem;
-      --space-4: 1rem;
-      --space-5: 1.25rem;
-      --space-6: 1.5rem;
-      --space-8: 2rem;
-      --space-10: 2.5rem;
-      --space-12: 3rem;
-      --space-16: 4rem;
-      --space-20: 5rem;
-      --space-24: 6rem;
-
-      --radius-sm: 0.375rem;
-      --radius-md: 0.5rem;
-      --radius-lg: 0.75rem;
-      --radius-xl: 1rem;
-      --radius-2xl: 1.5rem;
-      --radius-full: 9999px;
-
-      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-
-      --content-narrow: 640px;
-      --content-default: 960px;
-      --content-wide: 1200px;
-
-      --font-display: 'Boska', 'Georgia', serif;
-      --font-body: 'Satoshi', 'Helvetica Neue', sans-serif;
+    /* ==========================================================
+       Mission Control: deep night sky, telemetry data, rocket plume
+       ========================================================== */
+    :root {
+      --bg: #05070f;
+      --bg-2: #0a0f1e;
+      --panel: rgba(14, 21, 40, 0.72);
+      --panel-solid: #0e1528;
+      --line: rgba(130, 170, 230, 0.16);
+      --line-strong: rgba(130, 170, 230, 0.32);
+      --text: #e8eefb;
+      --text-2: #a5b2cc;
+      --text-3: #6f7d99;
+      --plume: #ff7a1a;
+      --plume-2: #ffb15c;
+      --signal: #6fd3ff;
+      --ok: #4ade80;
+      --warn: #fbbf24;
+      --radius: 14px;
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+      --max: 1180px;
     }
 
-    [data-theme="dark"] {
-      --color-bg: #111110;
-      --color-surface: #171614;
-      --color-surface-2: #1d1c1a;
-      --color-surface-offset: #222120;
-      --color-divider: #2c2b29;
-      --color-border: #363532;
-      --color-text: #d8d7d4;
-      --color-text-muted: #7a7977;
-      --color-text-faint: #555451;
-      --color-text-inverse: #111110;
-      --color-primary: #3da8b0;
-      --color-primary-hover: #1a8d96;
-      --color-primary-active: #0e6e76;
-      --color-primary-highlight: #1e3538;
-
-      --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.25);
-      --shadow-md: 0 4px 16px oklch(0 0 0 / 0.35);
-      --shadow-lg: 0 16px 48px oklch(0 0 0 / 0.50);
-    }
-
-    /* ============ BASE ============ */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
       margin: 0;
-      padding: 0;
-    }
-
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
-    }
-
-    html {
-      -webkit-font-smoothing: antialiased;
-      scroll-behavior: smooth;
-      scroll-padding-top: 5rem;
-    }
-
-    body {
-      min-height: 100dvh;
+      background: var(--bg);
+      color: var(--text);
       font-family: var(--font-body);
-      font-size: var(--text-base);
-      color: var(--color-text);
-      background: var(--color-bg);
+      font-size: 16px;
       line-height: 1.65;
-      transition: background var(--transition-interactive), color var(--transition-interactive);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
+    img { max-width: 100%; display: block; }
+    a { color: var(--signal); text-decoration: none; }
+    a:hover { color: var(--plume-2); }
+    ::selection { background: var(--plume); color: #05070f; }
 
-    img,
-    picture,
-    video,
-    canvas,
-    svg {
-      display: block;
-      max-width: 100%;
-      height: auto;
+    /* ---------- Sky ---------- */
+    #sky {
+      position: fixed; inset: 0; width: 100%; height: 100%;
+      z-index: -2; pointer-events: none;
     }
-
-    ul[role="list"],
-    ol[role="list"] {
-      list-style: none;
-    }
-
-    input,
-    button,
-    textarea,
-    select {
-      font: inherit;
-      color: inherit;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      text-wrap: balance;
-      line-height: 1.15;
-      font-family: var(--font-display);
-    }
-
-    p,
-    li {
-      text-wrap: pretty;
-    }
-
-    button {
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    ::selection {
-      background: oklch(from var(--color-primary) l c h / 0.22);
-      color: var(--color-text);
-    }
-
-    :focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 3px;
-      border-radius: var(--radius-sm);
-    }
-
-    a,
-    button,
-    [role="button"] {
-      transition:
-        color var(--transition-interactive),
-        background var(--transition-interactive),
-        border-color var(--transition-interactive),
-        box-shadow var(--transition-interactive),
-        opacity var(--transition-interactive);
-    }
-
-    /* ============ NAV ============ */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: var(--space-4) clamp(var(--space-6), 5vw, var(--space-12));
-      background: oklch(from var(--color-bg) l c h / 0.88);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--color-divider);
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      font-family: var(--font-display);
-      font-size: var(--text-base);
-      font-weight: 700;
-      color: var(--color-text);
-    }
-
-    .nav-logo svg {
-      flex-shrink: 0;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: var(--space-6);
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: var(--text-sm);
-      font-weight: 500;
-      color: var(--color-text-muted);
-      letter-spacing: 0.01em;
-    }
-
-    .nav-links a:hover {
-      color: var(--color-text);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: var(--space-4);
-    }
-
-    .theme-toggle {
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: var(--radius-md);
-      color: var(--color-text-muted);
-      background: transparent;
-    }
-
-    .theme-toggle:hover {
-      background: var(--color-surface-2);
-      color: var(--color-text);
-    }
-
-    .nav-cta {
-      padding: var(--space-2) var(--space-4);
-      background: var(--color-primary);
-      color: var(--color-text-inverse);
-      border-radius: var(--radius-full);
-      font-size: var(--text-sm);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .nav-cta:hover {
-      background: var(--color-primary-hover);
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      padding: var(--space-2);
-      border-radius: var(--radius-md);
-    }
-
-    .hamburger span {
-      width: 22px;
-      height: 2px;
-      background: var(--color-text);
-      border-radius: 2px;
-      transition: all var(--transition-interactive);
-    }
-
-    /* ============ HERO ============ */
-    .hero {
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: clamp(var(--space-16), 8vw, var(--space-24)) clamp(var(--space-6), 5vw, var(--space-12));
-      padding-top: calc(clamp(var(--space-16), 8vw, var(--space-24)) + 5rem);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
+    .nebula {
+      position: fixed; inset: 0; z-index: -3; pointer-events: none;
       background:
-        radial-gradient(ellipse 80% 60% at 70% 30%, oklch(from var(--color-primary) l c h / 0.08) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 40% at 10% 80%, oklch(0.5 0.03 210 / 0.06) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--font-body);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--color-primary);
-      margin-bottom: var(--space-4);
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: var(--text-hero);
-      font-weight: 700;
-      line-height: 0.95;
-      color: var(--color-text);
-      max-width: 14ch;
-      margin-bottom: var(--space-6);
-    }
-
-    .hero-title em {
-      font-style: italic;
-      color: var(--color-primary);
-    }
-
-    .hero-subtitle {
-      font-size: var(--text-lg);
-      color: var(--color-text-muted);
-      max-width: 50ch;
-      margin-bottom: var(--space-8);
-      font-family: var(--font-body);
-      font-weight: 400;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-4);
-      align-items: center;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: var(--space-3) var(--space-6);
-      background: var(--color-primary);
-      color: var(--color-text-inverse);
-      border-radius: var(--radius-full);
-      font-size: var(--text-sm);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .btn-primary:hover {
-      background: var(--color-primary-hover);
-    }
-
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: var(--space-3) var(--space-6);
-      border: 1px solid var(--color-border);
-      color: var(--color-text);
-      border-radius: var(--radius-full);
-      font-size: var(--text-sm);
-      font-weight: 500;
-    }
-
-    .btn-ghost:hover {
-      background: var(--color-surface-2);
-      border-color: var(--color-text-muted);
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: var(--space-8);
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: var(--text-xs);
-      color: var(--color-text-faint);
-      letter-spacing: 0.1em;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-2);
-    }
-
-    .hero-scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--color-primary), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 1; }
-    }
-
-    /* ============ SECTIONS ============ */
-    .section {
-      padding: clamp(var(--space-12), 8vw, var(--space-24)) clamp(var(--space-6), 5vw, var(--space-12));
-    }
-
-    .section-inner {
-      max-width: var(--content-wide);
-      margin-inline: auto;
-    }
-
-    .section-narrow {
-      max-width: var(--content-default);
-      margin-inline: auto;
-    }
-
-    .section-label {
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--color-primary);
-      margin-bottom: var(--space-3);
-      font-family: var(--font-body);
-    }
-
-    .section-title {
-      font-size: var(--text-2xl);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: var(--space-4);
-    }
-
-    .section-description {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
-      max-width: 60ch;
-      margin-bottom: var(--space-10);
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--color-divider);
-    }
-
-    /* ============ ABOUT & EXPERIENCE ============ */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(var(--space-8), 5vw, var(--space-16));
-      align-items: center;
-    }
-
-    .about-text p {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
-      line-height: 1.75;
-      margin-bottom: var(--space-4);
-      max-width: 55ch;
-    }
-
-    .about-text p:last-of-type {
-      margin-bottom: var(--space-6);
-    }
-
-    .about-visual {
-      position: relative;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-2xl);
-      overflow: hidden;
-      aspect-ratio: 4/5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .about-visual-inner {
-      padding: var(--space-8);
-      text-align: center;
-    }
-
-    .about-avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: var(--radius-full);
-      background: var(--color-primary-highlight);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto var(--space-6);
-      font-size: 2.5rem;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-4);
-      margin-top: var(--space-6);
-    }
-
-    .stat-card:nth-child(5):last-child {
-      grid-column: span 2;
-    }
-
-    .stat-card {
-      background: var(--color-surface-2);
-      border: 1px solid var(--color-divider);
-      border-radius: var(--radius-lg);
-      padding: var(--space-4);
-      text-align: center;
-    }
-
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      font-weight: 700;
-      color: var(--color-primary);
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
-      margin-top: var(--space-1);
-    }
-
-    .experience-section-title {
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text);
-      margin-bottom: var(--space-4);
-      margin-top: var(--space-12);
-      padding-bottom: var(--space-2);
-      border-bottom: 1px solid var(--color-divider);
-    }
-
-    .experience-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-8);
-      margin-top: var(--space-6);
-    }
-
-    .exp-item {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-2);
-    }
-
-    .exp-date {
-      font-size: var(--text-xs);
-      color: var(--color-primary);
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .exp-role {
-      font-size: var(--text-lg);
-      font-weight: 700;
-      color: var(--color-text);
-      font-family: var(--font-display);
-      line-height: 1.2;
-      margin-bottom: 4px;
-    }
-
-    .exp-company {
-      font-weight: 500;
-      color: var(--color-text-muted);
-      font-size: var(--text-base);
-    }
-
-    .exp-desc {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      margin-top: var(--space-2);
-      max-width: 65ch;
-      line-height: 1.6;
-    }
-
-    @media (min-width: 768px) {
-      .exp-item {
-        grid-template-columns: 180px 1fr;
-        gap: var(--space-6);
-      }
-
-      .exp-date {
-        text-align: right;
-        padding-top: 6px;
-      }
-    }
-
-    /* ============ TOOLS & ROADMAP ============ */
-    .tools-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3);
-    }
-
-    .tool-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: var(--space-2) var(--space-4);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-full);
-      font-size: var(--text-sm);
-      font-weight: 500;
-      color: var(--color-text-muted);
-      transition: all var(--transition-interactive);
-    }
-
-    .tool-chip:hover {
-      border-color: var(--color-primary);
-      color: var(--color-primary);
-      background: var(--color-primary-highlight);
-    }
-
-    .tool-chip.learning {
-      border-color: oklch(from var(--color-primary) l c h / 0.35);
-      color: var(--color-primary);
-      background: oklch(from var(--color-primary) l c h / 0.05);
-    }
-
-    .tool-chip.good-level { border-color: var(--color-primary); color: var(--color-primary); background: var(--color-primary-highlight); }
-    .tool-chip.fundamental { border-color: var(--color-border); color: var(--color-text-muted); background: var(--color-surface); }
-
-    .tool-chip.learning-neutral {
-      border-color: var(--color-border);
-      color: var(--color-text-muted);
-      background: var(--color-surface);
-    }
-
-    .tool-chip.learning-neutral:hover {
-      border-color: var(--color-border);
-      color: var(--color-text-muted);
-      background: var(--color-surface);
-    }
-
-    .tools-section-title {
-      font-family: var(--font-body);
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text-faint);
-      margin-bottom: var(--space-3);
-      margin-top: var(--space-6);
-    }
-
-    .roadmap-grid {
-      display: grid;
-      gap: var(--space-4);
-      margin-top: var(--space-8);
-    }
-
-    .layer-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-5) var(--space-6);
-      transition: box-shadow var(--transition-interactive), border-color var(--transition-interactive);
-    }
-
-    .layer-card:hover {
-      box-shadow: var(--shadow-md);
-      border-color: var(--color-primary);
-    }
-
-    .layer-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: var(--space-4);
-      flex-wrap: wrap;
-      gap: var(--space-2);
-    }
-
-    .layer-title {
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      font-weight: 700;
-      color: var(--color-text);
-    }
-
-    .layer-body {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2);
-    }
-
-    /* ============ CERTIFICATIONS ============ */
-    .certs-grid {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-3);
-    }
-
-    .cert-row {
-      display: grid;
-      grid-template-columns: 180px 100px 1fr auto;
-      align-items: center;
-      gap: var(--space-4);
-      padding: var(--space-4) var(--space-5);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      transition: box-shadow var(--transition-interactive), border-color var(--transition-interactive);
-    }
-
-    .cert-row:hover {
-      box-shadow: var(--shadow-sm);
-      border-color: var(--color-primary);
-    }
-
-    .cert-name {
-      font-size: var(--text-sm);
-      font-weight: 700;
-      color: var(--color-text);
-    }
-
-    .cert-sub {
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
-      margin-top: 2px;
-    }
-
-    .cert-level {
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: var(--space-1) var(--space-3);
-      border-radius: var(--radius-full);
-      text-align: center;
-      white-space: nowrap;
-    }
-
-    .cert-level.done {
-      background: oklch(from var(--color-success, #437a22) l c h / 0.12);
-      color: #437a22;
-    }
-
-    [data-theme="dark"] .cert-level.done {
-      background: oklch(0.65 0.12 130 / 0.15);
-      color: #6daa45;
-    }
-
-    .cert-level.now {
-      background: var(--color-primary-highlight);
-      color: var(--color-primary);
-    }
-
-    .cert-level.soon {
-      background: var(--color-surface-2);
-      color: var(--color-text);
-    }
-
-    .cert-level.mid {
-      background: var(--color-surface-2);
-      color: var(--color-text-muted);
-    }
-
-    .cert-level.long {
-      background: var(--color-surface-offset);
-      color: var(--color-text-faint);
-    }
-
-    .cert-why {
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
-      line-height: 1.55;
-      max-width: 42ch;
-    }
-
-    .cert-badge {
-      font-size: var(--text-xs);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--color-text-faint);
-      white-space: nowrap;
-    }
-
-    .cert-badge.fundamental { color: var(--color-blue, #006494); }
-    .cert-badge.associate { color: var(--color-primary); }
-    .cert-badge.expert { color: var(--color-warning, #964219); }
-
-    [data-theme="dark"] .cert-badge.fundamental { color: #5591c7; }
-    [data-theme="dark"] .cert-badge.expert { color: #bb653b; }
-
-    @media (max-width: 768px) {
-      .cert-row {
-        grid-template-columns: 1fr auto;
-        gap: var(--space-3);
-      }
-
-      .cert-why {
-        display: none;
-      }
-    }
-
-    /* ============ PORTFOLIO ============ */
-    .portfolio-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2);
-      margin-bottom: var(--space-8);
-      border-bottom: 1px solid var(--color-divider);
-      padding-bottom: var(--space-3);
-    }
-
+        radial-gradient(60vw 40vw at 85% 10%, rgba(80, 60, 160, 0.18), transparent 60%),
+        radial-gradient(50vw 35vw at 10% 70%, rgba(20, 90, 160, 0.16), transparent 60%),
+        radial-gradient(40vw 30vw at 60% 110%, rgba(255, 122, 26, 0.08), transparent 60%),
+        linear-gradient(180deg, #05070f 0%, #070b18 50%, #05070f 100%);
+    }
+
+    /* ---------- Layout ---------- */
+    .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    section { padding: 110px 0; position: relative; }
+    .sec-head { margin-bottom: 48px; max-width: 760px; }
+    .sec-code {
+      font-family: var(--font-mono); font-size: 12px; letter-spacing: .18em;
+      color: var(--plume); text-transform: uppercase; display: flex; align-items: center; gap: 12px;
+    }
+    .sec-code::after { content: ""; height: 1px; width: 64px; background: linear-gradient(90deg, var(--plume), transparent); }
+    h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+    h2 { font-size: clamp(2rem, 1.2rem + 2.6vw, 3.1rem); margin-top: 14px; }
+    .sec-head p { color: var(--text-2); margin: 16px 0 0; font-size: 1.05rem; }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    /* ---------- Nav ---------- */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: rgba(5, 7, 15, 0.7);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-family: var(--font-display); font-weight: 600; }
+    .brand-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--plume); box-shadow: 0 0 12px var(--plume); }
+    .nav-links { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a {
+      color: var(--text-2); font-size: 14px; padding: 8px 12px; border-radius: 8px; display: block;
+    }
+    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    .nav-cta {
+      font-family: var(--font-mono); font-size: 13px; color: #05070f !important; background: var(--plume);
+      padding: 8px 14px; border-radius: 8px; font-weight: 500;
+    }
+    .nav-cta:hover { background: var(--plume-2); }
+    .hamburger { display: none; background: none; border: 1px solid var(--line-strong); color: var(--text); border-radius: 8px; padding: 6px 10px; cursor: pointer; }
+
+    /* ---------- Hero ---------- */
+    .hero { overflow: hidden; min-height: 100vh; display: flex; align-items: center; padding-top: 100px; padding-bottom: 60px; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: center; }
+    .status {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-2); padding: 6px 12px; border: 1px solid var(--line-strong); border-radius: 999px;
+      background: rgba(10, 15, 30, 0.6);
+    }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 0 rgba(74,222,128,.6); animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(74,222,128,.6);} 70% { box-shadow: 0 0 0 10px rgba(74,222,128,0);} 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0);} }
+    .hero h1 { font-size: clamp(2.8rem, 1.2rem + 6vw, 5.6rem); font-weight: 700; margin: 22px 0 6px; }
+    .hero h1 span { display: block; color: transparent; -webkit-text-stroke: 1px rgba(232,238,251,0.55); }
+    .hero-role { font-family: var(--font-mono); color: var(--plume-2); font-size: clamp(.95rem, .8rem + .5vw, 1.15rem); margin: 18px 0 18px; }
+    .hero-lead { color: var(--text-2); font-size: 1.12rem; max-width: 560px; margin: 0 0 30px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 10px;
+      font-weight: 600; font-size: 15px; border: 1px solid transparent; transition: transform .15s, background .15s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--plume); color: #05070f; }
+    .btn-primary:hover { background: var(--plume-2); color: #05070f; }
+    .btn-ghost { border-color: var(--line-strong); color: var(--text); background: rgba(10,15,30,.5); }
+    .btn-ghost:hover { border-color: var(--signal); color: var(--signal); }
+
+    /* Orbit visual */
+    .orbit-box { position: relative; aspect-ratio: 1; width: 100%; max-width: 420px; margin: 0 auto; }
+    .ring { position: absolute; inset: 0; border: 1px dashed var(--line-strong); border-radius: 50%; }
+    .ring.r2 { inset: 12%; border-style: solid; border-color: var(--line); }
+    .ring.r3 { inset: -6%; border-color: rgba(255,122,26,0.18); }
+    .orbiter { position: absolute; inset: 0; animation: spin 26s linear infinite; }
+    .orbiter.o2 { inset: 12%; animation-duration: 16s; animation-direction: reverse; }
+    .orbiter.o3 { inset: -6%; animation-duration: 40s; }
+    .sat { position: absolute; top: -6px; left: 50%; width: 12px; height: 12px; margin-left: -6px; border-radius: 3px; background: var(--signal); box-shadow: 0 0 14px var(--signal); }
+    .o2 .sat { background: var(--plume); box-shadow: 0 0 14px var(--plume); border-radius: 50%; width: 9px; height: 9px; margin-left: -4px; top: -4px; }
+    .o3 .sat { background: #fff; width: 5px; height: 5px; border-radius: 50%; top: -3px; box-shadow: 0 0 8px #fff; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar-wrap {
+      position: absolute; inset: 24%; border-radius: 50%; overflow: hidden;
+      border: 2px solid rgba(255,122,26,0.55);
+      box-shadow: 0 0 0 8px rgba(255,122,26,0.06), 0 0 60px rgba(111,211,255,0.18);
+    }
+    .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .orbit-label {
+      position: absolute; font-family: var(--font-mono); font-size: 11px; color: var(--text-3);
+      letter-spacing: .08em; white-space: nowrap;
+    }
+    .orbit-label.l1 { top: 4%; right: -2%; }
+    .orbit-label.l2 { bottom: 6%; left: -4%; }
+
+    /* Telemetry strip */
+    .telemetry {
+      margin-top: 64px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+      border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+      background: rgba(10, 15, 30, 0.55);
+    }
+    .tm { padding: 18px 20px; border-right: 1px solid var(--line); }
+    .tm:last-child { border-right: 0; }
+    .tm b { display: block; font-family: var(--font-display); font-size: 1.7rem; color: var(--text); font-weight: 600; }
+    .tm span { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); }
+
+    /* ---------- About ---------- */
+    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; }
+    .about-text { padding: 34px; }
+    .about-text h3 { font-size: 1.5rem; margin-bottom: 14px; }
+    .about-text p { color: var(--text-2); margin: 0 0 16px; }
+    .about-text p strong { color: var(--text); font-weight: 600; }
+    .quote {
+      border-left: 2px solid var(--plume); padding: 6px 0 6px 18px; margin: 24px 0;
+      font-family: var(--font-display); font-size: 1.15rem; color: var(--text);
+    }
+    .side-stack { display: grid; gap: 20px; align-content: start; }
+    .card { padding: 26px; }
+    .card h4 { font-size: 1.05rem; margin-bottom: 10px; }
+    .card p { color: var(--text-2); margin: 0; font-size: .97rem; }
+    .kv { font-family: var(--font-mono); font-size: 13px; display: grid; gap: 8px; margin: 0; }
+    .kv div { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed var(--line); padding-bottom: 8px; }
+    .kv div:last-child { border-bottom: 0; padding-bottom: 0; }
+    .kv dt { color: var(--text-3); }
+    .kv dd { margin: 0; color: var(--text); text-align: right; }
+    .links-row { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+
+    /* ---------- Mission log (timeline) ---------- */
+    .log-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .log-title { font-family: var(--font-mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--signal); margin: 0 0 18px; }
+    .log { position: relative; padding-left: 26px; }
+    .log::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 1px; background: linear-gradient(var(--plume), var(--line) 30%, var(--line)); }
+    .entry { position: relative; padding: 22px 24px; margin-bottom: 18px; }
+    .entry::before {
+      content: ""; position: absolute; left: -26px; top: 28px; width: 13px; height: 13px; border-radius: 50%;
+      background: var(--bg); border: 2px solid var(--signal);
+    }
+    .entry.now::before { border-color: var(--plume); background: var(--plume); box-shadow: 0 0 12px var(--plume); }
+    .when { font-family: var(--font-mono); font-size: 12px; color: var(--plume-2); letter-spacing: .06em; }
+    .entry h3 { font-size: 1.15rem; margin: 6px 0 2px; }
+    .org { color: var(--text-3); font-size: .92rem; margin-bottom: 10px; }
+    .entry p { color: var(--text-2); margin: 0 0 8px; font-size: .96rem; }
+    .entry ul { margin: 8px 0 0; padding-left: 18px; color: var(--text-2); font-size: .94rem; }
+    .entry li { margin-bottom: 6px; }
+    .entry li strong { color: var(--text); font-weight: 600; }
+
+    /* ---------- Direction ---------- */
+    .dir-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; }
+    .path { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 18px 0 8px; }
+    .stage {
+      font-family: var(--font-mono); font-size: 13px; padding: 8px 12px; border-radius: 8px;
+      border: 1px solid var(--line-strong); background: rgba(111,211,255,0.06); color: var(--text);
+    }
+    .stage.on { border-color: var(--plume); background: rgba(255,122,26,0.12); }
+    .arrow { color: var(--text-3); font-family: var(--font-mono); }
+    .build-list { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 10px; }
+    .build-list li { display: flex; gap: 10px; color: var(--text-2); }
+    .build-list li::before { content: "▸"; color: var(--plume); }
+
+    /* ---------- Projects ---------- */
+    .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 70px; }
+    .feat { padding: 28px; display: flex; flex-direction: column; transition: border-color .2s, transform .2s; }
+    .feat:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+    .feat.big { grid-column: span 2; background: linear-gradient(135deg, rgba(255,122,26,0.12), rgba(14,21,40,0.75) 55%); border-color: rgba(255,122,26,0.35); }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 14px; }
+    .tag {
+      font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 6px;
+      border: 1px solid var(--line-strong); color: var(--text-2);
+    }
+    .tag.hot { border-color: rgba(255,122,26,0.5); color: var(--plume-2); }
+    .feat h3 { font-size: 1.25rem; margin-bottom: 10px; }
+    .feat p { color: var(--text-2); margin: 0 0 18px; font-size: .97rem; flex: 1; }
+    .feat-links { display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--font-mono); font-size: 13px; }
+
+    .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
     .tab-btn {
-      padding: var(--space-2) var(--space-4);
-      border-radius: var(--radius-md);
-      font-size: var(--text-sm);
-      font-weight: 500;
-      color: var(--color-text-muted);
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      transition: all var(--transition-interactive);
+      font-family: var(--font-mono); font-size: 13px; padding: 9px 14px; border-radius: 8px;
+      border: 1px solid var(--line-strong); background: rgba(10,15,30,.6); color: var(--text-2); cursor: pointer;
     }
+    .tab-btn:hover { color: var(--text); border-color: var(--signal); }
+    .tab-btn.active { background: var(--plume); color: #05070f; border-color: var(--plume); }
+    .panel-tab { display: none; }
+    .panel-tab.active { display: block; animation: fade .35s ease; }
+    @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .panel-intro { color: var(--text-2); margin: 0 0 12px; max-width: 820px; }
+    .note { font-size: .9rem; color: var(--warn); margin: 0 0 14px; }
+    .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; }
+    .proj { padding: 22px; display: flex; flex-direction: column; }
+    .proj h4 { font-size: 1.05rem; margin-bottom: 8px; }
+    .proj p { color: var(--text-2); font-size: .93rem; margin: 0 0 14px; flex: 1; }
+    .proj a { font-family: var(--font-mono); font-size: 13px; margin-right: 14px; }
+    .coming { text-align: center; padding: 40px 24px; }
+    .coming .big-emoji { font-size: 2.4rem; }
 
-    .tab-btn:hover {
-      background: var(--color-surface-2);
-      color: var(--color-text);
+    /* ---------- Skills ---------- */
+    .legend { display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--font-mono); font-size: 12px; color: var(--text-3); margin-bottom: 26px; }
+    .legend b { color: var(--text); }
+    .lv { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+    .lv-e { background: var(--plume); } .lv-gl { background: var(--signal); } .lv-l { background: var(--warn); } .lv-f { background: var(--text-3); }
+    .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .skill-box { padding: 22px; }
+    .skill-box h4 { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--signal); margin-bottom: 14px; font-weight: 500; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      font-size: 13px; padding: 6px 10px; border-radius: 8px; background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line); color: var(--text); display: inline-flex; align-items: center; gap: 6px;
     }
+    .chip small { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-3); }
+    a.chip:hover { border-color: var(--signal); color: var(--signal); }
 
-    .tab-btn.active {
-      background: var(--color-primary);
-      color: var(--color-text-inverse);
+    /* ---------- Roadmap ---------- */
+    .layers { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin: 26px 0; }
+    .layer { padding: 18px; position: relative; }
+    .layer .num { font-family: var(--font-mono); font-size: 11px; color: var(--plume); letter-spacing: .12em; }
+    .layer h4 { font-size: 1rem; margin: 6px 0 12px; }
+    .layer .chips { gap: 6px; }
+    .layer .chip { font-size: 12px; padding: 4px 8px; }
+    .disclaimer { padding: 20px 22px; color: var(--text-2); font-size: .95rem; border-left: 3px solid var(--warn); }
+    .disclaimer strong { color: var(--warn); }
+    .story { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 22px; }
+    .story .card p { font-size: .95rem; }
+
+    /* ---------- Certs ---------- */
+    .cert-track { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; position: relative; }
+    .cert { padding: 18px 16px; text-align: left; position: relative; }
+    .cert .code { font-family: var(--font-mono); font-size: 1.05rem; color: var(--text); font-weight: 500; }
+    .cert .lvl { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-3); text-transform: uppercase; letter-spacing: .1em; }
+    .cert h4 { font-size: .95rem; margin: 8px 0 6px; }
+    .cert p { color: var(--text-2); font-size: .85rem; margin: 0 0 12px; }
+    .badge { font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 6px; display: inline-block; }
+    .b-ok { background: rgba(74,222,128,0.12); color: var(--ok); border: 1px solid rgba(74,222,128,0.35); }
+    .b-next { background: rgba(255,122,26,0.12); color: var(--plume-2); border: 1px solid rgba(255,122,26,0.35); }
+    .b-later { background: rgba(255,255,255,0.04); color: var(--text-3); border: 1px solid var(--line-strong); }
+    .cert.done { border-color: rgba(74,222,128,0.3); }
+    .extra-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+    .plain-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; font-size: .93rem; color: var(--text-2); }
+    .plain-list li { display: flex; gap: 10px; }
+    .plain-list li::before { content: "•"; color: var(--plume); }
+    .plain-list strong { color: var(--text); font-weight: 500; }
+
+    /* ---------- Contact ---------- */
+    .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; }
+    .channels { display: grid; gap: 14px; align-content: start; }
+    .channel { padding: 18px 20px; display: flex; flex-direction: column; gap: 2px; }
+    .channel span { font-family: var(--font-mono); font-size: 11px; color: var(--text-3); letter-spacing: .12em; text-transform: uppercase; }
+    .channel a { font-size: 1rem; word-break: break-all; }
+    form { padding: 28px; display: grid; gap: 16px; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    label { display: block; font-family: var(--font-mono); font-size: 12px; color: var(--text-2); margin-bottom: 6px; letter-spacing: .05em; }
+    input, textarea {
+      width: 100%; background: rgba(5,7,15,0.7); border: 1px solid var(--line-strong); color: var(--text);
+      border-radius: 10px; padding: 12px 14px; font: inherit; font-size: 15px;
     }
+    input:focus, textarea:focus { outline: none; border-color: var(--signal); box-shadow: 0 0 0 3px rgba(111,211,255,0.15); }
+    textarea { min-height: 140px; resize: vertical; }
+    button[type=submit] { border: 0; cursor: pointer; justify-self: start; font-family: var(--font-body); }
 
-    .portfolio-panel {
-      display: none;
+    footer { border-top: 1px solid var(--line); padding: 34px 0 44px; color: var(--text-3); font-size: 14px; }
+    .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; align-items: center; }
+    .foot nav { display: flex; flex-wrap: wrap; gap: 16px; }
+    .foot nav a { color: var(--text-2); }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    :focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; border-radius: 6px; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1080px) {
+      .cert-track { grid-template-columns: repeat(4, 1fr); }
+      .layers { grid-template-columns: repeat(3, 1fr); }
     }
-
-    .portfolio-panel.active {
-      display: block;
+    @media (max-width: 920px) {
+      .hero-grid, .about-grid, .log-cols, .dir-grid, .contact-grid { grid-template-columns: 1fr; }
+      .orbit-box { max-width: 320px; }
+      .feat-grid, .proj-grid, .skill-grid, .extra-grid, .story { grid-template-columns: 1fr 1fr; }
+      .feat.big { grid-column: span 2; }
+      .telemetry { grid-template-columns: repeat(3, 1fr); }
+      .tm:nth-child(3) { border-right: 0; }
+      .tm:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; background: rgba(5,7,15,0.97); padding: 12px 16px; border-bottom: 1px solid var(--line); }
+      .nav-links.open { display: flex; }
+      .hamburger { display: block; }
     }
-
-    .portfolio-panel .panel-description {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
-      max-width: 70ch;
-      margin-bottom: var(--space-6);
-      line-height: 1.7;
+    @media (max-width: 620px) {
+      .wrap { padding: 0 16px; }
+      section { padding: 80px 0; }
+      .feat-grid, .proj-grid, .skill-grid, .extra-grid, .story, .row2 { grid-template-columns: 1fr; }
+      .feat.big { grid-column: span 1; }
+      .cert-track { grid-template-columns: 1fr 1fr; }
+      .layers { grid-template-columns: 1fr; }
+      .telemetry { grid-template-columns: 1fr 1fr; }
+      .tm { border-right: 1px solid var(--line) !important; border-bottom: 1px solid var(--line); }
+      .tm:nth-child(2n) { border-right: 0 !important; }
+      .tm:last-child { grid-column: span 2; border-bottom: 0; }
+      .about-text, form { padding: 22px; }
+      .orbit-label { display: none; }
     }
-
-    .portfolio-panel .panel-note {
-      font-size: var(--text-xs);
-      color: var(--color-text-faint);
-      background: var(--color-surface);
-      border: 1px solid var(--color-divider);
-      border-radius: var(--radius-lg);
-      padding: var(--space-3) var(--space-4);
-      margin-bottom: var(--space-6);
-      max-width: 70ch;
-    }
-
-    .portfolio-panel .panel-tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2);
-      margin-bottom: var(--space-6);
-    }
-
-    .tool-tag {
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--color-primary);
-      background: var(--color-primary-highlight);
-      padding: var(--space-1) var(--space-3);
-      border-radius: var(--radius-full);
-    }
-
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-4);
-    }
-
-    .project-card {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-5);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-5) var(--space-6);
-      transition:
-        box-shadow var(--transition-interactive),
-        border-color var(--transition-interactive),
-        transform var(--transition-interactive);
-    }
-
-    .project-card:hover {
-      box-shadow: var(--shadow-md);
-      border-color: var(--color-primary);
-      transform: translateY(-2px);
-    }
-
-    .project-icon {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-      background: var(--color-primary-highlight);
-      border-radius: var(--radius-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-primary);
-    }
-
-    .project-info {
-      flex: 1;
-    }
-
-    .project-title {
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      font-weight: 600;
-      color: var(--color-text);
-      margin-bottom: var(--space-1);
-    }
-
-    .project-desc {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      line-height: 1.6;
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-1);
-      margin-top: var(--space-3);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      color: var(--color-primary);
-      letter-spacing: 0.04em;
-    }
-
-    .project-link:hover {
-      gap: var(--space-2);
-    }
-
-    .coming-soon {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: var(--space-16) var(--space-8);
-      color: var(--color-text-faint);
-    }
-
-    .coming-soon-icon {
-      font-size: 2.5rem;
-      margin-bottom: var(--space-4);
-    }
-
-    .coming-soon h3 {
-      font-size: var(--text-lg);
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-2);
-    }
-
-    .coming-soon p {
-      font-size: var(--text-sm);
-      max-width: 36ch;
-    }
-
-    /* ============ CONTACT ============ */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(var(--space-8), 6vw, var(--space-16));
-    }
-
-    .contact-info {
-      padding-top: var(--space-4);
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-4);
-      padding: var(--space-4) 0;
-      border-bottom: 1px solid var(--color-divider);
-    }
-
-    .contact-item:last-child {
-      border-bottom: none;
-    }
-
-    .contact-icon {
-      width: 40px;
-      height: 40px;
-      flex-shrink: 0;
-      background: var(--color-surface-2);
-      border-radius: var(--radius-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-primary);
-    }
-
-    .contact-item a {
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-    }
-
-    .contact-item a:hover {
-      color: var(--color-primary);
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-4);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-4);
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-    }
-
-    .form-group label {
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-    }
-
-    .form-group input,
-    .form-group textarea {
-      padding: var(--space-3) var(--space-4);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      font-size: var(--text-sm);
-      color: var(--color-text);
-      transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive);
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--color-primary);
-      box-shadow: 0 0 0 3px oklch(from var(--color-primary) l c h / 0.12);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-submit {
-      padding: var(--space-3) var(--space-8);
-      background: var(--color-primary);
-      color: var(--color-text-inverse);
-      border-radius: var(--radius-full);
-      font-size: var(--text-sm);
-      font-weight: 600;
-      cursor: pointer;
-      letter-spacing: 0.04em;
-      align-self: flex-start;
-      transition: background var(--transition-interactive);
-      border: none;
-    }
-
-    .form-submit:hover {
-      background: var(--color-primary-hover);
-    }
-
-    /* ============ FOOTER ============ */
-    footer {
-      padding: var(--space-10) clamp(var(--space-6), 5vw, var(--space-12));
-      border-top: 1px solid var(--color-divider);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-4);
-    }
-
-    .footer-brand {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: var(--text-base);
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-4);
-      margin-bottom: 0;
-    }
-
-    .footer-links a {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-    }
-
-    .footer-links a:hover {
-      color: var(--color-primary);
-    }
-
-    .footer-copy {
-      font-size: var(--text-xs);
-      color: var(--color-text-faint);
-      width: 100%;
-    }
-
-    /* ============ MOBILE ============ */
-    @media (max-width: 768px) {
-      .nav-links,
-      .nav-cta {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-4);
-        position: fixed;
-        top: 5rem;
-        left: 0;
-        right: 0;
-        background: var(--color-surface);
-        padding: var(--space-6);
-        border-bottom: 1px solid var(--color-divider);
-      }
-
-      .nav-links.open ~ .nav-cta {
-        display: none;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-visual {
-        aspect-ratio: unset;
-        max-height: none;
-        height: auto;
-      }
-
-      .about-visual-inner {
-        padding: var(--space-5);
-      }
-
-      .about-avatar {
-        width: 72px;
-        height: 72px;
-        font-size: 1.8rem;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-title {
-        font-size: clamp(2.5rem, 12vw, 5rem);
-      }
-    }
-
-    /* ============ SCROLL ANIMATIONS ============ */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .layer-card.no-hover:hover {
-      box-shadow: none;
-      border-color: var(--color-border);
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .orbiter, .pulse { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
     }
   </style>
 </head>
 <body>
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="#home" class="nav-logo" aria-label="Darius Chiosa Chiosa home">
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <rect width="28" height="28" rx="7" fill="var(--color-primary)"/>
-        <path d="M8 8h5.5c3.6 0 6.5 2.7 6.5 6.2S17.1 20 13.5 20H8V8z" fill="var(--color-text-inverse)" opacity="0.95"/>
-        <circle cx="19.5" cy="19.5" r="2.5" fill="var(--color-text-inverse)" opacity="0.6"/>
-      </svg>
-      Darius Chiosa Chiosa
-    </a>
+  <div class="nebula" aria-hidden="true"></div>
+  <canvas id="sky" aria-hidden="true"></canvas>
 
-    <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="#about">Who Am I</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="#roadmap">Roadmap</a></li>
-      <li><a href="#certifications">Certs</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <div class="nav-right">
-      <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="5"/>
-          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-        </svg>
-      </button>
-      <a href="#contact" class="nav-cta">Get in Touch</a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
+  <!-- ================= NAV ================= -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#home" class="brand"><span class="brand-dot"></span>Darius Chiosa Chiosa</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Who Am I</a></li>
+        <li><a href="#experience">Mission Log</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+      </ul>
     </div>
-  </nav>
+  </header>
 
-  <section class="hero" id="home" aria-labelledby="hero-title">
-    <div class="hero-bg" aria-hidden="true"></div>
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <span class="status"><span class="pulse"></span>Málaga, Spain · Learning in public</span>
+            <h1 id="hero-title">Darius<span>Chiosa Chiosa</span></h1>
+            <p class="hero-role">&gt; Aspiring Data &amp; Cloud Engineer_</p>
+            <p class="hero-lead">I come from business and I'm moving into tech, step by step. Python, SQL, Azure and Applied AI, to build systems for operational intelligence in aerospace and industry.</p>
+            <div class="btns">
+              <a class="btn btn-primary" href="#portfolio">View portfolio →</a>
+              <a class="btn btn-ghost" href="#about">Who am I</a>
+              <a class="btn btn-ghost" href="https://github.com/Dariuscc-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
 
-    <p class="hero-eyebrow">Aspiring Data & Cloud Engineer</p>
-    <h1 class="hero-title" id="hero-title">Darius <em>Chiosa Chiosa</em></h1>
-
-    <p class="hero-subtitle">Python, SQL, Azure and Applied AI.<br>Building systems for operational intelligence in aerospace and industry.</p>
-    <div class="hero-actions">
-      <a href="#portfolio" class="btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        View Portfolio
-      </a>
-      <a href="#about" class="btn-ghost">Who Am I</a>
-    </div>
-    <div class="hero-scroll" aria-hidden="true">
-      <div class="hero-scroll-line"></div>
-      <span>scroll</span>
-    </div>
-  </section>
-
-<section class="section" id="about" aria-labelledby="about-title">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-text fade-up">
-        
-        <p class="section-label">Who Am I</p>
-
-        <h2 class="section-title" id="about-title">Bridging Analytical Foundation with Technical Depth</h2>
-        
-
-        <p>I have a solid foundation in business and analytics, currently developing deep technical proficiency in Python, data, and cloud. My focus is applying these tools to solve real-world operational problems in aerospace, industry, and B2B platforms.</p>
-        
-        <div style="margin-top: 3rem;">        
-          <h3>Vision & Interests</h3>
-          <p>Beyond immediate business operations, I am deeply invested in the exponential evolution of STEM fields. The unprecedented acceleration of scientific progress, driven by Artificial Intelligence and quantum computing, is fundamentally reshaping our environment.</p>
-          
-
-
-          <p>Although humanity is often much worse than savage animals, the advancements and technology that humanity has developed amaze me. I am unable to stop engaging with these advancements, and that is why I believe my life will revolve around technology and the advancement of humanity.</p>
-          <p>I profoundly dislike immoral, lying, disrespectful and disloyal people. My life goal is to apply every bit of intelligence that God has given me to fight against injustices and wrongdoing in any field & situation possible.</p>
-        </div>
-        
-          <div class="hero-actions" style="margin-top: var(--space-6);">
-            <a href="https://www.linkedin.com/in/darius-chiosa" target="_blank" rel="noopener noreferrer" class="btn-ghost">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-              LinkedIn
-            </a>
-
-            <a href="https://github.com/Dariuscc-dev" target="_blank" rel="noopener noreferrer" class="btn-ghost">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-              GitHub
-            </a>
+          <div class="orbit-box" aria-hidden="false">
+            <div class="ring r3"></div>
+            <div class="ring"></div>
+            <div class="ring r2"></div>
+            <div class="orbiter o3"><span class="sat"></span></div>
+            <div class="orbiter"><span class="sat"></span></div>
+            <div class="orbiter o2"><span class="sat"></span></div>
+            <div class="avatar-wrap"><img src="foto-linkedin.jpg" alt="Darius Chiosa Chiosa"></div>
+            <span class="orbit-label l1">ORBIT 01 · DATA</span>
+            <span class="orbit-label l2">ORBIT 02 · CLOUD</span>
           </div>
         </div>
 
-        <div class="about-visual fade-up">
-          <div class="about-visual-inner">
-            <img src="foto-linkedin.jpg" alt="Darius Chiosa Chiosa" class="about-avatar" style="object-fit: cover;">
-            <p style="font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-2);">Darius Chiosa Chiosa</p>
-            <p style="font-size: var(--text-sm); color: var(--color-text-muted);">Tech & Business · Málaga, Spain</p>
-            <div class="about-stats">
-              <div class="stat-card">
-                <div class="stat-number">22</div>
-                <div class="stat-label">Years old</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number">3+</div>
-                <div class="stat-label">Years Exp.</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number">3</div>
-                <div class="stat-label">Languages</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number">🏆</div>
-                <div class="stat-label">Honors (TFG)</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number">+10</div>
-                <div class="stat-label">Projects</div>
-              </div>
+        <div class="telemetry" role="list" aria-label="Quick facts">
+          <div class="tm" role="listitem"><b>22</b><span>Years old</span></div>
+          <div class="tm" role="listitem"><b>3+</b><span>Years experience</span></div>
+          <div class="tm" role="listitem"><b>3</b><span>Languages</span></div>
+          <div class="tm" role="listitem"><b>🏆</b><span>Matrícula de Honor (TFG)</span></div>
+          <div class="tm" role="listitem"><b>+10</b><span>Projects</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-code">01 · Mission brief</div>
+          <h2 id="about-title">Who am I</h2>
+          <p>Business foundation, technical depth on the way.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel about-text reveal">
+            <h3>From business to Data &amp; Cloud</h3>
+            <p>I studied <strong>Marketing &amp; Market Research</strong> at the University of Málaga and did ThePowerMBA, and I've spent the last few years working in sales, analytics and digital marketing. Along the way I realized that what I enjoy most is the data behind the decisions, so now I'm building real technical skills in <strong>Python, data and cloud</strong>.</p>
+            <p>Today I'm in the first year of the <strong>Tridente program at UTAMED</strong>: Web Application Development (DAW), then a specialization in AI &amp; Machine Learning and a degree in Computer Engineering. At the same time I work as a <strong>tech recruitment consultant at QGROUP</strong> for the Dutch market, talking every day with engineers and hiring managers about stacks, systems and what a team really needs.</p>
+            <p>My focus is using these tools to solve real operational problems in <strong>aerospace, industry and B2B platforms</strong>.</p>
+            <p class="quote">It all started as a kid, looking up at the sky and talking about the cosmos with my dad. Rockets, space and New Space have fascinated me ever since.</p>
+
+            <h3 style="margin-top:26px">Vision &amp; values</h3>
+            <p>Science and technology are moving faster than ever. AI and quantum computing are changing the world around us, and I can't stop following it. People aren't always at their best, but what we've managed to build as humans amazes me. That's why I'm sure my life will revolve around technology and the progress of humanity.</p>
+            <p>I value honesty, respect and loyalty, and I can't stand lying or injustice. My goal is to use every bit of the intelligence God has given me to do things right and to fight injustice wherever I can.</p>
+            <div class="links-row">
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/darius-chiosa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="btn btn-ghost" href="https://github.com/Dariuscc-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+
+          <div class="side-stack">
+            <div class="panel card reveal">
+              <h4>Crew file</h4>
+              <dl class="kv">
+                <div><dt>Name</dt><dd>Darius Chiosa Chiosa</dd></div>
+                <div><dt>Base</dt><dd>Málaga, Spain</dd></div>
+                <div><dt>Profile</dt><dd>Tech &amp; Business</dd></div>
+                <div><dt>Languages</dt><dd>Spanish · Romanian · English (C1)</dd></div>
+                <div><dt>Now</dt><dd>Consultant @ QGROUP</dd></div>
+                <div><dt>Studying</dt><dd>FP DAW · Year 1</dd></div>
+                <div><dt>Certified</dt><dd>PL-300 · AZ-900 · SC-900</dd></div>
+              </dl>
+            </div>
+            <div class="panel card reveal">
+              <h4>How I learn</h4>
+              <p>I'm a visual learner and I need to understand the <em>why</em> of things from the ground up before I use them. That's why my GitHub is full of notes that break every concept down to the basics.</p>
+            </div>
+            <div class="panel card reveal">
+              <h4>Awards &amp; recognitions</h4>
+              <ul class="plain-list">
+                <li><span><strong>Matrícula de Honor</strong> · <a href="https://drive.google.com/drive/folders/1DeKmp8fAhwGKZO3F1cZQsOsExFoDgGBV?usp=sharing" target="_blank" rel="noopener noreferrer">Bachelor's thesis in Quantitative Finance</a></span></li>
+                <li><span><a href="https://www.linkedin.com/in/darius-chiosa/details/honors/" target="_blank" rel="noopener noreferrer">LinkedIn Top SEM Voice</a></span></li>
+                <li><span><strong>1st Prize</strong> · <a href="https://gestoresmalaga.com/premio-al-mejor-estudio-sobre-los-ga-en-nuestro-colegio/" target="_blank" rel="noopener noreferrer">Best research project on the gA brand</a></span></li>
+                <li><span><strong>1st Prize UMA</strong> · <a href="https://www.youtube.com/watch?v=qnfN9q5rZJA" target="_blank" rel="noopener noreferrer">Short film contest (Unidos por un sueño)</a></span></li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="fade-up">
-        <h3 class="experience-section-title">Professional Experience</h3>
-
-        <div class="experience-list">
-          <div class="exp-item">
-            <div class="exp-date">Sep 2026 - Present</div>
-            <div>
-              <h4 class="exp-role">Consultant <span class="exp-company">@ QGROUP - Tech Startup</span></h4>
-              <p class="exp-desc">Acting as an "Architect-Translator" bridging top-tier technical talent with complex global software ecosystems (Cloud, MLOps, Cybersecurity). I leverage a rigorous, data-driven approach to optimize recruitment conversion funnels and strategic staffing structures.</p>
-              <p class="exp-desc">º High-Level Strategic Engagement: Driving full-funnel sourcing and C-level negotiations. I optimize KPIs with surgical precision, ensuring that talent acquisition remains a predictable, high-performance lever for business growth.</p>
-            </div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-date">Jan 2026 - Sep 2026</div>
-            <div>
-              <h4 class="exp-role">Treatment Coordinator & Sales <span class="exp-company">@ Impress (Health Tech)</span></h4>
-              <p class="exp-desc">Comprehensive sales cycle management and structured financial advising. Appointed as Interim Clinic Manager for the Marbella location, leading operations and team coordination to ensure seamless continuity.</p>
-            </div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-date">Mar 2025 - Sep 2025</div>
-            <div>
-              <h4 class="exp-role">Business & Sales Analyst <span class="exp-company">@ La Zambra Resort 5* GL</span></h4>
-              <p class="exp-desc">Strategic KPI analysis (ADR, RevPAR, conversion) and BI dashboard creation (Tableau). Implemented AI workflows and prompt engineering focused on data analysis and operational efficiency.</p>
-            </div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-date">Jan 2021 - Jul 2024</div>
-            <div>
-              <h4 class="exp-role">Founder & Digital Marketing Consultant <span class="exp-company">@ Fly Vip Marketing</span></h4>
-              <p class="exp-desc">Technical launch and comprehensive management of 2 e-commerce platforms. Executed digital strategy, SEM campaigns, and ROI optimization through traffic analytics.</p>
-            </div>
-          </div>
+    <!-- ================= EXPERIENCE & EDUCATION ================= -->
+    <section id="experience" aria-labelledby="exp-title">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-code">02 · Mission log</div>
+          <h2 id="exp-title">Experience &amp; education</h2>
+          <p>Where I've been and what I've done there, in my own words.</p>
         </div>
 
-        <h3 class="experience-section-title" style="margin-top: var(--space-12);">Education & Certifications</h3>
-        <div class="experience-list">
-          <div class="exp-item">
-            <div class="exp-date">Sep 2026 - Jul 2031</div>
-            <div>
-              <h4 class="exp-role">FP DAW (AI & ML Specialization) + Software Engineering <span class="exp-company">@ UTAMED</span></h4>
-              <p class="exp-desc">Formal technical transition covering full-stack web application development, applied artificial intelligence & machine learning, and a complete degree in Software Engineering.</p>
+        <div class="log-cols">
+          <div>
+            <p class="log-title">// Professional experience</p>
+            <div class="log">
+              <article class="panel entry now reveal">
+                <div class="when">SEP 2026 → PRESENT</div>
+                <h3>Consultant</h3>
+                <div class="org">QGROUP · Tech recruitment &amp; consulting · Amsterdam Area (Hybrid)</div>
+                <p>I work between technology and business, recruiting for the Dutch tech market (Cloud, MLOps, Cybersecurity, Data). Since I'm studying software development at the same time, I understand what clients are really asking for and I can talk with candidates on their level.</p>
+                <ul>
+                  <li><strong>Technical screening:</strong> I evaluate candidates for Cloud, Data and System Architecture roles by their stack, systems and projects, not by buzzwords.</li>
+                  <li><strong>Full cycle:</strong> from sourcing to negotiation with hiring managers and decision makers, keeping an eye on the KPIs of every step.</li>
+                  <li><strong>Data-driven processes:</strong> I use business analytics to improve our recruitment funnel and day-to-day operations.</li>
+                  <li><strong>Long-term relationships:</strong> I don't just fill a vacancy and move on. I keep in touch with clients and candidates.</li>
+                </ul>
+              </article>
+
+              <article class="panel entry reveal">
+                <div class="when">JAN 2026 → SEP 2026</div>
+                <h3>Treatment Coordinator &amp; Sales</h3>
+                <div class="org">Impress · Health tech scale-up (€110M+ Series C) · Málaga</div>
+                <p>I managed the full sales cycle and the financial advice for clients, during the company's international expansion.</p>
+                <ul>
+                  <li><strong>Interim Clinic Manager (Marbella):</strong> took over the clinic to keep it running, leading daily operations and the local team.</li>
+                  <li><strong>Consultative sales:</strong> premium treatments, high ROI and a strong record of closing on the first visit.</li>
+                  <li><strong>Financial advice:</strong> financial plans, budgets and tailored financing options.</li>
+                  <li><strong>Work with HQ:</strong> solved operational bottlenecks and aligned customer service with the company's own tech stack and AI tools.</li>
+                </ul>
+              </article>
+
+              <article class="panel entry reveal">
+                <div class="when">MAR 2025 → SEP 2025</div>
+                <h3>Sales &amp; Business Analysis Intern</h3>
+                <div class="org">La Zambra · 5* Grand Luxury Resort (Intriva Capital / Marugal / Hyatt) · Mijas</div>
+                <p>I started in the commercial department and after two months did a four-month cross-training in sales, leisure and business analysis. That's where I confirmed I enjoy analysis and data-driven decisions the most.</p>
+                <ul>
+                  <li><strong>KPI analysis:</strong> pick-up, ADR, RevPAR and conversion, with monthly reports for the owners.</li>
+                  <li><strong>BI:</strong> Tableau and Lighthouse dashboards for demand analysis.</li>
+                  <li><strong>AI:</strong> AI workflows and prompt engineering for data analysis and operational efficiency, trained by an external consultant.</li>
+                  <li><strong>Sales:</strong> B2B/MICE quotes, key accounts and negotiations with tour operators. Clients like Bentley, Porsche, Coca-Cola, Citibank and Rothschild &amp; Co.</li>
+                </ul>
+              </article>
+
+              <article class="panel entry reveal">
+                <div class="when">JAN 2021 → JUL 2024</div>
+                <h3>Founder &amp; Digital Marketing Consultant</h3>
+                <div class="org">Fly Vip Marketing · Málaga</div>
+                <p>My own small agency, started while I was at university.</p>
+                <ul>
+                  <li>Launched and managed 2 e-commerce stores, from the technical side to the day-to-day.</li>
+                  <li>SEM campaigns (Google and YouTube Ads) and ROI optimization through traffic analytics and affiliate programs (PPC).</li>
+                  <li>Created my own "Indirect Targeted Segmentation" method to find customers by thinking laterally.</li>
+                </ul>
+              </article>
             </div>
           </div>
-
-          <div class="exp-item">
-            <div class="exp-date">Jul 2025 - Jun 2026</div>
-            <div>
-              <h4 class="exp-role">Technical Specialization <span class="exp-company">@ DataCamp</span></h4>
-              <p class="exp-desc">Focused curriculum on Business Intelligence, Python, Machine Learning, and advanced SQL data modeling.</p>
-            </div>
-          </div>
-
-          <div class="exp-item">
-            <div class="exp-date">Sep 2022 - Jun 2026</div>
-            <div>
-              <h4 class="exp-role">Degree in Marketing & Market Research <span class="exp-company">@ Universidad de Málaga</span></h4>
-              <p class="exp-desc">Graduated with 'Matrícula de Honor' (Highest Distinction) for my Quantitative Finance Bachelor's Thesis.</p>
-            </div>
-          </div>
-
-          <div class="exp-item">
-            <div class="exp-date">2024</div>
-            <div>
-              <h4 class="exp-role">MBA & Master in Digital Marketing <span class="exp-company">@ ThePower</span></h4>
-              <p class="exp-desc">Business Administration framework and modern digital marketing strategies.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section class="section" id="technical-direction" aria-labelledby="tech-direction-title">
-    <div class="section-inner">
-      <div class="section-narrow fade-up">
-        <p class="section-label">Technical Direction</p>
-        <h2 class="section-title" id="tech-direction-title">Core Path & Domain Interest</h2>
-        <div style="margin-bottom: 2rem;">
-          <h3>Core Path</h3>
-          <p>Python → SQL → Data Engineering → Backend APIs → Cloud → Applied ML</p>
-        </div>
-        <div style="margin-bottom: 2rem;">
-          <h3>Domain Interest</h3>
-          <p>Aerospace, industrial operations, telemetry and decision-support systems.</p>
-        </div>
-        <div>
-          <h3>What I build</h3>
-          <ul>
-            <li>Data ingestion and transformation pipelines</li>
-            <li>Python analytics and automation</li>
-            <li>Backend APIs with documented contracts</li>
-            <li>Cloud-ready, containerised services</li>
-            <li>Clear dashboards for operational decision-making</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="divider" role="separator"></div>
-
-  <div class="divider" role="separator"></div>
-
-
-  <section class="section" id="featured-projects" aria-labelledby="featured-title">
-    <div class="section-inner">
-      <p class="section-label">Highlights</p>
-      <h2 class="section-title" id="featured-title">Featured Projects</h2>
-      <p class="section-description">A curated selection of my most impactful work in quantitative research and business intelligence.</p>
-      <div class="project-list fade-up">
-        <!-- Featured: TFG -->
-        <div class="project-card">
-          <div class="project-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-            </svg>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Bachelor's Thesis: Quantitative Model for BME Growth 🏆</h3>
-            <p class="project-desc">Summa Cum Laude distinction. Development of the first Fear & Greed Index for Spanish micro-cap markets using Python-driven algorithmic backtesting and Power BI.</p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: var(--space-3);">
-              <a href="https://drive.google.com/drive/folders/1DeKmp8fAhwGKZO3F1cZQsOsExFoDgGBV?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link" style="margin-top: 0;">Research & Code →</a>
-              <a href="https://drive.google.com/drive/folders/10EBKLnpA2Ls1BQUBWsiKPvsR7QmgOEFg?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link" style="margin-top: 0;">BI Dashboard →</a>
-            </div>
-          </div>
-        </div>
-        <!-- Featured: Churn Analysis -->
-        <div class="project-card">
-          <div class="project-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 00-3-3.87"/>
-              <path d="M16 3.13a4 4 0 010 7.75"/>
-            </svg>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Customer Churn Analysis — Databel Telecom</h3>
-            <p class="project-desc">Advanced Power BI dashboard identifying key drivers of customer attrition through segmentation and pattern analysis for data-driven retention strategies.</p>
-
-            <a href="https://github.com/Dariuscc-dev/Customer-Churn-Analysis---Databel-Telecom" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-          </div>
-        </div>
-
-        <!-- Featured: Python & SQL Space Data Journey -->
-        <div class="project-card">
-          <div class="project-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-            </svg>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Python &amp; SQL Space Data Journey</h3>
-            <p class="project-desc">A project-based Python and SQL learning journey focused on space, aviation, engineering, data analysis and operational intelligence. Skills demonstrated are transferable to any data-driven sector.</p>
-            <a href="https://github.com/Dariuscc-dev/python-space-data-journey" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-          </div>
-        </div>
-        <!-- Featured: HR Analytics -->
-      </div>
-    </div>
-  </section>
-  <div class="divider" role="separator"></div>
-  <section class="section" id="portfolio" aria-labelledby="portfolio-title">
-    <div class="section-inner">
-      <p class="section-label">Portfolio</p>
-      <h2 class="section-title" id="portfolio-title">All of My Work</h2>
-      <p class="section-description">A selection of academic, analytical and technical projects covering data science, financial modelling, BI and AI.</p>
-
-      <nav class="portfolio-tabs" aria-label="Portfolio categories" role="tablist">
-        <button class="tab-btn active" id="tab-btn-academic" role="tab" aria-selected="true" data-tab="academic" aria-controls="tab-academic">Academic Projects</button>
-        <button class="tab-btn" id="tab-btn-bi" role="tab" aria-selected="false" data-tab="bi" aria-controls="tab-bi">Business Intelligence</button>
-        <button class="tab-btn" id="tab-btn-excel" role="tab" aria-selected="false" data-tab="excel" aria-controls="tab-excel">Excel & Finance</button>
-        <button class="tab-btn" id="tab-btn-python" role="tab" aria-selected="false" data-tab="python" aria-controls="tab-python">Python</button>
-        <button class="tab-btn" id="tab-btn-ai" role="tab" aria-selected="false" data-tab="ai" aria-controls="tab-ai">AI</button>
-        <button class="tab-btn" id="tab-btn-web" role="tab" aria-selected="false" data-tab="web" aria-controls="tab-web">Web Development</button>
-        <button class="tab-btn" id="tab-btn-cloud" role="tab" aria-selected="false" data-tab="cloud" aria-controls="tab-cloud">Cloud Architecture</button>
-
-        <button class="tab-btn" id="tab-btn-devops" role="tab" aria-selected="false" data-tab="devops" aria-controls="tab-devops">DevOps &amp; Infrastructure</button>
-      </nav>
-
-      <div class="portfolio-panel active fade-up" id="tab-academic" role="tabpanel" aria-labelledby="tab-btn-academic">
-        <p class="panel-description">Academic projects from my Marketing & Market Research degree at UMA — from award-winning market research to macroeconomic forecasting as Trump takes power. Using tools like Statgraphics, SPSS, Gretl and Excel.</p>
-        <div class="panel-note">⚠️ Some projects mix Spanish and English, and some databases may be incomplete — these are archives of my favourite subjects, originally not intended as portfolio pieces.</div>
-        <div class="panel-tools">
-          <span class="tool-tag">SPSS</span><span class="tool-tag">Gretl</span><span class="tool-tag">Statgraphics</span>
-          <span class="tool-tag">Excel</span><span class="tool-tag">Google Trends</span><span class="tool-tag">ANOVA</span>
-          <span class="tool-tag">Cluster Analysis</span><span class="tool-tag">Factor Analysis</span><span class="tool-tag">Econometrics</span>
-        </div>
-
-        <div class="project-list">
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Bachelor's Thesis: Quantitative Model for BME Growth 🏆</h3>
-              <p class="project-desc">Awarded <em>Summa Cum Laude</em> (Highest Distinction). My final degree project pioneering the <strong>world's first Fear & Greed Index engineered specifically for Spanish micro-cap and illiquid markets</strong>. A comprehensive academic research piece combining deep statistical modeling, Python-driven algorithmic backtesting, and Power BI visualization.</p>
-              <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: var(--space-3);">
-                <a href="https://drive.google.com/drive/folders/1DeKmp8fAhwGKZO3F1cZQsOsExFoDgGBV?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link" style="margin-top: 0;">View Research & Code →</a>
-                <a href="https://drive.google.com/drive/folders/10EBKLnpA2Ls1BQUBWsiKPvsR7QmgOEFg?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link" style="margin-top: 0;">View BI Dashboard →</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="2" y1="12" x2="22" y2="12"/>
-                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Macroeconomic & Trade Effects of U.S. Tariff Policies on the Automotive Sector</h3>
-              <p class="project-desc">International Business project forecasting macroeconomic impact of Trump-era tariff policies on the automotive industry. Trade flow analysis and economic modelling.</p>
-              <a href="https://drive.google.com/drive/folders/15zRlceGbsJEURXPFMY8coEdrgKFDja7W?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 20V10"/>
-                <path d="M12 20V4"/>
-                <path d="M6 20v-6"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Market Research I — Award-Winning Project 🏆</h3>
-              <p class="project-desc">Chi-Square tests, Crossed Tables, Descriptive & Frequency Analysis. This project won an award during my studies.</p>
-              <a href="https://drive.google.com/drive/folders/1wqr-lpQYnpAebhX10gm0P1qmqjXkXzH5?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Market Research II — Advanced Statistical Methods</h3>
-              <p class="project-desc">ANOVA, Cluster Analysis, Correspondence Analysis, Binary Logistic Regression and Factor Analysis applied to real market data.</p>
-              <a href="https://drive.google.com/drive/folders/1UtoiLqJzL2Yb-FSJ9VVKsl2ObA-cdZZc?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <path d="M3 9h18M9 21V9"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Multivariate Statistics — Deep Analysis</h3>
-              <p class="project-desc">Normality tests, Quantile-Quantile plots, Chi-Square, Levene tests, Homoscedasticity, Principal Component Analysis, Sedimentation Graphics and more.</p>
-              <a href="https://drive.google.com/drive/folders/1PXPjV-p3PS7RYz6QK0BCf-O6XKAAd9l5?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                <path d="M2 17l10 5 10-5"/>
-                <path d="M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Business Creation — Full Venture Analysis</h3>
-              <p class="project-desc">Cash Flow modelling, Business Model Canvas, DuPont Analysis, and full financial structuring for a new business venture.</p>
-              <a href="https://drive.google.com/drive/folders/1TpiPW9R_qNyXtlueTlTlJOQiUBbhvN9L?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-panel" id="tab-bi" role="tabpanel" aria-labelledby="tab-btn-bi">
-        <p class="panel-description">Business Intelligence projects using Power BI to summarise complex databases and extract actionable insights for real business scenarios.</p>
-        <div class="panel-tools">
-          <span class="tool-tag">Power BI</span><span class="tool-tag">DAX</span><span class="tool-tag">Data Modelling</span>
-        </div>
-
-        <div class="project-list">
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="20" x2="18" y2="10"/>
-                <line x1="12" y1="20" x2="12" y2="4"/>
-                <line x1="6" y1="20" x2="6" y2="14"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Bachelor's Thesis: BME Growth Predictive Dashboard 🏆</h3>
-              <p class="project-desc">Awarded <em>Summa Cum Laude</em> (Highest Distinction). This dashboard is the Business Intelligence frontend of a groundbreaking quantitative model: <strong>the world's first Fear & Greed Index adapted for illiquid markets</strong>, specifically targeting the Spanish IBEX Growth Market 15. It visually translates complex quantitative signals and historical backtesting into clear, actionable financial insights.</p>
-              <a href="https://drive.google.com/drive/folders/10EBKLnpA2Ls1BQUBWsiKPvsR7QmgOEFg?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link">View BI Dashboard →</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 00-3-3.87"/>
-                <path d="M16 3.13a4 4 0 010 7.75"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Customer Churn Analysis — Databel Telecom</h3>
-              <p class="project-desc">Power BI dashboard analysing customer churn patterns for a telecom company. Identifies key churn drivers and customer segments at risk.</p>
-
-              <a href="https://github.com/Dariuscc-dev/Customer-Churn-Analysis---Databel-Telecom" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="7" width="20" height="14" rx="2"/>
-                <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">HR Analytics — Atlas Labs</h3>
-              <p class="project-desc">Human Resources analytics dashboard for Atlas Labs. Explores workforce composition, attrition rates, performance and diversity metrics using Power BI.</p>
-
-              <a href="https://github.com/Dariuscc-dev/HR-Analytics" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-panel" id="tab-excel" role="tabpanel" aria-labelledby="tab-btn-excel">
-        <p class="panel-description">Excel-based financial modelling projects covering company valuation, stock analysis and investment frameworks. Excel remains a central tool in finance and business strategy.</p>
-        <div class="panel-tools">
-          <span class="tool-tag">Excel</span><span class="tool-tag">Financial Modelling</span><span class="tool-tag">DCF</span><span class="tool-tag">Valuation</span>
-        </div>
-
-        <div class="project-list">
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="1" x2="12" y2="23"/>
-                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Stock Valuation & Discount Methods — GOOGL</h3>
-              <p class="project-desc">Complete stock valuation model using Google (GOOGL) as a case study. Applies multiple discount and valuation methodologies including DCF, comparable companies and growth parameters.</p>
-              <a href="https://docs.google.com/spreadsheets/d/1Fk9QbS3k-b4bc6tBsIXnHmJ7AYvTCrOfNEIe3-mpcxg/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-panel" id="tab-python" role="tabpanel" aria-labelledby="tab-btn-python">
-        <p class="panel-description">Python-driven analytical models, data extraction pipelines, and quantitative algorithms to solve complex financial and business problems.</p>
-        <div class="panel-tools">
-          <span class="tool-tag">Python</span><span class="tool-tag">Pandas</span><span class="tool-tag">Quantitative Finance</span>
-        </div>
-
-        <div class="project-list">
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="16 18 22 12 16 6"/>
-                <polyline points="8 6 2 12 8 18"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Bachelor's Thesis: Algorithmic Model for BME Growth 🏆</h3>
-              <p class="project-desc">Awarded <em>Summa Cum Laude</em> (Highest Distinction). This project pioneers the <strong>first-ever Fear & Greed Index engineered specifically for Spanish micro-cap and illiquid markets</strong>. Aquí encontrarás la arquitectura central de Python, incluyendo la extracción de datos, procesamiento estadístico y lógica algorítmica.</p>
-              <a href="https://drive.google.com/drive/folders/1DeKmp8fAhwGKZO3F1cZQsOsExFoDgGBV?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link">View Python Scripts →</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="4 17 10 11 4 5"/>
-                <line x1="12" y1="19" x2="20" y2="19"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Living Web Stack — Python</h3>
-              <p class="project-desc">The fifth layer of my web development learning path. An introduction to Python scripting, data structures, and core programming logic.</p>
-              <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/05-python" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Python &amp; SQL Space Data Journey</h3>
-              <p class="project-desc">A project-based Python and SQL learning journey focused on space, aviation, engineering, data analysis and operational intelligence. Skills demonstrated are transferable to any data-driven sector.</p>
-              <a href="https://github.com/Dariuscc-dev/python-space-data-journey" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-panel" id="tab-ai" role="tabpanel" aria-labelledby="tab-btn-ai">
-        <div class="coming-soon">
-          <div class="coming-soon-icon">🤖</div>
-          <h3>AI Projects Coming Soon</h3>
-          <p>Building projects that apply AI, Deep Learning, Machine Learning and Cloud AI Infrastructure to solve hard real-world problems.</p>
-        </div>
-      </div>
-
-      <div class="portfolio-panel" id="tab-web" role="tabpanel" aria-labelledby="tab-btn-web">
-        <p class="panel-description">Web development projects focused on clean code, semantic structure, and foundational web technologies.</p>
-        <div class="panel-tools">
-          <span class="tool-tag">HTML</span><span class="tool-tag">CSS</span><span class="tool-tag">JavaScript</span><span class="tool-tag">Web Development</span>
-        </div>
-
-        <div class="project-list">
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <line x1="3" y1="9" x2="21" y2="9"/>
-                <line x1="9" y1="21" x2="9" y2="9"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Living Web Stack — CSS Layouts & Styling</h3>
-              <p class="project-desc">The second layer of my web development learning path. A deep dive into modern CSS, covering layout techniques (Flexbox & Grid), responsive design principles, design tokens, and UI styling directly from scratch.</p>
-              <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/02-css" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M8 8v8"/>
-                <path d="M16 8v5a3 3 0 1 1-6 0"/>
-                <path d="M4 4h16v16H4z"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Living Web Stack — JavaScript Foundations</h3>
-              <p class="project-desc">The third layer of my web development learning path. Focused on core JavaScript logic, DOM interaction, scripting fundamentals, and the transition from static pages to dynamic browser behaviour.</p>
-              <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/03-javascript" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Living Web Stack — Web Protocols & Security</h3>
-              <p class="project-desc">The fourth layer of my web development learning path. Exploring the architecture of web communications, covering the HTTP/HTTPS request lifecycle, statefulness, and the implementation mechanics of SSL and TLS encryption.</p>
-              <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="16 18 22 12 16 6"/>
-                <polyline points="8 6 2 12 8 18"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Living Web Stack — Basic Semantic HTML</h3>
-              <p class="project-desc">My first time working with HTML. Built exclusively with native semantic HTML, without CSS or JavaScript, to demonstrate a solid understanding of core web structure and tag programming.</p>
-              <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/01-html" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
-            </div>
-          </div>
-
-<!-- Additional Web Modules -->
-<div class="project-card">
-  <div class="project-icon" aria-hidden="true">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-    </svg>
-  </div>
-  <div class="project-info">
-    <h3 class="project-title">Living Web Stack — SQL Data Modeling</h3>
-    <p class="project-desc">The sixth layer. Implementation of relational databases, exploring SQL queries, data integrity, and normalization within a web application context.</p>
-    <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/06-SQL" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
-  </div>
-</div>
-<div class="project-card">
-  <div class="project-icon" aria-hidden="true">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-    </svg>
-  </div>
-  <div class="project-info">
-    <h3 class="project-title">Living Web Stack — Node &amp; REST APIs</h3>
-    <p class="project-desc">The seventh layer. Building backend services with Node.js, handling CORS policies, and designing RESTful API contracts for secure client-server communication.</p>
-    <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/07-Node-CORS-API-REST" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
-  </div>
-</div>
-<div class="project-card">
-  <div class="project-icon" aria-hidden="true">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-      <line x1="8" y1="21" x2="16" y2="21"></line>
-      <line x1="12" y1="17" x2="12" y2="21"></line>
-    </svg>
-  </div>
-  <div class="project-info">
-    <h3 class="project-title">Living Web Stack — Linux Infrastructure</h3>
-    <p class="project-desc">The eighth layer. Exploration of the Linux environment, shell scripting with Bash, and managing system-level configurations for web hosting.</p>
-    <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/08-Linux" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
-  </div>
-</div>
-
-<div class="project-card">
-  <div class="project-icon" aria-hidden="true">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"></path>
-      <polyline points="7 8 11 12 7 16"></polyline>
-      <line x1="12" y1="16" x2="17" y2="16"></line>
-    </svg>
-  </div>
-  <div class="project-info">
-    <h3 class="project-title">Living Web Stack — Visual Studio Code</h3>
-    <p class="project-desc">The twelfth layer. Exploring Visual Studio Code as the primary development environment, including essential extensions, configuration, and workflow automation.</p>
-    <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/12-Visual-Studio-Code" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
-  </div>
-</div>
-        </div>
-      </div>
-
-      <div class="portfolio-panel" id="tab-cloud" role="tabpanel" aria-labelledby="tab-btn-cloud">
-        <p class="panel-description">Cloud infrastructure and architecture projects, demonstrating practical implementations of Azure services, security, and cloud deployment principles.</p>
-        <div class="panel-tools">
-          <span class="tool-tag">Azure</span><span class="tool-tag">Cloud Architecture</span><span class="tool-tag">AZ-900</span><span class="tool-tag">SC-900</span><span class="tool-tag">Security</span>
-        </div>
-
-        <div class="project-list">
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Azure Architecture Implementation — AZ-900</h3>
-              <p class="project-desc">A practical cloud architecture project built alongside the Microsoft AZ-900 (Azure Fundamentals) certification. Showcases applied knowledge of core Azure services, structural design, and foundational cloud infrastructure concepts.</p>
-              <a href="https://github.com/Dariuscc-dev/azure-az900-architecture-project/tree/main" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Microsoft SC-900 — Zero Trust Blueprint</h3>
-              <p class="project-desc">A comprehensive blueprint and implementation guide for Microsoft's Zero Trust security model. Aligned with the SC-900 certification to showcase core security, compliance, and identity principles.</p>
-              <a href="https://github.com/Dariuscc-dev/microsoft-sc900-zero-trust-blueprint" target="_blank" rel="noopener noreferrer" class="project-link">View Repository →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-<div class="portfolio-panel" id="tab-devops" role="tabpanel" aria-labelledby="tab-btn-devops">
-  <p class="panel-description">Infrastructure and automation projects focused on version control, containerisation, and continuous integration/deployment pipelines.</p>
-  <div class="panel-tools">
-    <span class="tool-tag">Git</span><span class="tool-tag">GitHub Actions</span><span class="tool-tag">Docker</span><span class="tool-tag">CI/CD</span>
-  </div>
-  <div class="project-list">
-    <div class="project-card">
-      <div class="project-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 12l-4-4-4 4 4 4 4-4zM2 12l4-4 4 4-4 4-4-4z"></path>
-          <path d="M12 2v20"></path>
-        </svg>
-      </div>
-      <div class="project-info">
-        <h3 class="project-title">GIT and GitHub Actions</h3>
-        <p class="project-desc">Implementation of version control workflows and automated task runners using GitHub Actions for modern development cycles.</p>
-        <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/09-GIT-and-GitHub-Actions" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-      </div>
-    </div>
-    <div class="project-card">
-      <div class="project-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 7.6L13 2.1c-.6-.4-1.4-.4-2 0L2 7.6c-.6.4-1 1-1 1.7v10.3c0 .7.4 1.4 1 1.7l9 5.5c.6.4 1.4.4 2 0l9-5.5c.6-.4 1-1 1-1.7V9.3c0-.7-.4-1.3-1-1.7z"></path>
-        </svg>
-      </div>
-      <div class="project-info">
-        <h3 class="project-title">Docker</h3>
-        <p class="project-desc">Containerisation of applications to ensure environment parity and scalable deployment across different infrastructures.</p>
-        <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/10-Docker" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-      </div>
-    </div>
-    <div class="project-card">
-      <div class="project-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-        </svg>
-      </div>
-      <div class="project-info">
-        <h3 class="project-title">CI/CD</h3>
-        <p class="project-desc">Design and setup of Continuous Integration and Continuous Deployment pipelines for automated testing and delivery.</p>
-        <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/11-CI-CD" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
-      </div>
-    </div>
-  </div>
-</div>
-      
-    </div>
-  </section>
-
-  <div class="divider" role="separator"></div>
-
-
-  <section class="section" id="tools" aria-labelledby="tools-title">
-    <div class="section-narrow fade-up">
-      <p class="section-label">Skills &amp; Stack</p>
-      <h2 class="section-title" id="tools-title">Tools I'm Familiar With</h2>
-<div style="background: var(--color-surface); border: 1px solid var(--color-divider); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-6); display: flex; gap: var(--space-6); flex-wrap: wrap; font-size: var(--text-xs); font-weight: 600; color: var(--color-text-muted);">
-  <span><span style="color: var(--color-primary);">F:</span> Fundamental (know concepts, familiar)</span>
-  <span><span style="color: var(--color-primary);">L:</span> Learning</span>
-  <span><span style="color: var(--color-primary);">E:</span> Expert</span>
-  <span><span style="color: var(--color-primary);">GL:</span> Good Level</span>
-</div>
-      <p class="section-description">A mix of statistical, analytical, BI and dev tools — some mastered, some actively learning.</p>
-      <h3 class="tools-section-title">Languages</h3>
-      <div class="tools-grid">
-        <span class="tool-chip good-level">DAX <small>· GL</small></span>
-        <span class="tool-chip good-level">M <small>· GL</small></span>
-        <span class="tool-chip learning">Python <small>· Learning</small></span>
-        <span class="tool-chip learning">SQL <small>· Learning</small></span>
-        <span class="tool-chip learning">HTML <small>· Learning</small></span>
-        <span class="tool-chip learning">CSS <small>· Learning</small></span>
-        <span class="tool-chip learning">JavaScript <small>· Learning</small></span>
-      </div>
-      <h3 class="tools-section-title">Data, BI &amp; Cloud</h3>
-      <div class="tools-grid">
-        <span class="tool-chip good-level">Power BI <small>· PL-300 GL ✓</small></span>
-        <span class="tool-chip good-level">Microsoft Fabric <small>· GL</small></span>
-        <span class="tool-chip good-level">Azure Cloud <small>· AZ-900 GL ✓</small></span>
-        <span class="tool-chip good-level">Tableau <small>· GL</small></span>
-        <span class="tool-chip fundamental">Excel <small>· F</small></span>
-      </div>
-      <h3 class="tools-section-title">Cloud Security, Networks &amp; Protocols</h3>
-      <div class="tools-grid">
-        <span class="tool-chip good-level">Zero Trust <small>· SC-900 GL ✓</small></span>
-        <span class="tool-chip good-level">Microsoft Entra <small>· GL</small></span>
-        <span class="tool-chip good-level">Microsoft Defender <small>· GL</small></span>
-        <span class="tool-chip fundamental">HTTP / HTTPS <small>· F</small></span>
-        <span class="tool-chip fundamental">SSL / TLS <small>· F</small></span>
-        <span class="tool-chip fundamental">TCP/IP <small>· F</small></span>
-        <span class="tool-chip fundamental">DNS <small>· F</small></span>
-      </div>
-      <h3 class="tools-section-title">DevOps &amp; Infrastructure</h3>
-      <div class="tools-grid">
-
-        <span class="tool-chip good-level">Git <small>· GL</small></span>
-
-        <span class="tool-chip good-level">GitHub <small>· GL</small></span>
-        <span class="tool-chip fundamental">GitHub Actions <small>· F</small></span>
-        <span class="tool-chip fundamental">Docker <small>· F</small></span>
-        <span class="tool-chip fundamental">CI/CD <small>· F</small></span>
-        <span class="tool-chip fundamental">Linux/Bash <small>· F</small></span>
-        <span class="tool-chip good-level">VS Code <small>· GL</small></span>
-      </div>
-      <h3 class="tools-section-title">Statistics &amp; Research</h3>
-      <div class="tools-grid">
-        <span class="tool-chip fundamental">SPSS <small>· F</small></span>
-        <span class="tool-chip fundamental">Gretl <small>· F</small></span>
-        <span class="tool-chip good-level">Statgraphics <small>· GL</small></span>
-        <span class="tool-chip good-level">Google Trends <small>· GL</small></span>
-        <span class="tool-chip good-level">Google Analytics <small>· GL</small></span>
-      </div>
-      <h3 class="tools-section-title">Business &amp; AI</h3>
-      <div class="tools-grid">
-        <span class="tool-chip good-level">ROI &amp; FinOps <small>· GL</small></span>
-        <span class="tool-chip good-level">Prompt Engineering <small>· GL</small></span>
-        <span class="tool-chip good-level">Sales Pipeline Mgt <small>· GL</small></span>
-        <span class="tool-chip good-level">HubSpot <small>· GL</small></span>
-        <span class="tool-chip good-level">Odoo <small>· GL</small></span>
-        <span class="tool-chip good-level">Salesforce <small>· GL</small></span>
-        <span class="tool-chip good-level">Gemini / Claude / Perplexity <small>· GL</small></span>
-      </div>
-    </div>
-  </section>
-<section class="section" id="roadmap" aria-labelledby="roadmap-title">
-    <div class="section-narrow fade-up">
-      <p class="section-label">Development Roadmap</p>
-      <h2 class="section-title" id="roadmap-title">Living Web Stack Path</h2>
-      <p class="section-description">My structured technical roadmap spanning 5 layers: from foundational web technologies to cloud infrastructure and CI/CD automation.</p>
-<p class="section-description" style="margin-top: -1rem; font-style: italic; color: var(--color-primary);"><strong>Disclaimer:</strong> This repository is quite non-technical. It's my first hands-on contact with web development, and also with GitHub. Don't expect best practices or polished code: it's simply an initial exploration. Whatever comes next will clearly be far better than this. A project that grows layer by layer, trying out the most common technologies found in web development: HTML → CSS → JS → HTTP/TLS → Python → SQL → REST APIs → Linux → Git → Docker → CI/CD. This isn't a technical or professional project, it's just my way of exploring and understanding, in a simple way, the most common possibilities that exist when building a web application.</p>
-
-      <div class="roadmap-grid">
-        <!-- Layer 1: Web Fundamentals -->
-        <div class="layer-card">
-          <div class="layer-header">
-            <h3 class="layer-title">Layer 1: Web Fundamentals</h3>
-          </div>
-          <div class="layer-body">
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/01-html" target="_blank" rel="noopener noreferrer" class="tool-chip learning">HTML <small>· L</small></a>
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/02-css" target="_blank" rel="noopener noreferrer" class="tool-chip learning">CSS <small>· L</small></a>
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/03-javascript" target="_blank" rel="noopener noreferrer" class="tool-chip learning">JavaScript <small>· L</small></a>
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-chip fundamental">HTTP <small>· F</small></a>
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-chip fundamental">HTTPS <small>· F</small></a>
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-chip fundamental">TLS <small>· F</small></a>
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer" class="tool-chip fundamental">SSL <small>· F</small></a>
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/12-Visual-Studio-Code" target="_blank" rel="noopener noreferrer" class="tool-chip fundamental">VS Code <small>· F</small></a>
-          </div>
-        </div>
-
-        <!-- Layer 2: Logic & Data -->
-        <div class="layer-card">
-          <div class="layer-header">
-            <h3 class="layer-title">Layer 2: Logic & Data</h3>
-          </div>
-          <div class="layer-body">
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/05-python" target="_blank" rel="noopener noreferrer" class="tool-chip learning">Python <small>· L</small></a>
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/06-SQL" target="_blank" rel="noopener noreferrer" class="tool-chip learning">SQL <small>· L</small></a>
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/07-Node-CORS-API-REST" target="_blank" rel="noopener noreferrer" class="tool-chip fundamental">REST APIs &amp; CORS <small>· F</small></a>
-          </div>
-        </div>
-
-        <!-- Layer 3: Networks & Security -->
-        <div class="layer-card">
-          <div class="layer-header">
-            <h3 class="layer-title">Layer 3: Networks & Security</h3>
-          </div>
-          <div class="layer-body">
-            <span class="tool-chip fundamental">TCP/IP <small>· F</small></span>
-            <span class="tool-chip fundamental">DNS Flow <small>· F</small></span>
-          </div>
-        </div>
-
-        <!-- Layer 4: Infrastructure -->
-        <div class="layer-card">
-          <div class="layer-header">
-            <h3 class="layer-title">Layer 4: Infrastructure</h3>
-          </div>
-          <div class="layer-body">
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/08-Linux" target="_blank" rel="noopener noreferrer" class="tool-chip fundamental">Linux/Bash <small>· F</small></a>
-
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/09-GIT-and-GitHub-Actions" target="_blank" rel="noopener noreferrer" class="tool-chip good-level">Git &amp; GitHub <small>· GL</small></a>
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/10-Docker" target="_blank" rel="noopener noreferrer" class="tool-chip fundamental">Docker <small>· F</small></a>
-          </div>
-        </div>
-
-        <!-- Layer 5: Automation & DevOps -->
-        <div class="layer-card">
-          <div class="layer-header">
-            <h3 class="layer-title">Layer 5: Automation & DevOps</h3>
-          </div>
-          <div class="layer-body">
-
-            <a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/11-CI-CD" target="_blank" rel="noopener noreferrer" class="tool-chip fundamental">CI/CD &amp; GitHub Actions <small>· F</small></a>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top: var(--space-8); color: var(--color-text-muted); line-height: 1.7;">
-        <p style="margin-bottom: var(--space-4);">Starting from zero in technology meant that, at first, I explored widely rather than committing too early to a single label. I wanted to understand what Computer Science actually contains before deciding where to build depth.</p>
-        
-        <p style="margin-bottom: var(--space-4);">The field is vast, where I've seen that there are fields such as web and software engineering, frontend and backend development, data analytics, ML, AI, cloud, DevOps, cybersecurity, networking, robotics, bioinformatics, and more. &quot;Living Web Stack&quot; was one of those early explorations, an exploration that has helped me understand the connected layers behind a modern web system — from HTML, CSS and JavaScript to HTTP/HTTPS/TLS and Python — instead of seeing technologies as isolated names. All of this has given me a map.</p>
-        
-        <p>My next step is focus: Python first, then SQL, data engineering, backend systems, cloud infrastructure and applied AI. I am especially interested in applying this path to aerospace, industrial operations and mission-critical environments.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider" role="separator"></div>
-
-  <section class="section" id="certifications" aria-labelledby="certs-title">
-    <div class="section-narrow fade-up">
-      <p class="section-label">Cloud & Tech Certifications</p>
-      <h2 class="section-title" id="certs-title">Microsoft & Cloud Roadmap</h2>
-      <p class="section-description">Building a hybrid profile as a technical authority in Cloud Architecture, Data Engineering and Applied AI — from fundamentals to expert-level architecture design.</p>
-
-
-      <div class="certs-grid">
-        <!-- Consolidar fundamentos -->
-        <div class="cert-row">
-          <div><h3 class="cert-name">PL-300</h3><div class="cert-sub">Power BI Data Analyst</div></div>
-          <span class="cert-badge associate">Associate</span>
-          <p class="cert-why">Mastery of data analysis and visualization. Fundamental basis for data engineering.</p>
-          <span class="cert-level done">✓ Achieved</span>
-        </div>
-        <div class="cert-row">
-          <div><h3 class="cert-name">AZ-900</h3><div class="cert-sub">Azure Fundamentals</div></div>
-          <span class="cert-badge fundamental">Fundamental</span>
-
-          <p class="cert-why">Cloud foundations. Vocabulary and base structure of Azure.</p>
-          <span class="cert-level done">✓ Achieved</span>
-        </div>
-        <div class="cert-row">
-          <div><h3 class="cert-name">SC-900</h3><div class="cert-sub">Security, Compliance & Identity</div></div>
-          <span class="cert-badge fundamental">Fundamental</span>
-
-          <p class="cert-why">Security, compliance, and identity. Zero Trust by design.</p>
-          <span class="cert-level done">✓ Achieved</span>
-        </div>
-        <!-- Datos -->
-        <div class="cert-row" style="border-color: var(--color-primary); box-shadow: 0 0 0 1px oklch(from var(--color-primary) l c h / 0.25);">
-          <div><h3 class="cert-name">DP-700</h3><div class="cert-sub">Microsoft Fabric Data Engineer</div></div>
-          <span class="cert-badge associate">Associate</span>
-
-          <p class="cert-why">Advanced analytics integration; preparation and data movement in Fabric.</p>
-          <span class="cert-level now">▶ Current</span>
-        </div>
-        <!-- Cloud operativo -->
-        <div class="cert-row">
-          <div><h3 class="cert-name">AZ-104</h3><div class="cert-sub">Azure Administrator</div></div>
-          <span class="cert-badge associate">Associate</span>
-
-          <p class="cert-why">Management of infrastructure, networks, storage, and compute.</p>
-          <span class="cert-level soon">Short-term</span>
-        </div>
-        <!-- Arquitectura -->
-        <div class="cert-row">
-          <div><h3 class="cert-name">AZ-305</h3><div class="cert-sub">Azure Solutions Architect</div></div>
-          <span class="cert-badge expert">Expert</span>
-
-          <p class="cert-why">High-level solution design prioritizing cost, performance, and security.</p>
-          <span class="cert-level mid">Mid-term</span>
-        </div>
-        <!-- Multicloud -->
-        <div class="cert-row">
-          <div><h3 class="cert-name">AWS SAA-C03</h3><div class="cert-sub">AWS Solutions Architect</div></div>
-          <span class="cert-badge associate">Associate</span>
-
-          <p class="cert-why">Multicloud versatility. Access to the largest global cloud provider market.</p>
-          <span class="cert-level mid">Mid-term</span>
-        </div>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider" role="separator"></div>
-
-  <section class="section" id="contact" aria-labelledby="contact-title">
-    <div class="section-inner">
-      <div class="contact-grid">
-        <div class="contact-info fade-up">
-          <p class="section-label">Contact</p>
-          <h2 class="section-title" id="contact-title">Let's work together</h2>
-          <p style="color: var(--color-text-muted); max-width: 44ch; margin-bottom: var(--space-8);">Feel free to reach out with inquiries, opportunities, questions or anything else. I'm always open to interesting conversations.</p>
 
           <div>
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              <div>
-                <div style="font-size: var(--text-xs); color: var(--color-text-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px;">Email</div>
-                <a href="mailto:corina.dariusnicu@gmail.com">corina.dariusnicu@gmail.com</a>
-              </div>
-            </div>
+            <p class="log-title">// Education</p>
+            <div class="log">
+              <article class="panel entry now reveal">
+                <div class="when">SEP 2026 → JUL 2031</div>
+                <h3>Tridente program: FP DAW + AI &amp; ML + Computer Engineering</h3>
+                <div class="org">UTAMED</div>
+                <p>A 4.5-year path with three official qualifications:</p>
+                <ul>
+                  <li><strong>Year 1 (now):</strong> Higher Technician in Web Application Development (DAW).</li>
+                  <li><strong>Year 2:</strong> second year of DAW, together with a University Specialist in AI &amp; Machine Learning.</li>
+                  <li><strong>Years 3 to 4.5:</strong> Bachelor's degree in Computer Engineering.</li>
+                </ul>
+              </article>
 
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </div>
-              <div>
-                <div style="font-size: var(--text-xs); color: var(--color-text-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px;">LinkedIn</div>
-                <a href="https://www.linkedin.com/in/darius-chiosa" target="_blank" rel="noopener noreferrer">linkedin.com/in/darius-chiosa</a>
-              </div>
-            </div>
+              <article class="panel entry reveal">
+                <div class="when">JUL 2025 → JUN 2026</div>
+                <h3>Technical Specialization</h3>
+                <div class="org">DataCamp</div>
+                <p>Business Intelligence, Python, Machine Learning and advanced SQL data modeling.</p>
+              </article>
 
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-              </div>
-              <div>
-                <div style="font-size: var(--text-xs); color: var(--color-text-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px;">GitHub</div>
-                <a href="https://github.com/Dariuscc-dev" target="_blank" rel="noopener noreferrer">github.com/Dariuscc-dev</a>
-              </div>
+              <article class="panel entry reveal">
+                <div class="when">SEP 2022 → JUN 2026</div>
+                <h3>Degree in Marketing &amp; Market Research</h3>
+                <div class="org">Universidad de Málaga</div>
+                <p>Focus on data analytics, multivariate statistics and quantitative modeling. My bachelor's thesis in Quantitative Finance got a <strong style="color:var(--text)">Matrícula de Honor</strong> (highest distinction, 10/10). Also 10/10 in Structure of International Trade, Introduction to Law and Commercial Communication I.</p>
+              </article>
+
+              <article class="panel entry reveal">
+                <div class="when">2024</div>
+                <h3>ThePowerMBA &amp; Master in Digital Marketing</h3>
+                <div class="org">ThePower</div>
+                <p>Business administration framework and modern digital marketing: growth strategy, conversion metrics, Lean Startup and financial analysis.</p>
+              </article>
             </div>
           </div>
         </div>
-
-        <form action="https://formspree.io/f/meedkobl" method="POST" class="contact-form fade-up" id="contactForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fname">Name *</label>
-              <input type="text" id="fname" name="fname" placeholder="Your name" required>
-            </div>
-            <div class="form-group">
-              <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="lname" placeholder="Your last name">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message *</label>
-            <textarea id="message" name="message" placeholder="Tell me about your project or inquiry..." required></textarea>
-          </div>
-
-          <button type="submit" class="form-submit">Send Message</button>
-        </form>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer role="contentinfo">
-    <span class="footer-brand">Darius Chiosa Chiosa</span>
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#tools">Tools</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#certifications">Certs</a>
-      <a href="#contact">Contact</a>
-      <a href="https://www.linkedin.com/in/darius-chiosa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://github.com/Dariuscc-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </nav>
-    <p class="footer-copy">© 2026 Darius Chiosa Chiosa · Málaga, Spain · corina.dariusnicu@gmail.com</p>
+    <!-- ================= DIRECTION ================= -->
+    <section id="direction" aria-labelledby="dir-title">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-code">03 · Flight plan</div>
+          <h2 id="dir-title">Technical direction</h2>
+          <p>Where I'm heading and what I want to build.</p>
+        </div>
+        <div class="dir-grid">
+          <div class="panel card reveal">
+            <h4>Core path</h4>
+            <div class="path" aria-label="Learning path">
+              <span class="stage on">Python</span><span class="arrow">→</span>
+              <span class="stage on">SQL</span><span class="arrow">→</span>
+              <span class="stage">Data Engineering</span><span class="arrow">→</span>
+              <span class="stage">Backend APIs</span><span class="arrow">→</span>
+              <span class="stage">Cloud</span><span class="arrow">→</span>
+              <span class="stage">Applied ML</span>
+            </div>
+            <h4 style="margin-top:22px">Domain interest</h4>
+            <p>Aerospace, New Space, industrial operations, telemetry and decision-support systems.</p>
+          </div>
+          <div class="panel card reveal">
+            <h4>What I want to build</h4>
+            <ul class="build-list">
+              <li>Data ingestion and transformation pipelines</li>
+              <li>Python analytics and automation</li>
+              <li>Backend APIs with documented contracts</li>
+              <li>Cloud-ready, containerized services</li>
+              <li>Clear dashboards for operational decision-making</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PORTFOLIO ================= -->
+    <section id="portfolio" aria-labelledby="port-title">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-code">04 · Payload</div>
+          <h2 id="port-title">Featured projects</h2>
+          <p>The projects I'm proudest of, and below, everything else: academic, analytical and technical work across data, finance, BI, cloud and web.</p>
+        </div>
+
+        <div class="feat-grid">
+          <article class="panel feat big reveal">
+            <div class="tag-row"><span class="tag hot">🏆 Matrícula de Honor</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Quantitative Finance</span></div>
+            <h3>Bachelor's thesis: Quantitative model for BME Growth</h3>
+            <p>The world's first Fear &amp; Greed Index built for illiquid Spanish micro-cap markets (IBEX Growth Market 15). A Python model with automated data extraction, statistical processing and rule-based backtesting, plus a Power BI dashboard that turns hundreds of signals into clear financial insights.</p>
+            <div class="feat-links">
+              <a href="https://drive.google.com/drive/folders/1DeKmp8fAhwGKZO3F1cZQsOsExFoDgGBV?usp=sharing" target="_blank" rel="noopener noreferrer">Research &amp; code →</a>
+              <a href="https://drive.google.com/drive/folders/10EBKLnpA2Ls1BQUBWsiKPvsR7QmgOEFg?usp=sharing" target="_blank" rel="noopener noreferrer">BI dashboard →</a>
+            </div>
+          </article>
+          <article class="panel feat reveal">
+            <div class="tag-row"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag hot">Space</span></div>
+            <h3>Python &amp; SQL Space Data Journey</h3>
+            <p>Learning Python and SQL through projects with space, aviation and engineering data, focused on operational intelligence. The skills carry over to any data-driven sector.</p>
+            <div class="feat-links"><a href="https://github.com/Dariuscc-dev/python-space-data-journey" target="_blank" rel="noopener noreferrer">View repository →</a></div>
+          </article>
+          <article class="panel feat reveal">
+            <div class="tag-row"><span class="tag">Power BI</span><span class="tag">DAX</span></div>
+            <h3>Customer Churn Analysis · Databel Telecom</h3>
+            <p>A 27% churn rate, analyzed. Monthly plans account for 46% of the customers lost, and churn goes hand in hand with the number of support calls. Segments and drivers for a retention strategy.</p>
+            <div class="feat-links"><a href="https://github.com/Dariuscc-dev/Customer-Churn-Analysis---Databel-Telecom" target="_blank" rel="noopener noreferrer">View project →</a></div>
+          </article>
+          <article class="panel feat reveal">
+            <div class="tag-row"><span class="tag">HTML → CI/CD</span><span class="tag">12 layers</span></div>
+            <h3>Living Web Stack</h3>
+            <p>One project that grows layer by layer through the whole web stack, from HTML to Docker and CI/CD, to understand how a web app really works end to end.</p>
+            <div class="feat-links"><a href="https://github.com/Dariuscc-dev/living-web-stack" target="_blank" rel="noopener noreferrer">View repository →</a></div>
+          </article>
+          <article class="panel feat reveal">
+            <div class="tag-row"><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">HTML/XML</span><span class="tag hot">New</span></div>
+            <h3>1st Year FP DAW</h3>
+            <p>My open notebook for the first year of DAW: notes that break every concept down, solved exercises and small projects in Java, databases, markup languages and computer systems.</p>
+            <div class="feat-links"><a href="https://github.com/Dariuscc-dev/1st_FP_DAW_YEAR" target="_blank" rel="noopener noreferrer">View repository →</a></div>
+          </article>
+        </div>
+
+        <h3 class="reveal" style="font-size:1.6rem;margin-bottom:8px">All of my work</h3>
+        <p class="reveal" style="color:var(--text-2);margin:0 0 22px">Pick a category.</p>
+
+        <div class="tabs" role="tablist" aria-label="Portfolio categories">
+          <button class="tab-btn active" role="tab" aria-selected="true" data-tab="academic">Academic</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="bi">Business Intelligence</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="excel">Excel &amp; Finance</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="python">Python</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="daw">FP DAW &amp; Java</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="web">Web Development</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="cloud">Cloud Architecture</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="devops">DevOps</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="ai">AI</button>
+        </div>
+
+        <!-- Academic -->
+        <div class="panel-tab active" id="tab-academic" role="tabpanel">
+          <p class="panel-intro">Projects from my Marketing &amp; Market Research degree at UMA, from award-winning market research to macroeconomic forecasting as Trump takes power. Tools: Statgraphics, SPSS, Gretl and Excel.</p>
+          <p class="note">⚠️ Some projects mix Spanish and English, and some databases may be incomplete. They're archives of my favorite subjects, not originally made as portfolio pieces.</p>
+          <div class="tag-row"><span class="tag">SPSS</span><span class="tag">Gretl</span><span class="tag">Statgraphics</span><span class="tag">Excel</span><span class="tag">Google Trends</span><span class="tag">ANOVA</span><span class="tag">Cluster Analysis</span><span class="tag">Factor Analysis</span><span class="tag">Econometrics</span></div>
+          <div class="proj-grid">
+            <article class="panel proj"><h4>Bachelor's thesis: Quantitative model for BME Growth 🏆</h4><p>Matrícula de Honor (highest distinction). The world's first Fear &amp; Greed Index built for Spanish micro-cap and illiquid markets, combining statistical modeling, Python algorithmic backtesting and Power BI.</p><div><a href="https://drive.google.com/drive/folders/1DeKmp8fAhwGKZO3F1cZQsOsExFoDgGBV?usp=sharing" target="_blank" rel="noopener noreferrer">Research &amp; code →</a><a href="https://drive.google.com/drive/folders/10EBKLnpA2Ls1BQUBWsiKPvsR7QmgOEFg?usp=sharing" target="_blank" rel="noopener noreferrer">BI dashboard →</a></div></article>
+            <article class="panel proj"><h4>Macroeconomic &amp; trade effects of U.S. tariffs on the automotive sector</h4><p>International Business project forecasting the macroeconomic impact of Trump-era tariff policies on the automotive industry. Trade flow analysis and economic modeling.</p><div><a href="https://drive.google.com/drive/folders/15zRlceGbsJEURXPFMY8coEdrgKFDja7W?usp=sharing" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
+            <article class="panel proj"><h4>Market Research I · Award-winning project 🏆</h4><p>Chi-square tests, cross tables, descriptive and frequency analysis. This project won an award during my studies.</p><div><a href="https://drive.google.com/drive/folders/1wqr-lpQYnpAebhX10gm0P1qmqjXkXzH5?usp=sharing" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
+            <article class="panel proj"><h4>Market Research II · Advanced statistical methods</h4><p>ANOVA, cluster analysis, correspondence analysis, binary logistic regression and factor analysis applied to real market data.</p><div><a href="https://drive.google.com/drive/folders/1UtoiLqJzL2Yb-FSJ9VVKsl2ObA-cdZZc?usp=sharing" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
+            <article class="panel proj"><h4>Multivariate Statistics · Deep analysis</h4><p>Normality tests, Q-Q plots, chi-square, Levene tests, homoscedasticity, principal component analysis, scree plots and more.</p><div><a href="https://drive.google.com/drive/folders/1PXPjV-p3PS7RYz6QK0BCf-O6XKAAd9l5?usp=sharing" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
+            <article class="panel proj"><h4>Business Creation · Full venture analysis</h4><p>Cash flow modeling, Business Model Canvas, DuPont analysis and full financial structuring for a new business.</p><div><a href="https://drive.google.com/drive/folders/1TpiPW9R_qNyXtlueTlTlJOQiUBbhvN9L?usp=sharing" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
+          </div>
+        </div>
+
+        <!-- BI -->
+        <div class="panel-tab" id="tab-bi" role="tabpanel">
+          <p class="panel-intro">Power BI projects that summarize complex databases and pull out insights for real business scenarios.</p>
+          <div class="tag-row"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Data Modeling</span></div>
+          <div class="proj-grid">
+            <article class="panel proj"><h4>Bachelor's thesis: BME Growth predictive dashboard 🏆</h4><p>Matrícula de Honor. The BI frontend of my quantitative model, the world's first Fear &amp; Greed Index for illiquid markets (IBEX Growth Market 15). It turns quantitative signals and historical backtesting into clear financial insights.</p><div><a href="https://drive.google.com/drive/folders/10EBKLnpA2Ls1BQUBWsiKPvsR7QmgOEFg?usp=sharing" target="_blank" rel="noopener noreferrer">BI dashboard →</a></div></article>
+            <article class="panel proj"><h4>Customer Churn Analysis · Databel Telecom</h4><p>Churn patterns at a telecom company: a 27% churn rate, key drivers and customer segments at risk.</p><div><a href="https://github.com/Dariuscc-dev/Customer-Churn-Analysis---Databel-Telecom" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
+            <article class="panel proj"><h4>HR Analytics · Atlas Labs</h4><p>End-to-end HR report on a snowflake schema: workforce composition, attrition, performance ratings and diversity metrics.</p><div><a href="https://github.com/Dariuscc-dev/HR-Analytics" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
+          </div>
+        </div>
+
+        <!-- Excel -->
+        <div class="panel-tab" id="tab-excel" role="tabpanel">
+          <p class="panel-intro">Excel financial modeling: company valuation, stock analysis and investment frameworks. Excel is still a central tool in finance and business strategy.</p>
+          <div class="tag-row"><span class="tag">Excel</span><span class="tag">Financial Modeling</span><span class="tag">DCF</span><span class="tag">Valuation</span></div>
+          <div class="proj-grid">
+            <article class="panel proj"><h4>Stock valuation &amp; discount methods · GOOGL</h4><p>Full stock valuation model using Google (GOOGL) as a case study: DCF, comparable companies and growth parameters.</p><div><a href="https://docs.google.com/spreadsheets/d/1Fk9QbS3k-b4bc6tBsIXnHmJ7AYvTCrOfNEIe3-mpcxg/edit?usp=sharing" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
+          </div>
+        </div>
+
+        <!-- Python -->
+        <div class="panel-tab" id="tab-python" role="tabpanel">
+          <p class="panel-intro">Python models, data extraction pipelines and quantitative algorithms for financial and business problems.</p>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Quantitative Finance</span></div>
+          <div class="proj-grid">
+            <article class="panel proj"><h4>Bachelor's thesis: Algorithmic model for BME Growth 🏆</h4><p>Matrícula de Honor. The core Python architecture of my Fear &amp; Greed Index for Spanish micro-caps: data extraction, statistical processing and the algorithmic logic.</p><div><a href="https://drive.google.com/drive/folders/1DeKmp8fAhwGKZO3F1cZQsOsExFoDgGBV?usp=sharing" target="_blank" rel="noopener noreferrer">Python scripts →</a></div></article>
+            <article class="panel proj"><h4>Living Web Stack · Python</h4><p>The fifth layer of my web path: Python scripting, data structures and core programming logic.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/05-python" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+            <article class="panel proj"><h4>Python &amp; SQL Space Data Journey</h4><p>Project-based learning with space, aviation and engineering data, focused on data analysis and operational intelligence.</p><div><a href="https://github.com/Dariuscc-dev/python-space-data-journey" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+          </div>
+        </div>
+
+        <!-- DAW -->
+        <div class="panel-tab" id="tab-daw" role="tabpanel">
+          <p class="panel-intro">What I'm learning right now in the first year of DAW at UTAMED, documented in English as I go.</p>
+          <div class="tag-row"><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">E/R modeling</span><span class="tag">HTML</span><span class="tag">XML / DTD</span><span class="tag">Git</span><span class="tag">Eclipse</span></div>
+          <div class="proj-grid">
+            <article class="panel proj"><h4>1st Year FP DAW · Open notebook</h4><p>Notes, exercises and small projects for every subject: programming in Java, databases, markup languages, computer systems and development environments.</p><div><a href="https://github.com/Dariuscc-dev/1st_FP_DAW_YEAR" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+            <article class="panel proj"><h4>Programming · Java</h4><p>From the first program to console apps, control structures, loops, arrays and data structures.</p><div><a href="https://github.com/Dariuscc-dev/1st_FP_DAW_YEAR/tree/main/programming" target="_blank" rel="noopener noreferrer">View folder →</a></div></article>
+            <article class="panel proj"><h4>Databases · E/R model</h4><p>Information storage systems, the entity-relationship model, extended E/R and case studies.</p><div><a href="https://github.com/Dariuscc-dev/1st_FP_DAW_YEAR/tree/main/._databases" target="_blank" rel="noopener noreferrer">View folder →</a></div></article>
+          </div>
+        </div>
+
+        <!-- Web -->
+        <div class="panel-tab" id="tab-web" role="tabpanel">
+          <p class="panel-intro">Web development layers of my Living Web Stack, focused on clean, semantic foundations.</p>
+          <div class="tag-row"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">HTTP/TLS</span><span class="tag">SQL</span><span class="tag">Node</span></div>
+          <div class="proj-grid">
+            <article class="panel proj"><h4>Layer 1 · Basic semantic HTML</h4><p>My first time with HTML. Only native semantic HTML, no CSS or JavaScript, to get the structure right first.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/01-html" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+            <article class="panel proj"><h4>Layer 2 · CSS layouts &amp; styling</h4><p>Modern CSS from scratch: Flexbox and Grid, responsive design, design tokens and UI styling.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/02-css" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+            <article class="panel proj"><h4>Layer 3 · JavaScript foundations</h4><p>Core logic, DOM interaction and the jump from static pages to dynamic behavior in the browser.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/03-javascript" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+            <article class="panel proj"><h4>Layer 4 · Web protocols &amp; security</h4><p>How the web communicates: the HTTP/HTTPS request lifecycle, statefulness, and how SSL and TLS encryption work.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+            <article class="panel proj"><h4>Layer 6 · SQL data modeling</h4><p>Relational databases, SQL queries, data integrity and normalization in a web app context.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/06-SQL" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+            <article class="panel proj"><h4>Layer 7 · Node &amp; REST APIs</h4><p>Backend services with Node.js, CORS policies and RESTful API contracts for client-server communication.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/07-Node-CORS-API-REST" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+            <article class="panel proj"><h4>Layer 8 · Linux infrastructure</h4><p>The Linux environment, Bash scripting and system-level configuration for web hosting.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/08-Linux" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+            <article class="panel proj"><h4>Layer 12 · Visual Studio Code</h4><p>VS Code as my main development environment: extensions, configuration and workflow automation.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/12-Visual-Studio-Code" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+            <article class="panel proj"><h4>This website</h4><p>My personal site, rebuilt with a mission-control theme. Plain HTML, CSS and JavaScript, hosted on GitHub Pages.</p><div><a href="https://github.com/Dariuscc-dev/Dariuscc-dev.github.io" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+          </div>
+        </div>
+
+        <!-- Cloud -->
+        <div class="panel-tab" id="tab-cloud" role="tabpanel">
+          <p class="panel-intro">Cloud infrastructure and architecture projects: Azure services, security and cloud design principles.</p>
+          <div class="tag-row"><span class="tag">Azure</span><span class="tag">Cloud Architecture</span><span class="tag">AZ-900</span><span class="tag">SC-900</span><span class="tag">Security</span></div>
+          <div class="proj-grid">
+            <article class="panel proj"><h4>Azure architecture · AZ-900</h4><p>Cloud architecture case study (e-commerce migration) built alongside the Azure Fundamentals certification: core services, structure and design.</p><div><a href="https://github.com/Dariuscc-dev/azure-az900-architecture-project/tree/main" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+            <article class="panel proj"><h4>Zero Trust blueprint · SC-900</h4><p>Zero Trust security architecture for a financial services company with a hybrid workplace, plus a quick reference guide for security, compliance and identity.</p><div><a href="https://github.com/Dariuscc-dev/microsoft-sc900-zero-trust-blueprint" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+          </div>
+        </div>
+
+        <!-- DevOps -->
+        <div class="panel-tab" id="tab-devops" role="tabpanel">
+          <p class="panel-intro">Version control, containers and CI/CD pipelines.</p>
+          <div class="tag-row"><span class="tag">Git</span><span class="tag">GitHub Actions</span><span class="tag">Docker</span><span class="tag">CI/CD</span></div>
+          <div class="proj-grid">
+            <article class="panel proj"><h4>Git &amp; GitHub Actions</h4><p>Version control workflows and automated task runners with GitHub Actions.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/09-GIT-and-GitHub-Actions" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
+            <article class="panel proj"><h4>Docker</h4><p>Containerizing applications so they run the same everywhere and scale across infrastructures.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/10-Docker" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
+            <article class="panel proj"><h4>CI/CD</h4><p>Continuous integration and deployment pipelines for automated testing and delivery.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/11-CI-CD" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
+          </div>
+        </div>
+
+        <!-- AI -->
+        <div class="panel-tab" id="tab-ai" role="tabpanel">
+          <div class="panel coming">
+            <div class="big-emoji">🛰️</div>
+            <h4 style="font-size:1.2rem;margin:10px 0 8px">AI projects coming soon</h4>
+            <p style="color:var(--text-2);margin:0 auto;max-width:560px">Projects that apply AI, deep learning, machine learning and cloud AI infrastructure to hard real-world problems. They'll land here during the AI &amp; ML specialization.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TOOLS ================= -->
+    <section id="tools" aria-labelledby="tools-title">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-code">05 · Instruments</div>
+          <h2 id="tools-title">Tools I'm familiar with</h2>
+          <p>A mix of statistical, analytical, BI and dev tools. Some I know well, some I'm learning right now.</p>
+        </div>
+        <div class="legend">
+          <span><i class="lv lv-e"></i><b>E</b> Expert</span>
+          <span><i class="lv lv-gl"></i><b>GL</b> Good level</span>
+          <span><i class="lv lv-l"></i><b>L</b> Learning</span>
+          <span><i class="lv lv-f"></i><b>F</b> Fundamentals (I know the concepts)</span>
+        </div>
+        <div class="skill-grid">
+          <div class="panel skill-box reveal"><h4>Languages</h4><div class="chips">
+            <span class="chip">DAX <small>GL</small></span><span class="chip">M <small>GL</small></span><span class="chip">Python <small>L</small></span><span class="chip">SQL <small>L</small></span><span class="chip">Java <small>L</small></span><span class="chip">HTML <small>L</small></span><span class="chip">CSS <small>L</small></span><span class="chip">JavaScript <small>L</small></span><span class="chip">XML <small>L</small></span>
+          </div></div>
+          <div class="panel skill-box reveal"><h4>Data, BI &amp; Cloud</h4><div class="chips">
+            <span class="chip">Power BI <small>PL-300 · GL ✓</small></span><span class="chip">Microsoft Fabric <small>GL</small></span><span class="chip">Azure <small>AZ-900 · GL ✓</small></span><span class="chip">Tableau <small>GL</small></span><span class="chip">Excel <small>F</small></span>
+          </div></div>
+          <div class="panel skill-box reveal"><h4>Cloud security, networks &amp; protocols</h4><div class="chips">
+            <span class="chip">Zero Trust <small>SC-900 · GL ✓</small></span><span class="chip">Microsoft Entra <small>GL</small></span><span class="chip">Microsoft Defender <small>GL</small></span><span class="chip">HTTP/HTTPS <small>F</small></span><span class="chip">SSL/TLS <small>F</small></span><span class="chip">TCP/IP <small>F</small></span><span class="chip">DNS <small>F</small></span>
+          </div></div>
+          <div class="panel skill-box reveal"><h4>DevOps &amp; infrastructure</h4><div class="chips">
+            <span class="chip">Git <small>GL</small></span><span class="chip">GitHub <small>GL</small></span><span class="chip">GitHub Actions <small>F</small></span><span class="chip">Docker <small>F</small></span><span class="chip">CI/CD <small>F</small></span><span class="chip">Linux/Bash <small>F</small></span><span class="chip">VS Code <small>GL</small></span><span class="chip">Eclipse <small>L</small></span>
+          </div></div>
+          <div class="panel skill-box reveal"><h4>Statistics &amp; research</h4><div class="chips">
+            <span class="chip">SPSS <small>F</small></span><span class="chip">Gretl <small>F</small></span><span class="chip">Statgraphics <small>GL</small></span><span class="chip">Google Trends <small>GL</small></span><span class="chip">Google Analytics <small>GL</small></span>
+          </div></div>
+          <div class="panel skill-box reveal"><h4>Business &amp; AI</h4><div class="chips">
+            <span class="chip">ROI &amp; FinOps <small>GL</small></span><span class="chip">Prompt Engineering <small>GL</small></span><span class="chip">Sales Pipeline Mgmt <small>GL</small></span><span class="chip">HubSpot <small>GL</small></span><span class="chip">Odoo <small>GL</small></span><span class="chip">Salesforce <small>GL</small></span><span class="chip">Gemini / Claude / Perplexity <small>GL</small></span>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ROADMAP ================= -->
+    <section id="roadmap" aria-labelledby="road-title">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-code">06 · Launch sequence</div>
+          <h2 id="road-title">Development roadmap</h2>
+          <p>The Living Web Stack path: five layers, from web fundamentals to infrastructure and CI/CD.</p>
+        </div>
+
+        <div class="panel disclaimer reveal">
+          <strong>Disclaimer:</strong> this repository isn't very technical. It was my first real contact with web development, and also with GitHub. Don't expect best practices or polished code, it's simply a first exploration, and whatever comes next will be far better. A project that grows layer by layer through the most common web technologies (HTML → CSS → JS → HTTP/TLS → Python → SQL → REST APIs → Linux → Git → Docker → CI/CD). It's not a professional project, it's my way of understanding, in a simple way, what's possible when you build a web application.
+        </div>
+
+        <div class="layers">
+          <div class="panel layer reveal"><div class="num">LAYER 01</div><h4>Web fundamentals</h4><div class="chips">
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/01-html" target="_blank" rel="noopener noreferrer">HTML <small>L</small></a>
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/02-css" target="_blank" rel="noopener noreferrer">CSS <small>L</small></a>
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/03-javascript" target="_blank" rel="noopener noreferrer">JavaScript <small>L</small></a>
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer">HTTP <small>F</small></a>
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer">HTTPS <small>F</small></a>
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer">TLS <small>F</small></a>
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer">SSL <small>F</small></a>
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/12-Visual-Studio-Code" target="_blank" rel="noopener noreferrer">VS Code <small>F</small></a>
+          </div></div>
+          <div class="panel layer reveal"><div class="num">LAYER 02</div><h4>Logic &amp; data</h4><div class="chips">
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/05-python" target="_blank" rel="noopener noreferrer">Python <small>L</small></a>
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/06-SQL" target="_blank" rel="noopener noreferrer">SQL <small>L</small></a>
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/07-Node-CORS-API-REST" target="_blank" rel="noopener noreferrer">REST APIs &amp; CORS <small>F</small></a>
+          </div></div>
+          <div class="panel layer reveal"><div class="num">LAYER 03</div><h4>Networks &amp; security</h4><div class="chips">
+            <span class="chip">TCP/IP <small>F</small></span>
+            <span class="chip">DNS flow <small>F</small></span>
+          </div></div>
+          <div class="panel layer reveal"><div class="num">LAYER 04</div><h4>Infrastructure</h4><div class="chips">
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/08-Linux" target="_blank" rel="noopener noreferrer">Linux/Bash <small>F</small></a>
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/09-GIT-and-GitHub-Actions" target="_blank" rel="noopener noreferrer">Git &amp; GitHub <small>GL</small></a>
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/10-Docker" target="_blank" rel="noopener noreferrer">Docker <small>F</small></a>
+          </div></div>
+          <div class="panel layer reveal"><div class="num">LAYER 05</div><h4>Automation &amp; DevOps</h4><div class="chips">
+            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/11-CI-CD" target="_blank" rel="noopener noreferrer">CI/CD &amp; GitHub Actions <small>F</small></a>
+          </div></div>
+        </div>
+
+        <div class="story">
+          <div class="panel card reveal"><h4>Why I explored first</h4><p>Starting from zero in tech, I explored widely before committing to a single label. I wanted to understand what Computer Science actually contains before deciding where to go deep.</p></div>
+          <div class="panel card reveal"><h4>What it gave me</h4><p>The field is huge: web and software engineering, frontend and backend, data, ML, AI, cloud, DevOps, cybersecurity, networking, robotics, bioinformatics... Living Web Stack helped me see how the layers of a modern web system connect, from HTML, CSS and JavaScript to HTTP/TLS and Python, instead of seeing technologies as loose names. It gave me a map.</p></div>
+          <div class="panel card reveal"><h4>What comes next</h4><p>Focus. Python first, then SQL, data engineering, backend systems, cloud infrastructure and applied AI. And I want to apply all of it to aerospace, industrial operations and mission-critical environments.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CERTIFICATIONS ================= -->
+    <section id="certifications" aria-labelledby="cert-title">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-code">07 · Stages</div>
+          <h2 id="cert-title">Cloud &amp; tech certifications</h2>
+          <p>My Microsoft &amp; cloud roadmap: from fundamentals to architecture, building a hybrid profile in Cloud, Data Engineering and Applied AI.</p>
+        </div>
+
+        <div class="cert-track">
+          <div class="panel cert done reveal"><div class="code">PL-300</div><div class="lvl">Associate</div><h4>Power BI Data Analyst</h4><p>Data analysis and visualization. The base for data engineering.</p><a class="badge b-ok" href="https://learn.microsoft.com/en-us/users/dariuschiosachiosa-2698/credentials/certification/data-analyst-associate?tab=credentials-tab" target="_blank" rel="noopener noreferrer">✓ Achieved</a></div>
+          <div class="panel cert done reveal"><div class="code">AZ-900</div><div class="lvl">Fundamental</div><h4>Azure Fundamentals</h4><p>Cloud foundations: Azure vocabulary and base structure.</p><a class="badge b-ok" href="https://learn.microsoft.com/en-us/users/dariuschiosachiosa-2698/credentials/certification/azure-fundamentals?tab=credentials-tab" target="_blank" rel="noopener noreferrer">✓ Achieved</a></div>
+          <div class="panel cert done reveal"><div class="code">SC-900</div><div class="lvl">Fundamental</div><h4>Security, Compliance &amp; Identity</h4><p>Security, compliance and identity. Zero Trust by design.</p><a class="badge b-ok" href="https://learn.microsoft.com/en-us/users/dariuschiosachiosa-2698/credentials/certification/security-compliance-and-identity-fundamentals?tab=credentials-tab" target="_blank" rel="noopener noreferrer">✓ Achieved</a></div>
+          <div class="panel cert reveal"><div class="code">DP-700</div><div class="lvl">Associate</div><h4>Fabric Data Engineer</h4><p>Analytics integration, data preparation and data movement in Microsoft Fabric.</p><span class="badge b-next">▶ Next</span></div>
+          <div class="panel cert reveal"><div class="code">AZ-104</div><div class="lvl">Associate</div><h4>Azure Administrator</h4><p>Managing infrastructure, networks, storage and compute.</p><span class="badge b-later">Short-term</span></div>
+          <div class="panel cert reveal"><div class="code">AZ-305</div><div class="lvl">Expert</div><h4>Azure Solutions Architect</h4><p>High-level solution design, balancing cost, performance and security.</p><span class="badge b-later">Mid-term</span></div>
+          <div class="panel cert reveal"><div class="code">SAA-C03</div><div class="lvl">Associate</div><h4>AWS Solutions Architect</h4><p>Multicloud: access to the largest cloud provider market.</p><span class="badge b-later">Mid-term</span></div>
+        </div>
+
+        <div class="extra-grid">
+          <div class="panel card reveal">
+            <h4>Other certifications</h4>
+            <ul class="plain-list">
+              <li><span><strong>C1 Advanced</strong> · Cambridge</span></li>
+              <li><span><strong>Insurance Broker Degree</strong> · Universidad Nebrija</span></li>
+              <li><span><strong>Real Estate Credit Advisory (LCCI)</strong> · INESEM</span></li>
+              <li><span><strong>Inside LVMH &amp; Luxury</strong> · LVMH</span></li>
+              <li><span><strong>Google Ads</strong> · Google</span></li>
+              <li><span><strong>Apple Search Ads</strong> · Apple</span></li>
+              <li><span><strong>Excel &amp; Word</strong> · Microsoft</span></li>
+            </ul>
+          </div>
+          <div class="panel card reveal">
+            <h4>Events &amp; talks</h4>
+            <ul class="plain-list">
+              <li><span><strong>La Biznaga 2026</strong> · Google event on tech trends, innovation and the developer community</span></li>
+              <li><span><strong>Talent Land 2025-2026</strong> · Talks and workshops on robotics, AR, AI, aerospace engineering and physics (with speakers like Javier Santaolalla)</span></li>
+            </ul>
+          </div>
+          <div class="panel card reveal">
+            <h4>Languages</h4>
+            <dl class="kv">
+              <div><dt>Spanish</dt><dd>Native</dd></div>
+              <div><dt>Romanian</dt><dd>Native / Bilingual</dd></div>
+              <div><dt>English</dt><dd>Full professional (C1)</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-code">08 · Open channel</div>
+          <h2 id="contact-title">Let's work together</h2>
+          <p>Opportunities, questions or just a good conversation about tech or space. Write to me, I always answer.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="channels">
+            <div class="panel channel reveal"><span>Email</span><a href="mailto:corina.dariusnicu@gmail.com">corina.dariusnicu@gmail.com</a></div>
+            <div class="panel channel reveal"><span>LinkedIn</span><a href="https://www.linkedin.com/in/darius-chiosa" target="_blank" rel="noopener noreferrer">linkedin.com/in/darius-chiosa</a></div>
+            <div class="panel channel reveal"><span>GitHub</span><a href="https://github.com/Dariuscc-dev" target="_blank" rel="noopener noreferrer">github.com/Dariuscc-dev</a></div>
+          </div>
+          <form class="panel reveal" action="https://formspree.io/f/meedkobl" method="POST" id="contactForm">
+            <div class="row2">
+              <div><label for="fname">Name *</label><input type="text" id="fname" name="fname" placeholder="Your name" required></div>
+              <div><label for="lname">Last name</label><input type="text" id="lname" name="lname" placeholder="Your last name"></div>
+            </div>
+            <div><label for="email">Email *</label><input type="email" id="email" name="email" placeholder="your@email.com" required></div>
+            <div><label for="message">Message *</label><textarea id="message" name="message" placeholder="Tell me about your project or idea..." required></textarea></div>
+            <button type="submit" class="btn btn-primary">Send message →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span><span class="brand-dot" style="display:inline-block;margin-right:8px"></span>Darius Chiosa Chiosa · Málaga, Spain</span>
+      <nav aria-label="Footer navigation">
+        <a href="#about">About</a><a href="#experience">Log</a><a href="#portfolio">Portfolio</a><a href="#tools">Tools</a><a href="#roadmap">Roadmap</a><a href="#certifications">Certs</a><a href="#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/darius-chiosa" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/Dariuscc-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+      <span>© 2026 · Built with HTML, CSS, JS and a lot of curiosity about the cosmos.</span>
+    </div>
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Theme toggle
-      const themeToggleBtn = document.querySelector('[data-theme-toggle]');
-      const rootElement = document.documentElement;
-      let currentTheme = rootElement.getAttribute('data-theme') || 'dark';
-
-      function updateThemeButton() {
-        if (!themeToggleBtn) return;
-        themeToggleBtn.setAttribute('aria-label', `Switch to ${currentTheme === 'dark' ? 'light' : 'dark'} mode`);
-        themeToggleBtn.innerHTML = currentTheme === 'dark'
-          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-      }
-
-      updateThemeButton();
-
-      if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-          currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-          rootElement.setAttribute('data-theme', currentTheme);
-          updateThemeButton();
-        });
-      }
-
-      // Hamburger menu
+      // Mobile menu
       const hamburger = document.getElementById('hamburger');
       const navLinks = document.getElementById('navLinks');
-
-      if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-          const isOpen = navLinks.classList.toggle('open');
-          hamburger.setAttribute('aria-expanded', String(isOpen));
-        });
-      }
+      hamburger.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', String(open));
+      });
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navLinks.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false');
+      }));
 
       // Portfolio tabs
-      const tabButtons = document.querySelectorAll('.tab-btn');
-      const portfolioPanels = document.querySelectorAll('.portfolio-panel');
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(btn => btn.addEventListener('click', () => {
+        tabs.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        document.querySelectorAll('.panel-tab').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active'); btn.setAttribute('aria-selected', 'true');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      }));
 
-      tabButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const tabId = btn.dataset.tab;
+      // Reveal on scroll
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-          tabButtons.forEach(b => {
-            b.classList.remove('active');
-            b.setAttribute('aria-selected', 'false');
-          });
+      // Starfield
+      const canvas = document.getElementById('sky');
+      const ctx = canvas.getContext('2d');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let stars = [], shooting = null, w, h, dpr;
 
-          portfolioPanels.forEach(p => {
-            p.classList.remove('active');
-          });
+      function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = window.innerWidth; h = window.innerHeight;
+        canvas.width = w * dpr; canvas.height = h * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const count = Math.round((w * h) / 4200);
+        stars = Array.from({ length: count }, () => ({
+          x: Math.random() * w, y: Math.random() * h,
+          r: Math.random() < 0.08 ? Math.random() * 1.4 + 0.8 : Math.random() * 0.9 + 0.2,
+          a: Math.random() * 0.7 + 0.2, s: Math.random() * 0.015 + 0.003, p: Math.random() * Math.PI * 2,
+          tint: Math.random() < 0.12 ? 'warm' : (Math.random() < 0.2 ? 'cool' : 'white'),
+          depth: Math.random() * 0.4 + 0.1
+        }));
+      }
 
-          btn.classList.add('active');
-          btn.setAttribute('aria-selected', 'true');
-          document.getElementById('tab-' + tabId).classList.add('active');
-        });
-      });
+      function color(t, a) {
+        if (t === 'warm') return `rgba(255, 196, 140, ${a})`;
+        if (t === 'cool') return `rgba(160, 210, 255, ${a})`;
+        return `rgba(235, 240, 255, ${a})`;
+      }
 
-      // Scroll animation
-      const observerOptions = {
-        threshold: 0.12
-      };
+      let scrollY = window.scrollY;
+      window.addEventListener('scroll', () => { scrollY = window.scrollY; }, { passive: true });
 
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            obs.unobserve(entry.target);
+      function draw(t) {
+        ctx.clearRect(0, 0, w, h);
+        for (const s of stars) {
+          const tw = reduce ? s.a : s.a * (0.65 + 0.35 * Math.sin(t * s.s + s.p));
+          let y = (s.y - scrollY * s.depth * 0.25) % h; if (y < 0) y += h;
+          ctx.beginPath(); ctx.arc(s.x, y, s.r, 0, Math.PI * 2);
+          ctx.fillStyle = color(s.tint, tw); ctx.fill();
+        }
+        if (!reduce) {
+          if (!shooting && Math.random() < 0.004) {
+            shooting = { x: Math.random() * w * 0.7 + w * 0.2, y: Math.random() * h * 0.4, vx: -(6 + Math.random() * 4), vy: 2.5 + Math.random() * 2, life: 1 };
           }
-        });
-      }, observerOptions);
+          if (shooting) {
+            const sx = shooting;
+            const grad = ctx.createLinearGradient(sx.x, sx.y, sx.x - sx.vx * 12, sx.y - sx.vy * 12);
+            grad.addColorStop(0, `rgba(255, 220, 180, ${sx.life})`); grad.addColorStop(1, 'rgba(255, 220, 180, 0)');
+            ctx.strokeStyle = grad; ctx.lineWidth = 1.4;
+            ctx.beginPath(); ctx.moveTo(sx.x, sx.y); ctx.lineTo(sx.x - sx.vx * 12, sx.y - sx.vy * 12); ctx.stroke();
+            sx.x += sx.vx; sx.y += sx.vy; sx.life -= 0.012;
+            if (sx.life <= 0 || sx.x < -50 || sx.y > h + 50) shooting = null;
+          }
+          requestAnimationFrame(draw);
+        }
+      }
 
-      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+      resize();
+      window.addEventListener('resize', () => { resize(); if (reduce) draw(0); });
+      if (reduce) draw(0); else requestAnimationFrame(draw);
     });
   </script>
 </body>
