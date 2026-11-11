@@ -148,7 +148,7 @@
     .ring { position: absolute; inset: 0; border: 1px dashed var(--line-strong); border-radius: 50%; }
     .ring.r2 { inset: 12%; border-style: solid; border-color: var(--line); }
     .ring.r3 { inset: -6%; border-color: rgba(255,122,26,0.18); }
-    .orbiter { position: absolute; inset: 0; animation: spin 26s linear infinite; }
+    .orbiter { position: absolute; inset: 0; animation: spin 26s linear infinite; will-change: transform; }
     .orbiter.o2 { inset: 12%; animation-duration: 16s; animation-direction: reverse; }
     .orbiter.o3 { inset: -6%; animation-duration: 40s; }
     .sat { position: absolute; top: -6px; left: 50%; width: 12px; height: 12px; margin-left: -6px; border-radius: 3px; background: var(--signal); box-shadow: 0 0 14px var(--signal); }
@@ -375,7 +375,7 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .orbiter, .pulse { animation: none; }
+      .pulse { animation: none; }
       .reveal { opacity: 1; transform: none; transition: none; }
     }
   </style>
@@ -970,10 +970,14 @@
       let stars = [], shooting = null, w, h, dpr;
 
       function resize() {
+        const prevW = w, prevH = h;
         dpr = Math.min(window.devicePixelRatio || 1, 2);
         w = window.innerWidth; h = window.innerHeight;
         canvas.width = w * dpr; canvas.height = h * dpr;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        // On phones the address bar hides and shows while scrolling, which fires resize.
+        // Keep the same stars then, so the sky doesn't jump.
+        if (stars.length && w === prevW && Math.abs(h - prevH) < 200) return;
         const count = Math.round((w * h) / 4200);
         stars = Array.from({ length: count }, () => ({
           x: Math.random() * w, y: Math.random() * h,
