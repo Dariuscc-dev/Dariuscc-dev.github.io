@@ -236,6 +236,7 @@
     .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 70px; }
     .feat { padding: 28px; display: flex; flex-direction: column; transition: border-color .2s, transform .2s; }
     .feat:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+    .feat.wide { grid-column: span 2; }
     .feat.big { grid-column: span 2; background: linear-gradient(135deg, rgba(255,122,26,0.12), rgba(14,21,40,0.75) 55%); border-color: rgba(255,122,26,0.35); }
     .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 14px; }
     .tag {
@@ -362,7 +363,7 @@
       .wrap { padding: 0 16px; }
       section { padding: 80px 0; }
       .feat-grid, .proj-grid, .skill-grid, .extra-grid, .story, .row2 { grid-template-columns: 1fr; }
-      .feat.big { grid-column: span 1; }
+      .feat.big, .feat.wide { grid-column: span 1; }
       .cert-track { grid-template-columns: 1fr 1fr; }
       .layers { grid-template-columns: 1fr; }
       .telemetry { grid-template-columns: 1fr 1fr; }
@@ -671,13 +672,7 @@
             <p>A 27% churn rate, analyzed. Monthly plans account for 46% of the customers lost, and churn goes hand in hand with the number of support calls. Segments and drivers for a retention strategy.</p>
             <div class="feat-links"><a href="https://github.com/Dariuscc-dev/Customer-Churn-Analysis---Databel-Telecom" target="_blank" rel="noopener noreferrer">View project →</a></div>
           </article>
-          <article class="panel feat reveal">
-            <div class="tag-row"><span class="tag">HTML → CI/CD</span><span class="tag">12 layers</span></div>
-            <h3>Living Web Stack</h3>
-            <p>One project that grows layer by layer through the whole web stack, from HTML to Docker and CI/CD, to understand how a web app really works end to end.</p>
-            <div class="feat-links"><a href="https://github.com/Dariuscc-dev/living-web-stack" target="_blank" rel="noopener noreferrer">View repository →</a></div>
-          </article>
-          <article class="panel feat reveal">
+          <article class="panel feat wide reveal">
             <div class="tag-row"><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">HTML/XML</span><span class="tag hot">New</span></div>
             <h3>1st Year FP DAW</h3>
             <p>My open notebook for the first year of DAW: notes that break every concept down, solved exercises and small projects in Java, databases, markup languages and computer systems.</p>
@@ -741,7 +736,6 @@
           <div class="tag-row"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Quantitative Finance</span></div>
           <div class="proj-grid">
             <article class="panel proj"><h4>Bachelor's thesis: Algorithmic model for BME Growth 🏆</h4><p>Matrícula de Honor. The core Python architecture of my Fear &amp; Greed Index for Spanish micro-caps: data extraction, statistical processing and the algorithmic logic.</p><div><a href="https://drive.google.com/drive/folders/1DeKmp8fAhwGKZO3F1cZQsOsExFoDgGBV?usp=sharing" target="_blank" rel="noopener noreferrer">Python scripts →</a></div></article>
-            <article class="panel proj"><h4>Living Web Stack · Python</h4><p>The fifth layer of my web path: Python scripting, data structures and core programming logic.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/05-python" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
             <article class="panel proj"><h4>Python &amp; SQL Space Data Journey</h4><p>Project-based learning with space, aviation and engineering data, focused on data analysis and operational intelligence.</p><div><a href="https://github.com/Dariuscc-dev/python-space-data-journey" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
           </div>
         </div>
@@ -759,17 +753,10 @@
 
         <!-- Web -->
         <div class="panel-tab" id="tab-web" role="tabpanel">
-          <p class="panel-intro">Web development layers of my Living Web Stack, focused on clean, semantic foundations.</p>
+          <p class="panel-intro">Web projects, from my first steps with HTML to this site.</p>
           <div class="tag-row"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">HTTP/TLS</span><span class="tag">SQL</span><span class="tag">Node</span></div>
           <div class="proj-grid">
-            <article class="panel proj"><h4>Layer 1 · Basic semantic HTML</h4><p>My first time with HTML. Only native semantic HTML, no CSS or JavaScript, to get the structure right first.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/01-html" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
-            <article class="panel proj"><h4>Layer 2 · CSS layouts &amp; styling</h4><p>Modern CSS from scratch: Flexbox and Grid, responsive design, design tokens and UI styling.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/02-css" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
-            <article class="panel proj"><h4>Layer 3 · JavaScript foundations</h4><p>Core logic, DOM interaction and the jump from static pages to dynamic behavior in the browser.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/03-javascript" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
-            <article class="panel proj"><h4>Layer 4 · Web protocols &amp; security</h4><p>How the web communicates: the HTTP/HTTPS request lifecycle, statefulness, and how SSL and TLS encryption work.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
-            <article class="panel proj"><h4>Layer 6 · SQL data modeling</h4><p>Relational databases, SQL queries, data integrity and normalization in a web app context.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/06-SQL" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
-            <article class="panel proj"><h4>Layer 7 · Node &amp; REST APIs</h4><p>Backend services with Node.js, CORS policies and RESTful API contracts for client-server communication.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/07-Node-CORS-API-REST" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
-            <article class="panel proj"><h4>Layer 8 · Linux infrastructure</h4><p>The Linux environment, Bash scripting and system-level configuration for web hosting.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/08-Linux" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
-            <article class="panel proj"><h4>Layer 12 · Visual Studio Code</h4><p>VS Code as my main development environment: extensions, configuration and workflow automation.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/12-Visual-Studio-Code" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
+            <article class="panel proj"><h4>Living Web Stack</h4><p>My first contact with web development and GitHub. A quick pass through HTML, CSS, JavaScript, HTTP/TLS, Python, SQL, Node, Linux, Git, Docker and CI/CD to get a feel for how a web app fits together. An early learning project, on hold for now.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
             <article class="panel proj"><h4>This website</h4><p>My personal site, rebuilt with a mission-control theme. Plain HTML, CSS and JavaScript, hosted on GitHub Pages.</p><div><a href="https://github.com/Dariuscc-dev/Dariuscc-dev.github.io" target="_blank" rel="noopener noreferrer">View repository →</a></div></article>
           </div>
         </div>
@@ -786,12 +773,10 @@
 
         <!-- DevOps -->
         <div class="panel-tab" id="tab-devops" role="tabpanel">
-          <p class="panel-intro">Version control, containers and CI/CD pipelines.</p>
-          <div class="tag-row"><span class="tag">Git</span><span class="tag">GitHub Actions</span><span class="tag">Docker</span><span class="tag">CI/CD</span></div>
-          <div class="proj-grid">
-            <article class="panel proj"><h4>Git &amp; GitHub Actions</h4><p>Version control workflows and automated task runners with GitHub Actions.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/09-GIT-and-GitHub-Actions" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
-            <article class="panel proj"><h4>Docker</h4><p>Containerizing applications so they run the same everywhere and scale across infrastructures.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/10-Docker" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
-            <article class="panel proj"><h4>CI/CD</h4><p>Continuous integration and deployment pipelines for automated testing and delivery.</p><div><a href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/11-CI-CD" target="_blank" rel="noopener noreferrer">View project →</a></div></article>
+          <div class="panel coming">
+            <div class="big-emoji">🛰️</div>
+            <h4 style="font-size:1.2rem;margin:10px 0 8px">DevOps projects coming soon</h4>
+            <p style="color:var(--text-2);margin:0 auto;max-width:560px">My first look at Git, Docker and CI/CD is part of Living Web Stack, under Web Development. Proper projects with version control, containers and pipelines will land here.</p>
           </div>
         </div>
 
@@ -849,41 +834,7 @@
         <div class="sec-head reveal">
           <div class="sec-code">06 · Launch sequence</div>
           <h2 id="road-title">Development roadmap</h2>
-          <p>The Living Web Stack path: five layers, from web fundamentals to infrastructure and CI/CD.</p>
-        </div>
-
-        <div class="panel disclaimer reveal">
-          <strong>Disclaimer:</strong> this repository isn't very technical. It was my first real contact with web development, and also with GitHub. Don't expect best practices or polished code, it's simply a first exploration, and whatever comes next will be far better. A project that grows layer by layer through the most common web technologies (HTML → CSS → JS → HTTP/TLS → Python → SQL → REST APIs → Linux → Git → Docker → CI/CD). It's not a professional project, it's my way of understanding, in a simple way, what's possible when you build a web application.
-        </div>
-
-        <div class="layers">
-          <div class="panel layer reveal"><div class="num">LAYER 01</div><h4>Web fundamentals</h4><div class="chips">
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/01-html" target="_blank" rel="noopener noreferrer">HTML <small>L</small></a>
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/02-css" target="_blank" rel="noopener noreferrer">CSS <small>L</small></a>
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/03-javascript" target="_blank" rel="noopener noreferrer">JavaScript <small>L</small></a>
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer">HTTP <small>F</small></a>
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer">HTTPS <small>F</small></a>
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer">TLS <small>F</small></a>
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/04-http%2Chttps%2Cssl%2Ctls" target="_blank" rel="noopener noreferrer">SSL <small>F</small></a>
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/12-Visual-Studio-Code" target="_blank" rel="noopener noreferrer">VS Code <small>F</small></a>
-          </div></div>
-          <div class="panel layer reveal"><div class="num">LAYER 02</div><h4>Logic &amp; data</h4><div class="chips">
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/05-python" target="_blank" rel="noopener noreferrer">Python <small>L</small></a>
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/06-SQL" target="_blank" rel="noopener noreferrer">SQL <small>L</small></a>
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/07-Node-CORS-API-REST" target="_blank" rel="noopener noreferrer">REST APIs &amp; CORS <small>F</small></a>
-          </div></div>
-          <div class="panel layer reveal"><div class="num">LAYER 03</div><h4>Networks &amp; security</h4><div class="chips">
-            <span class="chip">TCP/IP <small>F</small></span>
-            <span class="chip">DNS flow <small>F</small></span>
-          </div></div>
-          <div class="panel layer reveal"><div class="num">LAYER 04</div><h4>Infrastructure</h4><div class="chips">
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/08-Linux" target="_blank" rel="noopener noreferrer">Linux/Bash <small>F</small></a>
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/09-GIT-and-GitHub-Actions" target="_blank" rel="noopener noreferrer">Git &amp; GitHub <small>GL</small></a>
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/10-Docker" target="_blank" rel="noopener noreferrer">Docker <small>F</small></a>
-          </div></div>
-          <div class="panel layer reveal"><div class="num">LAYER 05</div><h4>Automation &amp; DevOps</h4><div class="chips">
-            <a class="chip" href="https://github.com/Dariuscc-dev/living-web-stack/tree/main/11-CI-CD" target="_blank" rel="noopener noreferrer">CI/CD &amp; GitHub Actions <small>F</small></a>
-          </div></div>
+          <p>How I started in tech and where I want to go deep next.</p>
         </div>
 
         <div class="story">
